@@ -17,8 +17,7 @@ Write something abnout what you do and your interests, perhaps add few links - i
   No formal computer science background, but fair math and econometrics. 
   [1k+ reputation on Stack Overflow for python](https://stackoverflow.com/users/1758363/epo)  
   
-- **Zarak**: awesome and very intelligent person (please fill in details).
-
+- **Zarak**: studied neuroscience at college, along with coursework in applied math and physics. hoping to study a bit of category theory via [Chapter 0](https://www.amazon.com/Algebra-Chapter-Graduate-Studies-Mathematics/dp/0821847813) by Aluffi next summer.
 
 #### Some prior reading:
 
@@ -32,7 +31,7 @@ Write something abnout what you do and your interests, perhaps add few links - i
 
 - Y: anything you can recommend for us to review?
 
-- connections to category theory (Z: can you add a video link? will not be not in scope for this course, but lets keep the link anyways) 
+- connections to category theory (Z: can you add a video link? will not be not in scope for this course, but lets keep the link anyways). For category theory I have [this playlist saved](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_), have only watched the first lecture though - Zarak.
 
 
 #### Learning objective:
