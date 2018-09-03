@@ -59,6 +59,8 @@ Haskell can be thought provoking for us - the result is a little change we think
 
 - please extend / modify
 
+- How is Haskell related to some other functional programming languages? Why use Haskell over, e.g. SML?
+
 
 #### Next steps:
 
