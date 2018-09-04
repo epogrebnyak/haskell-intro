@@ -10,14 +10,14 @@ Short overview of Haskell concepts
 
 Write something abnout what you do and your interests, perhaps add few links - it helps our tutor to prepare: 
 
-- **EP**: economist by education, interested in unit testing and reproducible 
+- **EP**: economist, interested in unit testing and reproducible 
   economic research, eg  [data science projects as a data pipeline](https://github.com/drivendata/cookiecutter-data-science).
   Maintainer of [mini-kep macroeconomic time series dataset](https://github.com/mini-kep/intro), 
   course author on [machine readable financial statements analysis](https://github.com/ru-corporate/teaching-2018). 
   No formal computer science background, but fair math and econometrics. 
-  [1k+ reputation on Stack Overflow for python](https://stackoverflow.com/users/1758363/epo)  
+  [some reputation on Stack Overflow for python](https://stackoverflow.com/users/1758363/epo)  
   
-- **Zarak**: studied neuroscience at college, along with coursework in applied math and physics. hoping to study a bit of category theory via [Chapter 0](https://www.amazon.com/Algebra-Chapter-Graduate-Studies-Mathematics/dp/0821847813) by Aluffi next summer.
+- **Zarak**: studied neuroscience at college, along with coursework in applied math and physics. Hoping to study a bit of category theory via [Chapter 0](https://www.amazon.com/Algebra-Chapter-Graduate-Studies-Mathematics/dp/0821847813) by Aluffi next summer.
 
 #### Some prior reading:
 
@@ -27,18 +27,18 @@ Write something abnout what you do and your interests, perhaps add few links - i
 
 - <http://learnyouahaskell.com/> - seems a nice intro as long at deals with familiar topics (eg map/filer, list comprehensions)
 
-- <https://github.com/billpmurphy/hask> and [similar](https://github.com/sfermigier/awesome-functional-python#libraries) - some Haskell in python, Y: is this a good direction to learn?
+- <https://github.com/billpmurphy/hask> and [similar](https://github.com/sfermigier/awesome-functional-python#libraries) - some Haskell in python, EP: is this a good direction to learn?
   Yuras: I think it is better to start with Haskell directly, and then try to apply things to python using these libraries.
 
-- Y: anything you can recommend for us to review?
+- EP: anything you can recommend for us to review?
   Yuras: No, it is more then enough. I'll introduce everything gradually.
 
-- connections to category theory (Z: can you add a video link? will not be not in scope for this course, but lets keep the link anyways). For category theory I have [this playlist saved](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_), have only watched the first lecture though - Zarak.
+- extra reading: connections to category theory, for category theory I have [this playlist saved](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_), have only watched the first lecture though - Zarak.
 
 
 #### Learning objective:
 
-> Introduction to new approaches in programming using Haskell and 
+> Introduction to new approaches in programming using Haskell 
 
 Comment: we are likely to continue use python/julia/R for development, but introduction to  
 Haskell can be thought provoking for us - the result is a little change we think of developing code.
@@ -50,8 +50,6 @@ Haskell can be thought provoking for us - the result is a little change we think
 
 - Haskell type system motivation (what is being achived) and implementation
 
-- what are the excercises to understand monad?
-
 - `pandoc` seems the most famous popular application written in Haskell. Any story behind it?
    Was Haskell particularly well suited for file format transformations or chosen accidentally for it?
 
@@ -59,16 +57,15 @@ Haskell can be thought provoking for us - the result is a little change we think
 
 - haslkell seems strognly typed, does this make it a fast?
 
-- please extend / modify
-
-- How is Haskell related to some other functional programming languages? Why use Haskell over, e.g. SML?
+- How is Haskell related to some other functional programming languages? Why use Haskell over, e.g. SML, Erlang?
 
 
 #### Next steps:
 
-- [ ] merge updates to this document + videochat to discuss it
-- [ ] make a simple outline for several lectures
-- [ ] students should install haskell(?)
+- [x] merge updates to this document 
+- [ ] videochat to discuss it, if necessary
+- [x] make an outline for several lectures
+- [ ] install haskell, see below
 - [ ] choose format to communicate (Hangouts for video + some texting app + dump some code/notes here?)
 
 
