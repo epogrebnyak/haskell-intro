@@ -28,8 +28,10 @@ Write something abnout what you do and your interests, perhaps add few links - i
 - <http://learnyouahaskell.com/> - seems a nice intro as long at deals with familiar topics (eg map/filer, list comprehensions)
 
 - <https://github.com/billpmurphy/hask> and [similar](https://github.com/sfermigier/awesome-functional-python#libraries) - some Haskell in python, Y: is this a good direction to learn?
+  Yuras: I think it is better to start with Haskell directly, and then try to apply things to python using these libraries.
 
 - Y: anything you can recommend for us to review?
+  Yuras: No, it is more then enough. I'll introduce everything gradually.
 
 - connections to category theory (Z: can you add a video link? will not be not in scope for this course, but lets keep the link anyways). For category theory I have [this playlist saved](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_), have only watched the first lecture though - Zarak.
 
@@ -69,3 +71,13 @@ Haskell can be thought provoking for us - the result is a little change we think
 - [ ] students should install haskell(?)
 - [ ] choose format to communicate (Hangouts for video + some texting app + dump some code/notes here?)
 
+
+#### Setting up Haskell
+
+Please try to get the Glasgow Haskell Compiler installed. If you have any issue, we'll try to solve them
+during the first meeting.
+
+The easiest way to install GHC is to use the [minimal installer](https://www.haskell.org/downloads#minimal)
+for your platform. Other options are OK too, e.g. you can install it using your package manager.
+Also you can use online tools like [this](https://www.tutorialspoint.com/compile_haskell_online.php),
+though they don't provide access to interactive environment.
