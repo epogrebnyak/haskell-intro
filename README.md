@@ -1,6 +1,4 @@
 # haskell-intro
-Short overview of Haskell concepts
-
 
 #### Tutor:
 
@@ -63,10 +61,11 @@ Haskell can be thought provoking for us - the result is a little change we think
 #### Next steps:
 
 - [x] merge updates to this document 
-- [ ] videochat to discuss it, if necessary
+- [x] videochat to discuss it, if necessary
 - [x] make an outline for several lectures
-- [ ] install haskell, see below
-- [ ] choose format to communicate (Hangouts for video + some texting app + dump some code/notes here?)
+- [x] install haskell, see below
+- [x] choose format to communicate: [Skype](https://support.skype.com/en/faq/fa10022/how-do-i-share-my-screen-in-skype)
+- [ ] first lesson
 
 
 #### Setting up Haskell
