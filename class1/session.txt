@@ -1,29 +1,3 @@
-Comment:
-- Prelude and loaded packages
-- make easiest funtion possible f(x) = x + 1
-- add signature and types to a function 
-- make a fucntion of two arguments 
-- chaining and currying
-- question: what is `Int -> Int -> Int` vs `Int -> (Int -> Int)` (the same)  vs `(Int -> Int) -> Int` (function + arg)
-- this war we explored 
-- discussion: there are just values, functions, expression 
-- lambda functions (nameless function)
-- `:{}:` and `do`
-- excercises in data types and fucntions over them 
-- `:t` know the type
-- Show() built-in
-- `:q` quits like in vim!
-- `:l` filename
-- `:r` reloads?
-- not now: list comprehensions, map, fileter, etc 
-- not now: typeclass
-- next: recursive functions, polymorphic datatypes
-
-
-- simialr quick approach in https://wiki.haskell.org/Learn_Haskell_in_10_minutes
-- try online https://repl.it/languages/haskell
-
-
 shum@shum-asus:/tmp/shum$ ghci
 GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
 Prelude> :edit test.hs
