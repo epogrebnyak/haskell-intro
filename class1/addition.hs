@@ -1,13 +1,6 @@
 -- Trying to show:
 --    - define function and function type in signature
 --    - currying
---    - currying
--- Not shown:
---    - lambdas
---    - pattern mathcing
---    - different ways to define a fucntions on several types
---    - let in / where / do 
---    - multiline statement?
 
 addTwo :: Int -> Int -> Int
 addTwo a b = a + b 
@@ -24,7 +17,18 @@ runFunc f = f 2
 square :: Double -> Double
 square x = x * x 
 
+
+-- Not shown:
+--
+--    - lambdas
+--    - pattern mathcing
+--    - different ways to define a fucntions on several types
+--    - let in / where / do 
+--    - multiline statement?
+
+
 -- Additions:
+--
 -- https://stackoverflow.com/questions/46547208/why-is-my-haskell-code-saying-variable-not-in-scope-main
 -- supress warnings
 
