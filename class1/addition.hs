@@ -39,4 +39,5 @@ main = return ()
 
 -- Good functions tutorial
 -- http://www.toves.org/books/hsfun/
--- but lacks lambda fucntions
+-- but lacks lambda functions
+-- also https://learnxinyminutes.com/docs/haskell/
