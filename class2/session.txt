@@ -1,0 +1,327 @@
+shum@shum-asus:~/hsg/class2$ ghci
+GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
+Prelude> (\f -> f + f) 3
+6
+Prelude> (\a b -> a + b) 3 5
+8
+Prelude> 5/3
+1.6666666666666667
+Prelude> (/ 3) 5
+1.6666666666666667
+Prelude> (5 /) 3
+1.6666666666666667
+Prelude> sumTwo a b = a + b
+Prelude> sumTwo 1 4
+5
+Prelude> sumTwo 1
+
+<interactive>:8:1: error:
+    • No instance for (Show (Integer -> Integer))
+        arising from a use of ‘print’
+        (maybe you haven't applied a function to enough arguments?)
+    • In a stmt of an interactive GHCi command: print it
+Prelude> let f = sumTwo 1
+Prelude> :t f
+f :: Num a => a -> a
+Prelude> f 4
+5
+Prelude> (*) 4
+
+<interactive>:12:1: error:
+    • No instance for (Show (Integer -> Integer))
+        arising from a use of ‘print’
+        (maybe you haven't applied a function to enough arguments?)
+    • In a stmt of an interactive GHCi command: print it
+Prelude> (*) 4 5
+20
+Prelude> :l test.hs 
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main> let user = User "John" "Smith"
+*Main> user
+
+<interactive>:16:1: error:
+    • No instance for (Show User) arising from a use of ‘print’
+    • In a stmt of an interactive GHCi command: print it
+*Main> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main> let user = User "John" "Smith"
+*Main> user
+User {userName = "John", userEmail = "Smith"}
+*Main> user {userName = "Jon"}
+User {userName = "Jon", userEmail = "Smith"}
+*Main> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main> main
+Hello
+World
+*Main> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main> main
+Hello
+World
+*Main> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main> main
+Hello
+World
+*Main> {putStrLn "hello"; putStrLn "word"}
+
+<interactive>:27:2: error:
+    Parse error: module header, import declaration
+    or top-level declaration expected.
+*Main> {putStrLn "hello"; putStrLn "word";}
+
+<interactive>:28:2: error:
+    Parse error: module header, import declaration
+    or top-level declaration expected.
+*Main> do {putStrLn "hello"; putStrLn "word";}
+hello
+word
+*Main> :edit
+*Main> :edit test.hs
+Ok, 1 module loaded.
+*Main> :edit 
+Ok, 1 module loaded.
+*Main> :l 
+Main           test.hs        test.hs~       .test2.hs.un~
+test2.hs       .test.hs.un~   .test2.hs.swp  test2.hs~
+*Main> :l test2.hs
+[1 of 1] Compiling Main             ( test2.hs, interpreted )
+Ok, 1 module loaded.
+*Main> Empty 
+Empty
+*Main> :t Empty 
+Empty :: IntList
+*Main> Cons 1 Empty 
+Cons 1 Empty
+*Main> Cons 2 (Cons 1 Empty)
+Cons 2 (Cons 1 Empty)
+*Main> Cons 3 (Cons 2 (Cons 1 Empty))
+Cons 3 (Cons 2 (Cons 1 Empty))
+*Main> :r
+[1 of 1] Compiling Main             ( test2.hs, interpreted )
+
+test2.hs:9:28: error:
+    Ambiguous occurrence ‘length’
+    It could refer to either ‘Prelude.length’,
+                             imported from ‘Prelude’ at test2.hs:1:1
+                             (and originally defined in ‘Data.Foldable’)
+                          or ‘Main.length’, defined at test2.hs:8:1
+  |
+9 | length (Cons _ tail) = 1 + length tail
+  |                            ^^^^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Main             ( test2.hs, interpreted )
+Ok, 1 module loaded.
+*Main> le
+len     length  lex
+*Main> len Empty 
+0
+*Main> len (Cons 1 Empty)
+1
+*Main> len (Cons 10 (Cons 1 Empty))
+2
+*Main> :r
+[1 of 1] Compiling Main             ( test2.hs, interpreted )
+Ok, 1 module loaded.
+*Main> len (Cons 10 (Cons 1 Nil))
+2
+*Main> Nil 4
+
+<interactive>:46:1: error:
+    • Couldn't match expected type ‘Integer -> t’
+                  with actual type ‘IntList’
+    • The function ‘Nil’ is applied to one argument,
+      but its type ‘IntList’ has none
+      In the expression: Nil 4
+      In an equation for ‘it’: it = Nil 4
+    • Relevant bindings include it :: t (bound at <interactive>:46:1)
+*Main> :t Cons
+Cons :: Int -> IntList -> IntList
+*Main> :t Nil
+Nil :: IntList
+*Main> :r
+[1 of 1] Compiling Main             ( test2.hs, interpreted )
+Ok, 1 module loaded.
+*Main> len' (Cons 10 (Cons 1 Nil))
+2
+*Main> undefined
+*** Exception: Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
+  undefined, called at <interactive>:51:1 in interactive:Ghci2
+*Main> :t undefined
+undefined :: a
+*Main> let a = undefined
+*Main> a
+*** Exception: Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
+  undefined, called at <interactive>:53:9 in interactive:Ghci2
+*Main> let a = 1 + undefined
+*Main> a
+*** Exception: Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
+  undefined, called at <interactive>:55:13 in interactive:Ghci3
+*Main> :t a
+a :: Num a => a
+*Main> let a = Cons undefined tail
+
+<interactive>:58:24: error:
+    • Couldn't match expected type ‘IntList’
+                  with actual type ‘[a0] -> [a0]’
+    • Probable cause: ‘tail’ is applied to too few arguments
+      In the second argument of ‘Cons’, namely ‘tail’
+      In the expression: Cons undefined tail
+      In an equation for ‘a’: a = Cons undefined tail
+*Main> let a = Cons undefined (Const 1 Empty)
+
+<interactive>:59:25: error:
+    • Data constructor not in scope: Const :: Integer -> t0 -> IntList
+    • Perhaps you meant one of these:
+        ‘Cons’ (line 4), variable ‘const’ (imported from Prelude)
+
+<interactive>:59:33: error: Data constructor not in scope: Empty
+*Main> 
+*Main> let a = Cons undefined (Cons 1 Empty)
+
+<interactive>:61:32: error:
+    Data constructor not in scope: Empty :: IntList
+*Main> let a = Cons undefined (Cons 1 Nil)
+*Main> :t a
+a :: IntList
+*Main> len a
+2
+*Main> a
+Cons *** Exception: Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
+  undefined, called at <interactive>:62:14 in interactive:Ghci4
+*Main> Cons 2 (Cons 1 Nil)
+Cons 2 (Cons 1 Nil)
+*Main> Cons undefined (Cons 1 Nil)
+Cons *** Exception: Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
+  undefined, called at <interactive>:67:6 in interactive:Ghci7
+*Main> Cons 2 (Cons undefined Nil)
+Cons 2 (Cons *** Exception: Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
+  undefined, called at <interactive>:68:14 in interactive:Ghci7
+*Main> :r
+[1 of 1] Compiling Main             ( test2.hs, interpreted )
+
+test2.hs:22:7: error: Parse error in pattern: res
+   |
+22 |   go !res (Cons _ tail) = go (res + 1) tail
+   |       ^^^^^^^^^^^^^^^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Main             ( test2.hs, interpreted )
+
+test2.hs:24:12: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+   |
+24 |       res' = go res' tail
+   |            ^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Main             ( test2.hs, interpreted )
+Ok, 1 module loaded.
+*Main> :i seq
+seq :: a -> b -> b 	-- Defined in ‘GHC.Prim’
+infixr 0 `seq`
+*Main> :r
+[1 of 1] Compiling Main             ( test2.hs, interpreted )
+
+test2.hs:33:7: error: Parse error in pattern: res
+   |
+33 |   go !res (Cons _ tail) = go (res + 1) tail
+   |       ^^^^^^^^^^^^^^^^^
+Failed, 0 modules loaded.
+Prelude> :l test3.hs
+[1 of 1] Compiling Main             ( test3.hs, interpreted )
+Ok, 1 module loaded.
+*Main> Nil
+Nil
+*Main> :t Nil
+Nil :: List a
+*Main> Cons 1 Nil
+Cons 1 Nil
+*Main> Cons 2 (Cons 1 Nil)
+Cons 2 (Cons 1 Nil)
+*Main> :t Cons 2 (Cons 1 Nil)
+Cons 2 (Cons 1 Nil) :: Num a => List a
+*Main> let a = Cons 2 (Cons 1 Nil) :: List Int
+*Main> :t a
+a :: List Int
+*Main> let a = Cons "world" (Cons "hello" Nil)
+*Main> :t a
+a :: List [Char]
+*Main> let a = Cons 1 (Cons "hello" Nil)
+*Main> :r
+[1 of 1] Compiling Main             ( test3.hs, interpreted )
+
+test3.hs:4:13: error:
+    • Expecting one more argument to ‘List a’
+      Expected a type, but ‘List a’ has kind ‘k0 -> *’
+    • In the type ‘(List a)’
+      In the definition of data constructor ‘Cons’
+      In the data declaration for ‘List’
+  |
+4 |   | Cons a (List a)
+  |             ^^^^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Main             ( test3.hs, interpreted )
+Ok, 1 module loaded.
+*Main> :kind Int
+Int :: *
+*Main> :kind List
+List :: * -> *
+*Main> :kind (List Int)
+(List Int) :: *
+*Main> data F a b = F
+*Main> :kind F
+F :: * -> * -> *
+*Main> :kind F Int
+F Int :: * -> *
+*Main> :kind F Int String
+F Int String :: *
+*Main> :r
+[1 of 1] Compiling Main             ( test3.hs, interpreted )
+Ok, 1 module loaded.
+*Main> len Cons "world" (Cons "hello" Nil)
+
+<interactive>:94:1: error:
+    • Couldn't match expected type ‘[Char] -> List [Char] -> t’
+                  with actual type ‘Int’
+    • The function ‘len’ is applied to three arguments,
+      but its type ‘List a1 -> Int’ has only one
+      In the expression: len Cons "world" (Cons "hello" Nil)
+      In an equation for ‘it’: it = len Cons "world" (Cons "hello" Nil)
+    • Relevant bindings include it :: t (bound at <interactive>:94:1)
+
+<interactive>:94:5: error:
+    • Couldn't match expected type ‘List a1’
+                  with actual type ‘a0 -> List a0 -> List a0’
+    • Probable cause: ‘Cons’ is applied to too few arguments
+      In the first argument of ‘len’, namely ‘Cons’
+      In the expression: len Cons "world" (Cons "hello" Nil)
+      In an equation for ‘it’: it = len Cons "world" (Cons "hello" Nil)
+*Main> len (Cons "world" (Cons "hello" Nil))
+2
+*Main> 
+Leaving GHCi.
+shum@shum-asus:~/hsg/class2$ 
+
