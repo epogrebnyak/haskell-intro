@@ -34,17 +34,26 @@ For functional programming in python see:
 ## Tutorials   
 
 - <http://learnyouahaskell.com/> - seems a nice intro, but not even in difficulty, eg 
-
+- http://shuklan.com/haskell/lec01.html#/ - react.js slides
+- https://www.tutorialspoint.com/haskell - available as android app (and look better on android, no ads) 
 
 ## Books
 
-- 
+- http://haskelldata.com also at [pakt](https://www.packtpub.com/big-data-and-business-intelligence/haskell-data-analysis-cookbook)
+- http://haskellbook.com/assets/img/sample.pdf
+- http://www.cs.nott.ac.uk/~pszgmh/pih.html
+- http://book.realworldhaskell.org
+- http://www.happylearnhaskelltutorial.com/1/first_step.html
+
 
 ## Reputable Stack overflow questions
 
+- https://stackoverflow.com/questions/1012573/getting-started-with-haskell
 - https://stackoverflow.com/questions/6400568/exponentiation-in-haskell
 - https://stackoverflow.com/questions/7368926/division-in-haskell (what is `x:xs`?)
 
+## Code examples
+- https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition
 
 # Extra stuff 
 
