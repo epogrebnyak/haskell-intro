@@ -8,7 +8,7 @@
 
 Write something abnout what you do and your interests, perhaps add few links - it helps our tutor to prepare: 
 
-- **EP**: economist, interested in unit testing and reproducible 
+- **EP**: interested in reproducible 
   economic research, eg  [data science projects as a data pipeline](https://github.com/drivendata/cookiecutter-data-science).
   Maintainer of [mini-kep macroeconomic time series dataset](https://github.com/mini-kep/intro), 
   course author on [machine readable financial statements analysis](https://github.com/ru-corporate/teaching-2018). 
