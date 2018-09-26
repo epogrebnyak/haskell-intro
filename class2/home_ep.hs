@@ -10,15 +10,16 @@ data Expr   -- abstract syntax tree
   -- let a = 4 + 5 in a + a = (4+5) + (4+5)
 
 eval :: Expr -> Int
--- I use pattern matching and 'agument unpacking' to catch x and y 
--- Same constructor helps me to undestand how to evaluate 
+-- I use pattern matching and 'argument unpacking' to catch x and y 
+-- `Same` constructor helps me to undestand how to evaluate 
 -- same expession with eval()
 eval (Same x) = eval x 
 eval (Lit x) = x
 eval (Add x y) = (eval x) + (eval y)  
 eval (Subs x y) = (eval x) - (eval y)  
 eval (Div x y) = (eval x) `div` (eval y)  
-eval (Mult x y) = (eval x) * eval(y)  
+eval (Mult x y) = (eval x) * eval(y) 
+eval (Power x y) = (eval x) ^ eval(y)  
 
 -- Question 1: a better way to make power function?
 -- Maybe need sopmething like this for Power:
@@ -37,6 +38,9 @@ eval (Mult x y) = (eval x) * eval(y)
 -- 1
 
 -- *Main> eval (Add (Lit 1) (Lit 5))
--- 6                                
+-- 6     
+
+-- eval (Power (Lit 2) (Lit 4))
+-- 16
 
 main = return ()
