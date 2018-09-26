@@ -33,13 +33,20 @@ For functional programming in python see:
 
 ## Tutorials   
 
-- <http://learnyouahaskell.com/> - seems a nice intro, but not even in difficulty, eg 
-
-Not as good: 
+- <http://learnyouahaskell.com/> - also a book
 - http://shuklan.com/haskell/lec01.html#/ - react.js slides
 - https://www.tutorialspoint.com/haskell - available as android app (and look better on android, no ads) 
 
+
+## Presentations and cartoons
+
+- http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html
+
 ## Books
+
+- <http://learnyouahaskell.com/> - seems a nice intro, but not even in difficulty
+
+Not as good for various reasons: 
 
 - http://haskelldata.com also at [pakt](https://www.packtpub.com/big-data-and-business-intelligence/haskell-data-analysis-cookbook)
 - http://haskellbook.com/assets/img/sample.pdf
