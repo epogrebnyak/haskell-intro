@@ -34,6 +34,8 @@ For functional programming in python see:
 ## Tutorials   
 
 - <http://learnyouahaskell.com/> - seems a nice intro, but not even in difficulty, eg 
+
+Not as good: 
 - http://shuklan.com/haskell/lec01.html#/ - react.js slides
 - https://www.tutorialspoint.com/haskell - available as android app (and look better on android, no ads) 
 
