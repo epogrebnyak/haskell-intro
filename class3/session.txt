@@ -1,0 +1,549 @@
+shum@shum-asus:~/hsg/class3$ ghci
+GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
+Prelude> data Expr = Lit Int | Add Expr Expr deriving (Show)
+Prelude> eval e = undefined
+Prelude> evel (Lit 1)
+
+<interactive>:3:1: error:
+    • Variable not in scope: evel :: Expr -> t
+    • Perhaps you meant one of these:
+        ‘even’ (imported from Prelude), ‘eval’ (line 2)
+Prelude> eval (Lit 1)
+*** Exception: Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
+  undefined, called at <interactive>:2:10 in interactive:Ghci2
+Prelude> :t ($)
+($) :: (a -> b) -> a -> b
+Prelude> :t eval $ Add (Lit 2) $ Add (Lit 2) $ Lit 1
+eval $ Add (Lit 2) $ Add (Lit 2) $ Lit 1 :: a
+Prelude> :l home.hs
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+Ok, 1 module loaded.
+*Main> eval (Add (Lit 2) (Lit 4))
+6
+*Main> eval (Mul (Lit 2) (Lit 4))
+8
+*Main> :r
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+
+home.hs:16:20: error:
+    • No instance for (Num Value) arising from a use of ‘+’
+    • In the expression: eval e1 + eval e2
+      In an equation for ‘eval’: eval (Add e1 e2) = eval e1 + eval e2
+   |
+16 | eval (Add e1 e2) = eval e1 + eval e2
+   |                    ^^^^^^^^^^^^^^^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+
+home.hs:30:19: error:
+    • Variable not in scope: mul :: Value -> Value -> Result
+    • Perhaps you meant data constructor ‘Mul’ (line 10)
+   |
+30 |     Success v2 -> mul v1 v2
+   |                   ^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+
+home.hs:30:19: error:
+    • Variable not in scope: mul :: Value -> Value -> Result
+    • Perhaps you meant data constructor ‘Mul’ (line 10)
+   |
+30 |     Success v2 -> mul v1 v2
+   |                   ^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+Ok, 1 module loaded.
+*Main> eval (Add (Lit 2) (Lit 4))
+
+<interactive>:14:16: error:
+    • No instance for (Num Value) arising from the literal ‘2’
+    • In the first argument of ‘Lit’, namely ‘2’
+      In the first argument of ‘Add’, namely ‘(Lit 2)’
+      In the first argument of ‘eval’, namely ‘(Add (Lit 2) (Lit 4))’
+*Main> eval (Add (Lit (2)) (Lit 4))
+*Main> :r
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+Ok, 1 module loaded.
+*Main> eval (Add (Lit two) (Lit three))
+Success (IntVal 5)
+*Main> eval (Add (Lit (StrVal "hello")) (Lit (StrVal "world")))
+Success (StrVal "helloworld")
+*Main> :i Either
+data Either a b = Left a | Right b 	-- Defined in ‘Data.Either’
+instance Applicative (Either e) -- Defined in ‘Data.Either’
+instance (Eq b, Eq a) => Eq (Either a b)
+  -- Defined in ‘Data.Either’
+instance Functor (Either a) -- Defined in ‘Data.Either’
+instance Monad (Either e) -- Defined in ‘Data.Either’
+instance (Ord b, Ord a) => Ord (Either a b)
+  -- Defined in ‘Data.Either’
+instance (Show b, Show a) => Show (Either a b)
+  -- Defined in ‘Data.Either’
+instance (Read b, Read a) => Read (Either a b)
+  -- Defined in ‘Data.Either’
+instance Foldable (Either a) -- Defined in ‘Data.Foldable’
+instance Traversable (Either a) -- Defined in ‘Data.Traversable’
+*Main> :r
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+Ok, 1 module loaded.
+*Main> :r
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+Ok, 1 module loaded.
+*Main> eval (Add (Lit (StrVal "hello")) (Lit (StrVal "world")))
+Success (StrVal "helloworld")
+*Main> eval (Add (Lit two) (Lit three))
+Success (IntVal 5)
+*Main> :r
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+Ok, 1 module loaded.
+*Main> eval (Add (Lit two) (Lit three))
+Success (IntVal *** Exception: Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
+  undefined, called at home.hs:51:53 in main:Main
+*Main> :r
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+Ok, 1 module loaded.
+*Main> eval (Add (Lit two) ())
+*Main> :r
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+Ok, 1 module loaded.
+*Main> eval (Add (Lit two) (Var "a"))
+
+<interactive>:27:7: error:
+    • Couldn't match expected type ‘String -> BindResult’
+                  with actual type ‘Expr’
+    • Possible cause: ‘Add’ is applied to too many arguments
+      In the first argument of ‘eval’, namely ‘(Add (Lit two) (Var "a"))’
+      In the expression: eval (Add (Lit two) (Var "a"))
+      In an equation for ‘it’: it = eval (Add (Lit two) (Var "a"))
+*Main> eval () (Add (Lit two) (Var "a"))
+*Main> :r
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+Ok, 1 module loaded.
+*Main> eval emptyScope (Add (Lit two) (Var "a"))
+Failure "variable is not in scope"
+*Main> eval emptyScope (Add (Lit two) (Lit three))
+Success (IntVal 5)
+*Main> eval emptyScope (Bind "a" (Lit three) (Add (Lit two) (Var "a")))
+Success (IntVal 5)
+*Main> :i (^)
+(^) :: (Num a, Integral b) => a -> b -> a 	-- Defined in ‘GHC.Real’
+infixr 8 ^
+*Main> :i (**)
+class Fractional a => Floating a where
+  ...
+  (**) :: a -> a -> a
+  ...
+  	-- Defined in ‘GHC.Float’
+infixr 8 **
+*Main> 2 ** 4
+16.0
+*Main> :i Maybe 
+data Maybe a = Nothing | Just a 	-- Defined in ‘GHC.Base’
+instance Applicative Maybe -- Defined in ‘GHC.Base’
+instance Eq a => Eq (Maybe a) -- Defined in ‘GHC.Base’
+instance Functor Maybe -- Defined in ‘GHC.Base’
+instance Monad Maybe -- Defined in ‘GHC.Base’
+instance Monoid a => Monoid (Maybe a) -- Defined in ‘GHC.Base’
+instance Ord a => Ord (Maybe a) -- Defined in ‘GHC.Base’
+instance Show a => Show (Maybe a) -- Defined in ‘GHC.Show’
+instance Read a => Read (Maybe a) -- Defined in ‘GHC.Read’
+instance Foldable Maybe -- Defined in ‘Data.Foldable’
+instance Traversable Maybe -- Defined in ‘Data.Traversable’
+*Main> :m + Data.Maybe 
+*Main Data.Maybe> :browse Data.Maybe 
+catMaybes :: [Maybe a] -> [a]
+fromJust :: Maybe a -> a
+fromMaybe :: a -> Maybe a -> a
+isJust :: Maybe a -> Bool
+isNothing :: Maybe a -> Bool
+listToMaybe :: [a] -> Maybe a
+mapMaybe :: (a -> Maybe b) -> [a] -> [b]
+maybe :: b -> (a -> b) -> Maybe a -> b
+maybeToList :: Maybe a -> [a]
+data Maybe a = Nothing | Just a
+*Main Data.Maybe> :i maybe
+maybe :: b -> (a -> b) -> Maybe a -> b 	-- Defined in ‘Data.Maybe’
+*Main Data.Maybe> maybe 0 (\n -> n * 5) Nothing
+0
+*Main Data.Maybe> maybe 0 (\n -> n * 5) (Just 3)
+15
+*Main Data.Maybe> :m + Data.Either 
+*Main Data.Maybe Data.Either> :browse Data.Either 
+data Either a b = Left a | Right b
+either :: (a -> c) -> (b -> c) -> Either a b -> c
+fromLeft :: a -> Either a b -> a
+fromRight :: b -> Either a b -> b
+isLeft :: Either a b -> Bool
+isRight :: Either a b -> Bool
+lefts :: [Either a b] -> [a]
+partitionEithers :: [Either a b] -> ([a], [b])
+rights :: [Either a b] -> [b]
+*Main Data.Maybe Data.Either> :i either 
+either :: (a -> c) -> (b -> c) -> Either a b -> c
+  	-- Defined in ‘Data.Either’
+*Main Data.Maybe Data.Either> :i maybe
+maybe :: b -> (a -> b) -> Maybe a -> b 	-- Defined in ‘Data.Maybe’
+*Main Data.Maybe Data.Either> either (\n -> n + 1) (\n->n*5) (Left 2)
+3
+*Main Data.Maybe Data.Either> either (\n -> n + 1) (\n->n*5) (Right 2)
+10
+*Main Data.Maybe Data.Either> :kind Either 
+Either :: * -> * -> *
+*Main Data.Maybe Data.Either> :i Maybe Int
+data Maybe a = Nothing | Just a 	-- Defined in ‘GHC.Base’
+instance Applicative Maybe -- Defined in ‘GHC.Base’
+instance Eq a => Eq (Maybe a) -- Defined in ‘GHC.Base’
+instance Functor Maybe -- Defined in ‘GHC.Base’
+instance Monad Maybe -- Defined in ‘GHC.Base’
+instance Monoid a => Monoid (Maybe a) -- Defined in ‘GHC.Base’
+instance Ord a => Ord (Maybe a) -- Defined in ‘GHC.Base’
+instance Show a => Show (Maybe a) -- Defined in ‘GHC.Show’
+instance Read a => Read (Maybe a) -- Defined in ‘GHC.Read’
+instance Foldable Maybe -- Defined in ‘Data.Foldable’
+instance Traversable Maybe -- Defined in ‘Data.Traversable’
+data Int = GHC.Types.I# GHC.Prim.Int# 	-- Defined in ‘GHC.Types’
+instance Eq Int -- Defined in ‘GHC.Classes’
+instance Ord Int -- Defined in ‘GHC.Classes’
+instance Show Int -- Defined in ‘GHC.Show’
+instance Read Int -- Defined in ‘GHC.Read’
+instance Enum Int -- Defined in ‘GHC.Enum’
+instance Num Int -- Defined in ‘GHC.Num’
+instance Real Int -- Defined in ‘GHC.Real’
+instance Bounded Int -- Defined in ‘GHC.Enum’
+instance Integral Int -- Defined in ‘GHC.Real’
+*Main Data.Maybe Data.Either> :i Maybe Either
+data Maybe a = Nothing | Just a 	-- Defined in ‘GHC.Base’
+instance Applicative Maybe -- Defined in ‘GHC.Base’
+instance Eq a => Eq (Maybe a) -- Defined in ‘GHC.Base’
+instance Functor Maybe -- Defined in ‘GHC.Base’
+instance Monad Maybe -- Defined in ‘GHC.Base’
+instance Monoid a => Monoid (Maybe a) -- Defined in ‘GHC.Base’
+instance Ord a => Ord (Maybe a) -- Defined in ‘GHC.Base’
+instance Show a => Show (Maybe a) -- Defined in ‘GHC.Show’
+instance Read a => Read (Maybe a) -- Defined in ‘GHC.Read’
+instance Foldable Maybe -- Defined in ‘Data.Foldable’
+instance Traversable Maybe -- Defined in ‘Data.Traversable’
+data Either a b = Left a | Right b 	-- Defined in ‘Data.Either’
+instance Applicative (Either e) -- Defined in ‘Data.Either’
+instance (Eq b, Eq a) => Eq (Either a b)
+  -- Defined in ‘Data.Either’
+instance Functor (Either a) -- Defined in ‘Data.Either’
+instance Monad (Either e) -- Defined in ‘Data.Either’
+instance (Ord b, Ord a) => Ord (Either a b)
+  -- Defined in ‘Data.Either’
+instance (Show b, Show a) => Show (Either a b)
+  -- Defined in ‘Data.Either’
+instance (Read b, Read a) => Read (Either a b)
+  -- Defined in ‘Data.Either’
+instance Foldable (Either a) -- Defined in ‘Data.Foldable’
+instance Traversable (Either a) -- Defined in ‘Data.Traversable’
+*Main Data.Maybe Data.Either> :kind Maybe Either
+
+<interactive>:1:7: error:
+    • Expecting two more arguments to ‘Either’
+      Expected a type, but ‘Either’ has kind ‘* -> * -> *’
+    • In the first argument of ‘Maybe’, namely ‘Either’
+      In the type ‘Maybe Either’
+*Main Data.Maybe Data.Either> :type Maybe 
+
+<interactive>:1:1: error:
+    • Data constructor not in scope: Maybe
+    • Perhaps you meant variable ‘maybe’ (imported from Data.Maybe)
+*Main Data.Maybe Data.Either> (1, "hello")
+(1,"hello")
+*Main Data.Maybe Data.Either> :t (1, "hello")
+(1, "hello") :: Num a => (a, [Char])
+*Main Data.Maybe Data.Either> :t (1, "hello", 5)
+(1, "hello", 5) :: (Num c, Num a) => (a, [Char], c)
+*Main Data.Maybe Data.Either> -- case (1, "hello) of (a, b) -> ...
+*Main Data.Maybe Data.Either> -- case (1, "hello") of (a, b)
+*Main Data.Maybe Data.Either> :t (,) 1 2
+(,) 1 2 :: (Num b, Num a) => (a, b)
+*Main Data.Maybe Data.Either> :m + Data.Tuple 
+*Main Data.Maybe Data.Either Data.Tuple> :browse Data.Tuple 
+curry :: ((a, b) -> c) -> a -> b -> c
+fst :: (a, b) -> a
+snd :: (a, b) -> b
+swap :: (a, b) -> (b, a)
+uncurry :: (a -> b -> c) -> (a, b) -> c
+*Main Data.Maybe Data.Either Data.Tuple> :t uncurry (+)
+uncurry (+) :: Num c => (c, c) -> c
+*Main Data.Maybe Data.Either Data.Tuple> :t (+)
+(+) :: Num a => a -> a -> a
+*Main Data.Maybe Data.Either Data.Tuple> (+) 1 2
+3
+*Main Data.Maybe Data.Either Data.Tuple> uncurry (+) (1, 2)
+3
+*Main Data.Maybe Data.Either Data.Tuple> curry (uncurry (+)) 1 23
+*Main Data.Maybe Data.Either Data.Tuple> :t id
+id :: a -> a
+*Main Data.Maybe Data.Either Data.Tuple> id 6
+6
+*Main Data.Maybe Data.Either Data.Tuple> :t con
+concat     concatMap  const
+*Main Data.Maybe Data.Either Data.Tuple> :t const 
+const :: a -> b -> a
+*Main Data.Maybe Data.Either Data.Tuple> :t (.)
+(.) :: (b -> c) -> (a -> b) -> a -> c
+*Main Data.Maybe Data.Either Data.Tuple> (* 3) . (+ 2) 5
+
+<interactive>:68:1: error:
+    • Non type-variable argument in the constraint: Num (a -> c)
+      (Use FlexibleContexts to permit this)
+    • When checking the inferred type
+        it :: forall c a. (Num (a -> c), Num c) => a -> c
+*Main Data.Maybe Data.Either Data.Tuple> (* 3) . (+ 2) $ 5
+21
+*Main Data.Maybe Data.Either Data.Tuple> :kind []
+[] :: * -> *
+*Main Data.Maybe Data.Either Data.Tuple> :kind [] Int
+[] Int :: *
+*Main Data.Maybe Data.Either Data.Tuple> :kind [Int]
+[Int] :: *
+*Main Data.Maybe Data.Either Data.Tuple> :i String
+type String = [Char] 	-- Defined in ‘GHC.Base’
+*Main Data.Maybe Data.Either Data.Tuple> [1,2,3,4,5]
+[1,2,3,4,5]
+*Main Data.Maybe Data.Either Data.Tuple> :i []
+data [] a = [] | a : [a] 	-- Defined in ‘GHC.Types’
+instance Applicative [] -- Defined in ‘GHC.Base’
+instance Eq a => Eq [a] -- Defined in ‘GHC.Classes’
+instance Functor [] -- Defined in ‘GHC.Base’
+instance Monad [] -- Defined in ‘GHC.Base’
+instance Monoid [a] -- Defined in ‘GHC.Base’
+instance Ord a => Ord [a] -- Defined in ‘GHC.Classes’
+instance Show a => Show [a] -- Defined in ‘GHC.Show’
+instance Read a => Read [a] -- Defined in ‘GHC.Read’
+instance Foldable [] -- Defined in ‘Data.Foldable’
+instance Traversable [] -- Defined in ‘Data.Traversable’
+*Main Data.Maybe Data.Either Data.Tuple> :t []
+[] :: [a]
+*Main Data.Maybe Data.Either Data.Tuple> :t (:)
+(:) :: a -> [a] -> [a]
+*Main Data.Maybe Data.Either Data.Tuple> [1, 2]
+[1,2]
+*Main Data.Maybe Data.Either Data.Tuple> 1 : 2 : []
+[1,2]
+*Main Data.Maybe Data.Either Data.Tuple> :m + Data.List
+*Main Data.Maybe Data.Either Data.Tuple Data.List> :browse Data.List
+isSubsequenceOf :: Eq a => [a] -> [a] -> Bool
+(!!) :: [a] -> Int -> a
+(++) :: [a] -> [a] -> [a]
+(\\) :: Eq a => [a] -> [a] -> [a]
+all :: Foldable t => (a -> Bool) -> t a -> Bool
+and :: Foldable t => t Bool -> Bool
+any :: Foldable t => (a -> Bool) -> t a -> Bool
+break :: (a -> Bool) -> [a] -> ([a], [a])
+concat :: Foldable t => t [a] -> [a]
+concatMap :: Foldable t => (a -> [b]) -> t a -> [b]
+cycle :: [a] -> [a]
+delete :: Eq a => a -> [a] -> [a]
+deleteBy :: (a -> a -> Bool) -> a -> [a] -> [a]
+deleteFirstsBy :: (a -> a -> Bool) -> [a] -> [a] -> [a]
+drop :: Int -> [a] -> [a]
+dropWhile :: (a -> Bool) -> [a] -> [a]
+dropWhileEnd :: (a -> Bool) -> [a] -> [a]
+class Foldable (t :: * -> *) where
+  ...
+  elem :: Eq a => a -> t a -> Bool
+  ...
+elemIndex :: Eq a => a -> [a] -> Maybe Int
+elemIndices :: Eq a => a -> [a] -> [Int]
+filter :: (a -> Bool) -> [a] -> [a]
+find :: Foldable t => (a -> Bool) -> t a -> Maybe a
+findIndex :: (a -> Bool) -> [a] -> Maybe Int
+findIndices :: (a -> Bool) -> [a] -> [Int]
+class Foldable (t :: * -> *) where
+  ...
+  foldl :: (b -> a -> b) -> b -> t a -> b
+  ...
+class Foldable (t :: * -> *) where
+  ...
+  foldl' :: (b -> a -> b) -> b -> t a -> b
+  ...
+class Foldable (t :: * -> *) where
+  ...
+  foldl1 :: (a -> a -> a) -> t a -> a
+  ...
+foldl1' :: (a -> a -> a) -> [a] -> a
+class Foldable (t :: * -> *) where
+  ...
+  foldr :: (a -> b -> b) -> b -> t a -> b
+  ...
+class Foldable (t :: * -> *) where
+  ...
+  foldr1 :: (a -> a -> a) -> t a -> a
+  ...
+genericDrop :: Integral i => i -> [a] -> [a]
+genericIndex :: Integral i => [a] -> i -> a
+genericLength :: Num i => [a] -> i
+genericReplicate :: Integral i => i -> a -> [a]
+genericSplitAt :: Integral i => i -> [a] -> ([a], [a])
+genericTake :: Integral i => i -> [a] -> [a]
+group :: Eq a => [a] -> [[a]]
+groupBy :: (a -> a -> Bool) -> [a] -> [[a]]
+head :: [a] -> a
+init :: [a] -> [a]
+inits :: [a] -> [[a]]
+insert :: Ord a => a -> [a] -> [a]
+insertBy :: (a -> a -> Ordering) -> a -> [a] -> [a]
+intercalate :: [a] -> [[a]] -> [a]
+intersect :: Eq a => [a] -> [a] -> [a]
+intersectBy :: (a -> a -> Bool) -> [a] -> [a] -> [a]
+intersperse :: a -> [a] -> [a]
+isInfixOf :: Eq a => [a] -> [a] -> Bool
+isPrefixOf :: Eq a => [a] -> [a] -> Bool
+isSuffixOf :: Eq a => [a] -> [a] -> Bool
+iterate :: (a -> a) -> a -> [a]
+last :: [a] -> a
+class Foldable (t :: * -> *) where
+  ...
+  length :: t a -> Int
+  ...
+lines :: String -> [String]
+lookup :: Eq a => a -> [(a, b)] -> Maybe b
+map :: (a -> b) -> [a] -> [b]
+mapAccumL ::
+  Traversable t => (a -> b -> (a, c)) -> a -> t b -> (a, t c)
+mapAccumR ::
+  Traversable t => (a -> b -> (a, c)) -> a -> t b -> (a, t c)
+class Foldable (t :: * -> *) where
+  ...
+  maximum :: Ord a => t a -> a
+  ...
+maximumBy :: Foldable t => (a -> a -> Ordering) -> t a -> a
+class Foldable (t :: * -> *) where
+  ...
+  minimum :: Ord a => t a -> a
+  ...
+minimumBy :: Foldable t => (a -> a -> Ordering) -> t a -> a
+notElem :: (Foldable t, Eq a) => a -> t a -> Bool
+nub :: Eq a => [a] -> [a]
+nubBy :: (a -> a -> Bool) -> [a] -> [a]
+class Foldable (t :: * -> *) where
+  ...
+  null :: t a -> Bool
+  ...
+or :: Foldable t => t Bool -> Bool
+partition :: (a -> Bool) -> [a] -> ([a], [a])
+permutations :: [a] -> [[a]]
+class Foldable (t :: * -> *) where
+  ...
+  product :: Num a => t a -> a
+repeat :: a -> [a]
+replicate :: Int -> a -> [a]
+reverse :: [a] -> [a]
+scanl :: (b -> a -> b) -> b -> [a] -> [b]
+scanl' :: (b -> a -> b) -> b -> [a] -> [b]
+scanl1 :: (a -> a -> a) -> [a] -> [a]
+scanr :: (a -> b -> b) -> b -> [a] -> [b]
+scanr1 :: (a -> a -> a) -> [a] -> [a]
+sort :: Ord a => [a] -> [a]
+sortBy :: (a -> a -> Ordering) -> [a] -> [a]
+sortOn :: Ord b => (a -> b) -> [a] -> [a]
+span :: (a -> Bool) -> [a] -> ([a], [a])
+splitAt :: Int -> [a] -> ([a], [a])
+stripPrefix :: Eq a => [a] -> [a] -> Maybe [a]
+subsequences :: [a] -> [[a]]
+class Foldable (t :: * -> *) where
+  ...
+  sum :: Num a => t a -> a
+  ...
+tail :: [a] -> [a]
+tails :: [a] -> [[a]]
+take :: Int -> [a] -> [a]
+takeWhile :: (a -> Bool) -> [a] -> [a]
+transpose :: [[a]] -> [[a]]
+uncons :: [a] -> Maybe (a, [a])
+unfoldr :: (b -> Maybe (a, b)) -> b -> [a]
+union :: Eq a => [a] -> [a] -> [a]
+unionBy :: (a -> a -> Bool) -> [a] -> [a] -> [a]
+unlines :: [String] -> String
+unwords :: [String] -> String
+unzip :: [(a, b)] -> ([a], [b])
+unzip3 :: [(a, b, c)] -> ([a], [b], [c])
+unzip4 :: [(a, b, c, d)] -> ([a], [b], [c], [d])
+unzip5 :: [(a, b, c, d, e)] -> ([a], [b], [c], [d], [e])
+unzip6 :: [(a, b, c, d, e, f)] -> ([a], [b], [c], [d], [e], [f])
+unzip7 ::
+  [(a, b, c, d, e, f, g)] -> ([a], [b], [c], [d], [e], [f], [g])
+words :: String -> [String]
+zip :: [a] -> [b] -> [(a, b)]
+zip3 :: [a] -> [b] -> [c] -> [(a, b, c)]
+zip4 :: [a] -> [b] -> [c] -> [d] -> [(a, b, c, d)]
+zip5 :: [a] -> [b] -> [c] -> [d] -> [e] -> [(a, b, c, d, e)]
+zip6 ::
+  [a] -> [b] -> [c] -> [d] -> [e] -> [f] -> [(a, b, c, d, e, f)]
+zip7 ::
+  [a]
+  -> [b]
+  -> [c]
+  -> [d]
+  -> [e]
+  -> [f]
+  -> [g]
+  -> [(a, b, c, d, e, f, g)]
+zipWith :: (a -> b -> c) -> [a] -> [b] -> [c]
+zipWith3 :: (a -> b -> c -> d) -> [a] -> [b] -> [c] -> [d]
+zipWith4 ::
+  (a -> b -> c -> d -> e) -> [a] -> [b] -> [c] -> [d] -> [e]
+zipWith5 ::
+  (a -> b -> c -> d -> e -> f)
+  -> [a] -> [b] -> [c] -> [d] -> [e] -> [f]
+zipWith6 ::
+  (a -> b -> c -> d -> e -> f -> g)
+  -> [a] -> [b] -> [c] -> [d] -> [e] -> [f] -> [g]
+zipWith7 ::
+  (a -> b -> c -> d -> e -> f -> g -> h)
+  -> [a] -> [b] -> [c] -> [d] -> [e] -> [f] -> [g] -> [h]
+*Main Data.Maybe Data.Either Data.Tuple Data.List> 
+*Main Data.Maybe Data.Either Data.Tuple Data.List> 
+*Main Data.Maybe Data.Either Data.Tuple Data.List> 
+*Main Data.Maybe Data.Either Data.Tuple Data.List> tail []
+*** Exception: Prelude.tail: empty list
+*Main Data.Maybe Data.Either Data.Tuple Data.List> tail [1]
+[]
+*Main Data.Maybe Data.Either Data.Tuple Data.List> 
+Leaving GHCi.
+shum@shum-asus:~/hsg/class3$ ghci
+GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
+Prelude> :m + Data.List
+Prelude Data.List> fold
+foldMap  foldl    foldl'   foldl1   foldl1'  foldr    foldr1
+Prelude Data.List> :i foldl' 
+class Foldable (t :: * -> *) where
+  ...
+  foldl' :: (b -> a -> b) -> b -> t a -> b
+  ...
+  	-- Defined in ‘Data.Foldable’
+Prelude Data.List> foldl (\res a -> res + a) 0 [1, 2, 3, 4, 5]
+15
+Prelude Data.List> foldl' (\res a -> res + a) 0 [1, 2, 3, 4, 5]
+15
+Prelude Data.List> :l home.hs
+[1 of 1] Compiling Main             ( home.hs, interpreted )
+Ok, 1 module loaded.
+*Main Data.List> 
+[1]+  Stopped                 ghci
+shum@shum-asus:~/hsg/class3$ fg
+ghci
+
+*Main Data.List> 
+*Main Data.List> 
+*Main Data.List> Z
+Z
+*Main Data.List> S Z
+S Z
+*Main Data.List> S (S Z)
+S (S Z)
+*Main Data.List> S (S (S Z))
+S (S (S Z))
+*Main Data.List> 
+
