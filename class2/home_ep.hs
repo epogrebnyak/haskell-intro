@@ -1,3 +1,5 @@
+-- TODO: make a typeclass to show expressions 
+
 data Expr   -- abstract syntax tree
   = Lit Int  -- 1
   | Same Expr
