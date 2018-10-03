@@ -1,23 +1,19 @@
--- This script is intended to parse a string like "Gross domestic product, bln rub"
+-- Parse a string like "Gross domestic product, bln rub"
 -- into a data structure that contains labels "GDP" and "bln_rub"
 
--- QUESTION: can I import just one or several functions from a module? with ()?
-import Data.List
+import Data.List (isInfixOf)
 
--- COMMENT: Here I wanted to use Nothing, but it is in conflict with 
--- Nothing already defined in Main. Is None ok here?
-data Label = Label String 
-            | None 
-            deriving (Show, Eq) 
+type Label = Maybe String
 
 data Variable = Variable
     { name :: Label,
       unit :: Label
     } deriving (Show, Eq)
 
+-- Map allows a more readable view of tuple-like stucture     
 data Map = Map 
     { label :: String,
-      texts :: [String]
+      texts :: [String] -- note: can use non-empty List 
     } deriving (Show)
 
 nameMaps = [
@@ -41,15 +37,15 @@ allKeys mapper header = [key | tup@(text, key) <- mapper,  text `isInfixOf` head
 getLabel :: [Map] -> String -> Label
 getLabel maps' header = let mapper = concatMap asTuples maps' in   
     case allKeys mapper header of 
-        [] -> None
-        (x:_) -> Label x
+        [] -> Nothing
+        (x:_) -> Just x
 
 getName = getLabel nameMaps
 getUnit = getLabel unitMaps
 parseHeader text = Variable (getName text) (getUnit text)
 x = parseHeader "Gross domestic product, bln rub"
 -- QUESTION: can I have a unit test similar to assert x == Variable (Label "GDP") (Label "bln_rub")  
-isAccepted = x == Variable (Label "GDP") (Label "bln_rub")
+isAccepted = x == Variable (Just "GDP") (Just "bln_rub")
 -- 
 main = do
     -- QUESTION: When I run the program I do not see the output on screen 
