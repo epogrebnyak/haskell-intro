@@ -27,18 +27,19 @@ unitMaps = [
     ] 
 
 -- COMMENT: code below converts nameMaps and unitMaps
---          to list of tuples whic I use for searching entries 
+--          to list of tuples which I use for searching entries 
 asTuples :: Map -> [(String, String)]   
 asTuples (Map label texts) = [(text, label) | text <- texts]  
 
-allKeys :: [(String, String)] -> String -> [String]
-allKeys mapper header = [key | tup@(text, key) <- mapper,  text `isInfixOf` header]
+findKeys :: [(String, String)] -> String -> [String]
+findKeys mapper header = [key | tup@(text, key) <- mapper,  text `isInfixOf` header]
 
 getLabel :: [Map] -> String -> Label
-getLabel maps' header = let mapper = concatMap asTuples maps' in   
-    case allKeys mapper header of 
+getLabel maps header = case findKeys (flatten' maps) header of 
         [] -> Nothing
         (x:_) -> Just x
+    where flatten' = concatMap asTuples
+ 
 
 getName = getLabel nameMaps
 getUnit = getLabel unitMaps
