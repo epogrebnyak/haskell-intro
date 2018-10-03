@@ -1,6 +1,9 @@
 -- Parse a string like "Gross domestic product, bln rub"
 -- into a data structure that contains labels "GDP" and "bln_rub"
 
+-- Posted for review at:
+-- https://codereview.stackexchange.com/questions/204872/find-labels-in-string-in-haskell 
+
 import Data.List (isInfixOf)
 
 type Label = Maybe String
