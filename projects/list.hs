@@ -10,7 +10,17 @@ data Variable = Variable
       unit :: Label
     } deriving (Show, Eq)
 
--- Map allows a more readable view of tuple-like stucture     
+makeVariable :: String -> String -> Variable 
+makeVariable name unit = Variable (Just name) (Just unit) 
+
+isDefined:: Variable -> Bool
+isDefined var = (name var /= Nothing) && (unit var /= Nothing) 
+
+isIdentical:: Variable -> String -> String -> Bool
+isIdentical var name unit = (makeVariable name unit) == var  
+
+-- Map allows a readable view of tuple-like 
+-- associative stucture.     
 data Map = Map 
     { label :: String,
       texts :: [String] -- note: can use non-empty List 
@@ -27,31 +37,32 @@ unitMaps = [
     ] 
 
 -- COMMENT: code below converts nameMaps and unitMaps
---          to list of tuples which I use for searching entries 
+--          to list of tuples which are used for searching a header
 asTuples :: Map -> [(String, String)]   
 asTuples (Map label texts) = [(text, label) | text <- texts]  
 
-findKeys :: [(String, String)] -> String -> [String]
-findKeys mapper header = [key | tup@(text, key) <- mapper,  text `isInfixOf` header]
+findAllKeys :: [(String, String)] -> String -> [String]
+findAllKeys mapper header = [key | tup@(text, key) <- mapper,  
+                                text `isInfixOf` header]
 
 getLabel :: [Map] -> String -> Label
-getLabel maps header = case findKeys (flatten' maps) header of 
+getLabel maps' header = case findAllKeys (flatten' maps') header of 
         [] -> Nothing
         (x:_) -> Just x
     where flatten' = concatMap asTuples
  
-
 getName = getLabel nameMaps
 getUnit = getLabel unitMaps
 parseHeader text = Variable (getName text) (getUnit text)
+
 x = parseHeader "Gross domestic product, bln rub"
--- QUESTION: can I have a unit test similar to assert x == Variable (Label "GDP") (Label "bln_rub")  
-isAccepted = x == Variable (Just "GDP") (Just "bln_rub")
--- 
+flag = (isDefined x) && (isIdentical x "GDP" "bln_rub")
+raise x = error ("Something wrong with: " ++ show x) 
+
 main = do
-    -- QUESTION: When I run the program I do not see the output on screen 
-    putStrLn $ show x
-    -- return ()
+    if flag then putStrLn $ show x else
+      raise x   
+    return ()
 
 -- NEXT: what is a path to learn CSV file handling with cassava?
 --       I would like to import a CSV file as list of lists.
@@ -62,7 +73,3 @@ main = do
 -- 1999 100 110 120 125
 -- 2000 130 125 140 150
 ---
-
-
-
-
