@@ -76,3 +76,6 @@ main = do
 -- 1999 100 110 120 125
 -- 2000 130 125 140 150
 ---
+
+-- Note: ReadP at 
+-- http://hackage.haskell.org/package/base-4.11.1.0/docs/Text-ParserCombinators-ReadP.html
