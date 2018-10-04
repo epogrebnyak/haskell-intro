@@ -20,22 +20,22 @@ eval (Lit x) = x
 eval (Add x y) = (eval x) + (eval y)  
 eval (Subs x y) = (eval x) - (eval y)  
 eval (Div x y) = (eval x) `div` (eval y)  
-eval (Mult x y) = (eval x) * eval(y) 
-eval (Power x y) = (eval x) ^ eval(y)  
+eval (Mult x y) = (eval x) * (eval y) 
+eval (Power x y) = power (eval x) (eval y)  
 
--- Question 1: a better way to make power function?
--- Maybe need sopmething like this for Power:
--- eval (Power x y) =  if y == 1  then  eval(x) else 
---                       (eval x) * (Power x eval(Subs eval(y) Lit 1))  
+-- comments for**, ^, ^^ are at 
+-- https://wiki.haskell.org/Power_function 
 
--- This option with 'guards' did not work
--- https://stackoverflow.com/questions/5768570/function-guard-syntax-in-haskell
--- eval (Power x y) =  
---     | eval(y) == 1     = eval(x) 
---     | eval(y) != 1     = eval x * (Power x (eval(y) - 1))  
+-- lets constrain the function to integers
+power :: Int -> Int -> Int
+power x 0 = 1
+power x 1 = x
+power x n | n > 1  = x * power x (n-1)
+          | n < 0  = error "We do not support negative powers"
+                    -- 1 / power x (n * (-1))
+                    -- requires Fractional type  
 
--- Question 2:
--- Why doesn't this work without parenthesis? 
+-- will not  work without parenthesis, see also $
 -- *Main> eval (Same (Lit 1))
 -- 1
 
