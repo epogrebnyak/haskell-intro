@@ -1,5 +1,5 @@
--- Starting notes by E.Pogrebnyak
--- 09/09/2018
+-- Notes by E.Pogrebnyak
+-- Started 09/09/2018
 
 -- Q: does Haskell compile on Windows?
 -- A: the following compiles notes.exe which is runnable on Windows!!!
@@ -80,3 +80,7 @@ head $ take 10 [1..]
 
 -- raising errors in Haskell
 -- http://www.randomhacks.net/2007/03/10/haskell-8-ways-to-report-errors/
+
+
+-- if-else / case of / guards
+-- https://stackoverflow.com/questions/9345589/guards-vs-if-then-else-vs-cases-in-haskell
