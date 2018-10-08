@@ -25,6 +25,8 @@ instance MySum Int where
 
 -- seems like I need a function to start using a new class
 -- (confusion: cannot just instativate type )
+-- does not no compile 
+-- addTwo :: MySum -> MySum -> MySum 
 addTwo 0 b = b
 addTwo a 0 = a
 addTwo a b = plus a b
