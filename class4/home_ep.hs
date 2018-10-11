@@ -13,28 +13,32 @@
 -- https://en.wikibooks.org/wiki/Haskell/Monoids
 
 
--- One idea is:  
-class MySum a where
-    empty :: a
-    plus :: a -> a -> a
+-- EP: newtype is stronger? 
+data Prod = Prod Int
+    deriving Show
 
--- does this make sense?    
-instance MySum Int where
-    empty = 0
-    plus a b = a + b
+class Monoid' a where
+    empty' :: a
+    mappend' :: a -> a -> a
 
--- seems like I need a function to start using a new class
--- (confusion: cannot just instativate type )
--- does not no compile 
--- addTwo :: MySum -> MySum -> MySum 
-addTwo 0 b = b
-addTwo a 0 = a
-addTwo a b = plus a b
+instance Monoid' Int where
+    empty' = 0
+    mappend' a b = a + b
 
--- how is `<>` overloaded?    
-(p) a b = plus a b 
+-- EP: cannot really extract `empty` from definition 
+--  Main.mappend Main.empty Main.empty :: Int
 
--- Another idea is make class    
+instance Monoid' Prod where
+    empty' = Prod 1
+    mappend' (Prod a) (Prod b) = Prod (a * b)
+
+
+-- ambigious without Main
+addTwo :: Int -> Int -> Int 
+addTwo a b = mappend' a b
+
+-- overload operator    
+(<^>) a b = mappend' a b 
 
 {-
 http://www.scs.stanford.edu/14sp-cs240h/slides/phantoms.html
@@ -53,7 +57,6 @@ newtype Sum a = Sum { getSum :: a }
 
 instance Num a => Monoid (Sum a) where
     mempty                = Sum 0
-
     Sum x `mappend` Sum y = Sum (x + y)
 
 -}
