@@ -344,21 +344,32 @@ instance Monoid a => Monad ((,) a) -- Defined in ‘GHC.Base’
 (=<<) :: Monad m => (a -> m b) -> m a -> m b
   	-- Defined in ‘GHC.Base’
 infixr 1 =<<
+
+-----------------------------------------------------------------
+
+-- fmap  
 *Main> :t (<$>)
 (<$>) :: Functor f => (a -> b) -> f a -> f b
+
+-- sequential application 
 *Main> :t (<*>)
 (<*>) :: Applicative f => f (a -> b) -> f a -> f b
+
+-- reverve of: 
+-- Sequentially compose two actions, passing any value produced 
+-- by the first as an argument to the second.
 *Main> :t (=<<)
 (=<<) :: Monad m => (a -> m b) -> m a -> m b
+
+-----------------------------------------------------------------
+
 *Main> Just 5 >>= \v -> Just (v + 4)
 Just 9
-*Main> Nothig >>= \v -> Just (v + 4)
-
-<interactive>:59:1: error:
-    • Data constructor not in scope: Nothig :: Maybe b
-    • Perhaps you meant ‘Nothing’ (imported from Prelude)
 *Main> Nothing >>= \v -> Just (v + 4)
 Nothing
+
+
+
 *Main> [1, 2, 3] >>= \v -> [v, v + 4]
 [1,5,2,6,3,7]
 *Main> :t getLine 
