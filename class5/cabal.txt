@@ -1,0 +1,5 @@
+
+cabal sandbox init          -- create an enviroment
+cabal init                  -- create a new package
+cabal install attoparsec    -- install new package
+cabal build                 -- build the package

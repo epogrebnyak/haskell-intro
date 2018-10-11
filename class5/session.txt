@@ -1,0 +1,612 @@
+shum@shum-asus:~/hsg/class5$ ghci
+GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
+Prelude> :l test.hs
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main> mappend 1 4
+
+<interactive>:2:1: error:
+    • Ambiguous type variable ‘a0’ arising from a use of ‘print’
+      prevents the constraint ‘(Show a0)’ from being solved.
+      Probable fix: use a type annotation to specify what ‘a0’ should be.
+      These potential instances exist:
+        instance Show Ordering -- Defined in ‘GHC.Show’
+        instance Show Integer -- Defined in ‘GHC.Show’
+        instance Show a => Show (Maybe a) -- Defined in ‘GHC.Show’
+        ...plus 22 others
+        ...plus 11 instances involving out-of-scope types
+        (use -fprint-potential-instances to see them all)
+    • In a stmt of an interactive GHCi command: print it
+*Main> mappend 1 4 :: Int
+5
+*Main> 
+Leaving GHCi.
+shum@shum-asus:~/hsg/class5$ ghci
+GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
+Prelude> mappend 1 4 :: Int
+
+<interactive>:1:1: error:
+    • No instance for (Monoid Int) arising from a use of ‘mappend’
+    • In the expression: mappend 1 4 :: Int
+      In an equation for ‘it’: it = mappend 1 4 :: Int
+Prelude> :l test.hs
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main> mappend 1 4 :: Int
+5
+*Main> :t 1
+1 :: Num p => p
+*Main> let one = 1 :: Int
+*Main> one
+1
+*Main> mappend one 4
+5
+*Main> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+
+test.hs:21:17: error:
+    Not in scope: type constructor or class ‘Sum’
+    Perhaps you meant ‘Num’ (imported from Prelude)
+   |
+21 | instance Monoid Sum where
+   |                 ^^^
+
+test.hs:23:12: error:
+    Not in scope: data constructor ‘Sum’
+    Perhaps you meant variable ‘sum’ (imported from Prelude)
+   |
+23 |   mappend (Sum a) (Sum b) = Sum (a + b)
+   |            ^^^
+
+test.hs:23:20: error:
+    Not in scope: data constructor ‘Sum’
+    Perhaps you meant variable ‘sum’ (imported from Prelude)
+   |
+23 |   mappend (Sum a) (Sum b) = Sum (a + b)
+   |                    ^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main> map
+map      mapM     mapM_    mappend
+*Main> mappend (Sum 1) (Sum 5)
+
+<interactive>:10:1: error:
+    • No instance for (Show Sum) arising from a use of ‘print’
+    • In a stmt of an interactive GHCi command: print it
+*Main> mappend (Sum 1) (Sum 5):
+*Main> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main> mappend (Sum 1) (Sum 5)
+Sum {getSum = 6}
+*Main> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main> mappend (Sum 1) (Sum 5)
+Sum {getSum = 6}
+*Main> getSum (mappend (Sum 1) (Sum 5))
+6
+*Main> :i Int
+data Int = GHC.Types.I# GHC.Prim.Int# 	-- Defined in ‘GHC.Types’
+instance [safe] Monoid Int -- Defined at test.hs:8:10
+instance Eq Int -- Defined in ‘GHC.Classes’
+instance Ord Int -- Defined in ‘GHC.Classes’
+instance Show Int -- Defined in ‘GHC.Show’
+instance Read Int -- Defined in ‘GHC.Read’
+instance Enum Int -- Defined in ‘GHC.Enum’
+instance Num Int -- Defined in ‘GHC.Num’
+instance Real Int -- Defined in ‘GHC.Real’
+instance Bounded Int -- Defined in ‘GHC.Enum’
+instance Integral Int -- Defined in ‘GHC.Real’
+*Main> :i Eq
+class Eq a where
+  (==) :: a -> a -> Bool
+  (/=) :: a -> a -> Bool
+  {-# MINIMAL (==) | (/=) #-}
+  	-- Defined in ‘GHC.Classes’
+instance (Eq b, Eq a) => Eq (Either a b)
+  -- Defined in ‘Data.Either’
+instance Eq a => Eq [a] -- Defined in ‘GHC.Classes’
+instance Eq Word -- Defined in ‘GHC.Classes’
+instance Eq Ordering -- Defined in ‘GHC.Classes’
+instance Eq Int -- Defined in ‘GHC.Classes’
+instance Eq Float -- Defined in ‘GHC.Classes’
+instance Eq Double -- Defined in ‘GHC.Classes’
+instance Eq Char -- Defined in ‘GHC.Classes’
+instance Eq Bool -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k, Eq l, Eq m, Eq n, Eq o) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k, Eq l, Eq m, Eq n) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k, l, m, n)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k, Eq l, Eq m) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k, l, m)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k, Eq l) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k, l)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j) =>
+         Eq (a, b, c, d, e, f, g, h, i, j)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i) =>
+         Eq (a, b, c, d, e, f, g, h, i)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h) =>
+         Eq (a, b, c, d, e, f, g, h)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g) =>
+         Eq (a, b, c, d, e, f, g)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f) =>
+         Eq (a, b, c, d, e, f)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e) => Eq (a, b, c, d, e)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d) => Eq (a, b, c, d)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c) => Eq (a, b, c)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b) => Eq (a, b) -- Defined in ‘GHC.Classes’
+instance Eq () -- Defined in ‘GHC.Classes’
+instance Eq Integer
+  -- Defined in ‘integer-gmp-1.0.1.0:GHC.Integer.Type’
+instance Eq a => Eq (Maybe a) -- Defined in ‘GHC.Base’
+*Main> :i Ord
+class Eq a => Ord a where
+  compare :: a -> a -> Ordering
+  (<) :: a -> a -> Bool
+  (<=) :: a -> a -> Bool
+  (>) :: a -> a -> Bool
+  (>=) :: a -> a -> Bool
+  max :: a -> a -> a
+  min :: a -> a -> a
+  {-# MINIMAL compare | (<=) #-}
+  	-- Defined in ‘GHC.Classes’
+instance (Ord b, Ord a) => Ord (Either a b)
+  -- Defined in ‘Data.Either’
+instance Ord a => Ord [a] -- Defined in ‘GHC.Classes’
+instance Ord Word -- Defined in ‘GHC.Classes’
+instance Ord Ordering -- Defined in ‘GHC.Classes’
+instance Ord Int -- Defined in ‘GHC.Classes’
+instance Ord Float -- Defined in ‘GHC.Classes’
+instance Ord Double -- Defined in ‘GHC.Classes’
+instance Ord Char -- Defined in ‘GHC.Classes’
+instance Ord Bool -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c, Ord d, Ord e, Ord f, Ord g, Ord h,
+          Ord i, Ord j, Ord k, Ord l, Ord m, Ord n, Ord o) =>
+         Ord (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c, Ord d, Ord e, Ord f, Ord g, Ord h,
+          Ord i, Ord j, Ord k, Ord l, Ord m, Ord n) =>
+         Ord (a, b, c, d, e, f, g, h, i, j, k, l, m, n)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c, Ord d, Ord e, Ord f, Ord g, Ord h,
+          Ord i, Ord j, Ord k, Ord l, Ord m) =>
+         Ord (a, b, c, d, e, f, g, h, i, j, k, l, m)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c, Ord d, Ord e, Ord f, Ord g, Ord h,
+          Ord i, Ord j, Ord k, Ord l) =>
+         Ord (a, b, c, d, e, f, g, h, i, j, k, l)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c, Ord d, Ord e, Ord f, Ord g, Ord h,
+          Ord i, Ord j, Ord k) =>
+         Ord (a, b, c, d, e, f, g, h, i, j, k)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c, Ord d, Ord e, Ord f, Ord g, Ord h,
+          Ord i, Ord j) =>
+         Ord (a, b, c, d, e, f, g, h, i, j)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c, Ord d, Ord e, Ord f, Ord g, Ord h,
+          Ord i) =>
+         Ord (a, b, c, d, e, f, g, h, i)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c, Ord d, Ord e, Ord f, Ord g,
+          Ord h) =>
+         Ord (a, b, c, d, e, f, g, h)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c, Ord d, Ord e, Ord f, Ord g) =>
+         Ord (a, b, c, d, e, f, g)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c, Ord d, Ord e, Ord f) =>
+         Ord (a, b, c, d, e, f)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c, Ord d, Ord e) => Ord (a, b, c, d, e)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c, Ord d) => Ord (a, b, c, d)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b, Ord c) => Ord (a, b, c)
+  -- Defined in ‘GHC.Classes’
+instance (Ord a, Ord b) => Ord (a, b) -- Defined in ‘GHC.Classes’
+instance Ord () -- Defined in ‘GHC.Classes’
+instance Ord Integer
+  -- Defined in ‘integer-gmp-1.0.1.0:GHC.Integer.Type’
+instance Ord a => Ord (Maybe a) -- Defined in ‘GHC.Base’
+*Main> :i map
+map :: (a -> b) -> [a] -> [b] 	-- Defined in ‘GHC.Base’
+*Main> :kind [Int]
+[Int] :: *
+*Main> :kind [] Int
+[] Int :: *
+*Main> :i Functor 
+class Functor (f :: * -> *) where
+  fmap :: (a -> b) -> f a -> f b
+  (<$) :: a -> f b -> f a
+  {-# MINIMAL fmap #-}
+  	-- Defined in ‘GHC.Base’
+instance Functor (Either a) -- Defined in ‘Data.Either’
+instance Functor [] -- Defined in ‘GHC.Base’
+instance Functor Maybe -- Defined in ‘GHC.Base’
+instance Functor IO -- Defined in ‘GHC.Base’
+instance Functor ((->) r) -- Defined in ‘GHC.Base’
+instance Functor ((,) a) -- Defined in ‘GHC.Base’
+*Main> fmap (+1) [1, 3, 6]
+[2,4,7]
+*Main> fmap (+1) Nothing
+Nothing
+*Main> fmap (+1) (Just 5)
+Just 6
+*Main> fmap (+1) (Left 5)
+Left 5
+*Main> fmap (+1) (Right 5)
+Right 6
+*Main> :t one
+
+<interactive>:1:1: error: Variable not in scope: one
+*Main> one = (+1) :: Int -> Int
+*Main> :t one
+one :: Int -> Int
+*Main> inc = (+1) :: Int -> Int
+*Main> :t inc
+inc :: Int -> Int
+*Main> inc = (+1) :: (->) Int Int
+*Main> :kind (->)
+(->) :: TYPE q -> TYPE r -> *
+*Main> :kind (->) Int
+(->) Int :: * -> *
+*Main> :kind (->) Int Int
+(->) Int Int :: *
+*Main> fmap (+1) one
+
+<interactive>:37:1: error:
+    • No instance for (Show (Int -> Int)) arising from a use of ‘print’
+        (maybe you haven't applied a function to enough arguments?)
+    • In a stmt of an interactive GHCi command: print it
+*Main> :t fmap (+1) one
+fmap (+1) one :: Int -> Int
+*Main> (fmap (+1) inc) 5
+7
+*Main> (fmap (*1) inc) 5
+6
+*Main> (fmap (*2) inc) 5
+12
+*Main> :kind Either 
+Either :: * -> * -> *
+*Main> :kind Either Int
+Either Int :: * -> *
+*Main> :i Applicative 
+class Functor f => Applicative (f :: * -> *) where
+  pure :: a -> f a
+  (<*>) :: f (a -> b) -> f a -> f b
+  GHC.Base.liftA2 :: (a -> b -> c) -> f a -> f b -> f c
+  (*>) :: f a -> f b -> f b
+  (<*) :: f a -> f b -> f a
+  {-# MINIMAL pure, ((<*>) | liftA2) #-}
+  	-- Defined in ‘GHC.Base’
+instance Applicative (Either e) -- Defined in ‘Data.Either’
+instance Applicative [] -- Defined in ‘GHC.Base’
+instance Applicative Maybe -- Defined in ‘GHC.Base’
+instance Applicative IO -- Defined in ‘GHC.Base’
+instance Applicative ((->) a) -- Defined in ‘GHC.Base’
+instance Monoid a => Applicative ((,) a) -- Defined in ‘GHC.Base’
+*Main> :t fmap 
+fmap :: Functor f => (a -> b) -> f a -> f b
+*Main> :t (<$>)
+(<$>) :: Functor f => (a -> b) -> f a -> f b
+*Main> (+1) <$> [3, 5,6]
+[4,6,7]
+*Main> pure 4 :: Maybe Int
+Just 4
+*Main> pure 4 :: [Int]
+[4]
+*Main> pure 4 :: Either String Int
+Right 4
+*Main> Just (+1) <*> Just 5
+Just 6
+*Main> (+1) <$> Just 5
+Just 6
+*Main> :i Monad
+class Applicative m => Monad (m :: * -> *) where
+  (>>=) :: m a -> (a -> m b) -> m b
+  (>>) :: m a -> m b -> m b
+  return :: a -> m a
+  fail :: String -> m a
+  {-# MINIMAL (>>=) #-}
+  	-- Defined in ‘GHC.Base’
+instance Monad (Either e) -- Defined in ‘Data.Either’
+instance Monad [] -- Defined in ‘GHC.Base’
+instance Monad Maybe -- Defined in ‘GHC.Base’
+instance Monad IO -- Defined in ‘GHC.Base’
+instance Monad ((->) r) -- Defined in ‘GHC.Base’
+instance Monoid a => Monad ((,) a) -- Defined in ‘GHC.Base’
+*Main> :i (=<<)
+(=<<) :: Monad m => (a -> m b) -> m a -> m b
+  	-- Defined in ‘GHC.Base’
+infixr 1 =<<
+*Main> :t (<$>)
+(<$>) :: Functor f => (a -> b) -> f a -> f b
+*Main> :t (<*>)
+(<*>) :: Applicative f => f (a -> b) -> f a -> f b
+*Main> :t (=<<)
+(=<<) :: Monad m => (a -> m b) -> m a -> m b
+*Main> Just 5 >>= \v -> Just (v + 4)
+Just 9
+*Main> Nothig >>= \v -> Just (v + 4)
+
+<interactive>:59:1: error:
+    • Data constructor not in scope: Nothig :: Maybe b
+    • Perhaps you meant ‘Nothing’ (imported from Prelude)
+*Main> Nothing >>= \v -> Just (v + 4)
+Nothing
+*Main> [1, 2, 3] >>= \v -> [v, v + 4]
+[1,5,2,6,3,7]
+*Main> :t getLine 
+getLine :: IO String
+*Main> getLine 
+serserwerwer
+"serserwerwer"
+*Main> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main> :l functors.hs
+[1 of 1] Compiling Main             ( functors.hs, interpreted )
+
+functors.hs:6:26: error:
+    • Couldn't match expected type ‘[b]’
+                  with actual type ‘[a0] -> [b0]’
+    • Probable cause: ‘mapList’ is applied to too few arguments
+      In the second argument of ‘(:)’, namely ‘mapList as’
+      In the expression: f a : mapList as
+      In an equation for ‘mapList’: mapList f (a : as) = f a : mapList as
+    • Relevant bindings include
+        f :: a -> b (bound at functors.hs:6:9)
+        mapList :: (a -> b) -> [a] -> [b] (bound at functors.hs:5:1)
+  |
+6 | mapList f (a:as) = f a : mapList as
+  |                          ^^^^^^^^^^
+
+functors.hs:6:34: error:
+    • Couldn't match expected type ‘a0 -> b0’ with actual type ‘[a]’
+    • In the first argument of ‘mapList’, namely ‘as’
+      In the second argument of ‘(:)’, namely ‘mapList as’
+      In the expression: f a : mapList as
+    • Relevant bindings include
+        as :: [a] (bound at functors.hs:6:14)
+        a :: a (bound at functors.hs:6:12)
+        f :: a -> b (bound at functors.hs:6:9)
+        mapList :: (a -> b) -> [a] -> [b] (bound at functors.hs:5:1)
+  |
+6 | mapList f (a:as) = f a : mapList as
+  |                                  ^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Main             ( functors.hs, interpreted )
+Ok, 1 module loaded.
+*Main> askAndAppend 
+11111
+eeee
+"11111eeee"
+*Main> :r
+[1 of 1] Compiling Main             ( functors.hs, interpreted )
+Ok, 1 module loaded.
+*Main> askAndAppend1 
+asdfaqsdf
+23452345
+"asdfaqsdf23452345"
+*Main> 
+*Main> 
+Leaving GHCi.
+shum@shum-asus:~/hsg/class5$ ls
+functors.hs  functors.hs~  test.hs  test.hs~
+shum@shum-asus:~/hsg/class5$ ghci
+GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
+Prelude> :i read
+read       readIO     readLn     reads
+readFile   readList   readParen  readsPrec
+Prelude> :m + Text.Read
+Prelude Text.Read> :i rea
+read                 readListPrecDefault  readPrec_to_S
+readEither           readLn               readS_to_Prec
+readFile             readMaybe            reads
+readIO               readP_to_Prec        readsPrec
+readList             readParen            realToFrac
+readListDefault      readPrec
+readListPrec         readPrec_to_P
+Prelude Text.Read> :i readEither 
+readEither :: Read a => String -> Either String a
+  	-- Defined in ‘Text.Read’
+Prelude Text.Read> :r
+Ok, 0 modules loaded.
+Prelude Text.Read> :l functors.hs
+[1 of 1] Compiling Main             ( functors.hs, interpreted )
+Ok, 1 module loaded.
+*Main Text.Read> f "12" "45"
+Right 57
+*Main Text.Read> f "12" "4df5"
+Left "Prelude.read: no parse"
+*Main Text.Read> 
+Leaving GHCi.
+shum@shum-asus:~/hsg/class5$ ls
+functors.hs  functors.hs~  test.hs  test.hs~
+shum@shum-asus:~/hsg/class5$ cabal --version
+cabal-install version 2.2.0.0
+compiled using version 2.2.0.1 of the Cabal library 
+shum@shum-asus:~/hsg/class5$ cabal sandbox init
+Writing a default package environment file to
+/home/shum/hsg/class5/cabal.sandbox.config
+Creating a new sandbox at /home/shum/hsg/class5/.cabal-sandbox
+shum@shum-asus:~/hsg/class5$ ls -la
+усяго 100
+drwxr-xr-x 3 shum shum  4096 кас 11 16:18 .
+drwxr-xr-x 6 shum shum  4096 кас 11 14:56 ..
+drwxr-xr-x 4 shum shum  4096 кас 11 16:18 .cabal-sandbox
+-rw-r--r-- 1 shum shum   942 кас 11 16:18 cabal.sandbox.config
+-rw-r--r-- 1 shum shum   741 кас 11 16:16 functors.hs
+-rw-r--r-- 1 shum shum   741 кас 11 16:16 functors.hs~
+-rw-r--r-- 1 shum shum 12288 кас 11 16:17 .functors.hs.swp
+-rw-r--r-- 1 shum shum 35784 кас 11 16:16 .functors.hs.un~
+-rw-r--r-- 1 shum shum   391 кас 11 15:33 test.hs
+-rw-r--r-- 1 shum shum   391 кас 11 15:29 test.hs~
+-rw-r--r-- 1 shum shum 19688 кас 11 15:33 .test.hs.un~
+shum@shum-asus:~/hsg/class5$ cabal init
+Warning: The package list for 'hackage.haskell.org' is 42 days old.
+Run 'cabal update' to get the latest list of available packages.
+Package name? [default: class5] 
+Package version? [default: 0.1.0.0] 
+Please choose a license:
+   1) GPL-2
+   2) GPL-3
+   3) LGPL-2.1
+   4) LGPL-3
+   5) AGPL-3
+   6) BSD2
+ * 7) BSD3
+   8) MIT
+   9) ISC
+  10) MPL-2.0
+  11) Apache-2.0
+  12) PublicDomain
+  13) AllRightsReserved
+  14) Other (specify)
+Your choice? [default: BSD3] 
+Author name? [default: Yuras Shumovich] 
+Maintainer email? [default: shumovichy@gmail.com] 
+Project homepage URL? 
+Project synopsis? 
+Project category:
+ * 1) (none)
+   2) Codec
+   3) Concurrency
+   4) Control
+   5) Data
+   6) Database
+   7) Development
+   8) Distribution
+   9) Game
+  10) Graphics
+  11) Language
+  12) Math
+  13) Network
+  14) Sound
+  15) System
+  16) Testing
+  17) Text
+  18) Web
+  19) Other (specify)
+Your choice? [default: (none)] 
+What does the package build:
+   1) Library
+   2) Executable
+   3) Library and Executable
+Your choice? 2
+What is the main module of the executable:
+ * 1) Main.hs (does not yet exist, but will be created)
+   2) Main.lhs (does not yet exist, but will be created)
+   3) Other (specify)
+Your choice? [default: Main.hs (does not yet exist, but will be created)] 
+Source directory:
+ * 1) (none)
+   2) src
+   3) Other (specify)
+Your choice? [default: (none)] 
+What base language is the package written in:
+ * 1) Haskell2010
+   2) Haskell98
+   3) Other (specify)
+Your choice? [default: Haskell2010] 
+Add informative comments to each field in the cabal file (y/n)? [default: n] 
+
+Guessing dependencies...
+
+Generating LICENSE...
+Generating Setup.hs...
+Generating ChangeLog.md...
+Generating Main.hs...
+Generating class5.cabal...
+
+Warning: no synopsis given. You should edit the .cabal file and add one.
+You may want to edit the .cabal file and add a Description field.
+shum@shum-asus:~/hsg/class5$ ls
+cabal.sandbox.config  class5.cabal  functors.hs~  Main.hs   test.hs
+ChangeLog.md          functors.hs   LICENSE       Setup.hs  test.hs~
+shum@shum-asus:~/hsg/class5$ ls -lht
+усяго 40K
+-rw-r--r-- 1 shum shum  653 кас 11 16:19 class5.cabal
+-rw-r--r-- 1 shum shum  109 кас 11 16:19 ChangeLog.md
+-rw-r--r-- 1 shum shum 1,5K кас 11 16:19 LICENSE
+-rw-r--r-- 1 shum shum   67 кас 11 16:19 Main.hs
+-rw-r--r-- 1 shum shum   46 кас 11 16:19 Setup.hs
+-rw-r--r-- 1 shum shum  942 кас 11 16:18 cabal.sandbox.config
+-rw-r--r-- 1 shum shum  741 кас 11 16:16 functors.hs
+-rw-r--r-- 1 shum shum  741 кас 11 16:16 functors.hs~
+-rw-r--r-- 1 shum shum  391 кас 11 15:33 test.hs
+-rw-r--r-- 1 shum shum  391 кас 11 15:29 test.hs~
+shum@shum-asus:~/hsg/class5$ view class5.cabal 
+shum@shum-asus:~/hsg/class5$ cabal install attoparsec
+Warning: The package list for 'hackage.haskell.org' is 42 days old.
+Run 'cabal update' to get the latest list of available packages.
+Resolving dependencies...
+Notice: installing into a sandbox located at
+/home/shum/hsg/class5/.cabal-sandbox
+Configuring primitive-0.6.4.0...
+Configuring integer-logarithms-1.0.2.1...
+Configuring text-1.2.3.0...
+Building integer-logarithms-1.0.2.1...
+Building primitive-0.6.4.0...
+Building text-1.2.3.0...
+Installed integer-logarithms-1.0.2.1
+Installed primitive-0.6.4.0
+Installed text-1.2.3.0
+Configuring hashable-1.2.7.0...
+^C
+shum@shum-asus:~/hsg/class5$ cabal build
+Warning: The package list for 'hackage.haskell.org' is 42 days old.
+Run 'cabal update' to get the latest list of available packages.
+Resolving dependencies...
+Configuring class5-0.1.0.0...
+Preprocessing executable 'class5' for class5-0.1.0.0..
+Building executable 'class5' for class5-0.1.0.0..
+[1 of 1] Compiling Main             ( Main.hs, dist/build/class5/class5-tmp/Main.o )
+Linking dist/build/class5/class5 ...
+shum@shum-asus:~/hsg/class5$ ls
+cabal.sandbox.config  class5.cabal  functors.hs~  Setup.hs
+cabal.txt             dist          LICENSE       test.hs
+ChangeLog.md          functors.hs   Main.hs       test.hs~
+shum@shum-asus:~/hsg/class5$ dist/build/class5/class5
+Hello, Haskell!
+shum@shum-asus:~/hsg/class5$ vim class5.cabal 
+
+make: *** No targets specified and no makefile found.  Stop.
+
+Press ENTER or type command to continue
+shum@shum-asus:~/hsg/class5$ cabal build
+Preprocessing executable 'class5' for class5-0.1.0.0..
+Building executable 'class5' for class5-0.1.0.0..
+[1 of 1] Compiling Main             ( Main.hs, dist/build/class5/class5-tmp/Main.o )
+Linking dist/build/class5/class5 ...
+shum@shum-asus:~/hsg/class5$ dist/build/class5/class5
+Hello, Haskell Study Group!
+shum@shum-asus:~/hsg/class5$ ^C
+shum@shum-asus:~/hsg/class5$ 
+

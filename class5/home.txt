@@ -1,0 +1,6 @@
+write your own versions of Maybe and Either, make then instances of
+Functor, Applicative and Monad, check laws.
+
+write a quiz game; use getLine and putStrLn from the Prelude
+or anything else you find; use do notation and also make sure you
+understand how do notation is desugered using (>>=) operator.
