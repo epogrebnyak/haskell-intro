@@ -7,6 +7,8 @@ or anything else you find; use do notation and also make sure you
 understand how do notation is desugered using (>>=) operator.
 -}
 
+-- some reading: https://page.mi.fu-berlin.de/scravy/realworldhaskell/materialien/the-essence-of-functional-programming.pdf
+
 -- also TODO install cabal
 
 -- version of Maybe a
