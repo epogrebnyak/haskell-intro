@@ -20,6 +20,8 @@ instance Functor CouldBe where
     fmap f Nope = Nope
     fmap f (Good x) = Good (f x)
 
+if fmap (*2) (Good 2) != Good 4 error "Functor not working"    
+
 -- TODO Applicative 
 {-
 class Functor f => Applicative f where
@@ -32,8 +34,23 @@ class Functor f => Applicative f where
 
 -- TODO Monad
 -- http://hackage.haskell.org/package/base-4.12.0.0/docs/src/GHC.Base.html#Monad
+
+{--
+instance Monad Maybe where  
+    return x = Just x  
+    Nothing >>= f = Nothing  
+    Just x >>= f  = f x  
+    fail _ = Nothing  
+-}
+
 -- return  
 -- (>>=)
+
+instance Monad CouldBe where
+    return x = Good x
+    Good x >== f = Good (f x)
+    --           =  f x
+    Nope >== f = Nope
 
 
 -- quiz game
