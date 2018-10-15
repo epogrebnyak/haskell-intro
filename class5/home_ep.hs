@@ -20,7 +20,7 @@ instance Functor CouldBe where
     fmap f Nope = Nope
     fmap f (Good x) = Good (f x)
 
-if fmap (*2) (Good 2) != Good 4 error "Functor not working"    
+if fmap (*2) (Good 2) != Good 4 then error "Functor not working"    
 
 -- TODO Applicative 
 {-
