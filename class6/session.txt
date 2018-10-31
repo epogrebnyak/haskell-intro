@@ -1,0 +1,563 @@
+shum@shum-asus:~/hsg/class6$ cabal repl
+Warning: The repl command is a part of the legacy v1 style of cabal usage.
+
+Please switch to using either the new project style and the new-repl command
+or the legacy v1-repl alias as new-style projects will become the default in
+the next version of cabal-install. Please file a bug if you cannot replicate a
+working v1- use case with the new-style commands.
+
+For more information, see: https://wiki.haskell.org/Cabal/NewBuild
+
+GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
+Prelude> :l test.hs
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+
+test.hs:5:1: error:
+    Could not find module ‘Data.Bytestring’
+    Perhaps you meant Data.ByteString (from bytestring-0.10.8.2)
+    Use -v to see a list of the files searched for.
+  |
+5 | import qualified Data.Bytestring as Bytestring
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test.hs:6:1: error:
+    Could not find module ‘Data.Attoparsec.Bytestring’
+    Perhaps you meant
+      Data.Attoparsec.ByteString (from attoparsec-0.13.2.2)
+      Data.Attoparsec.ByteString.Lazy (from attoparsec-0.13.2.2)
+      Data.Attoparsec.ByteString.Char8 (from attoparsec-0.13.2.2)
+    Use -v to see a list of the files searched for.
+  |
+6 | import qualified Data.Attoparsec.Bytestring as Atto
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+
+test.hs:6:1: error:
+    Could not find module ‘Data.Attoparsec.Bytestring’
+    Perhaps you meant
+      Data.Attoparsec.ByteString (from attoparsec-0.13.2.2)
+      Data.Attoparsec.ByteString.Lazy (from attoparsec-0.13.2.2)
+      Data.Attoparsec.ByteString.Char8 (from attoparsec-0.13.2.2)
+    Use -v to see a list of the files searched for.
+  |
+6 | import qualified Data.Attoparsec.Bytestring as Atto
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+
+test.hs:1:1: error:
+    The IO action ‘main’ is not defined in module ‘Main’
+  |
+1 | 
+  | ^
+
+test.hs:19:12: error:
+    • Variable not in scope:
+        choose
+          :: [Data.Attoparsec.Internal.Types.Parser
+                ByteString.ByteString Main.Day]
+             -> Atto.Parser Main.Day
+    • Perhaps you meant ‘Atto.choice’ (imported from Data.Attoparsec.ByteString)
+   |
+19 | parseDay = choose
+   |            ^^^^^^
+Failed, 0 modules loaded.
+Prelude> :m + Control.Applicative
+Prelude Control.Applicative> :i Applicative 
+class Functor f => Applicative (f :: * -> *) where
+  pure :: a -> f a
+  (<*>) :: f (a -> b) -> f a -> f b
+  liftA2 :: (a -> b -> c) -> f a -> f b -> f c
+  (*>) :: f a -> f b -> f b
+  (<*) :: f a -> f b -> f a
+  {-# MINIMAL pure, ((<*>) | liftA2) #-}
+  	-- Defined in ‘GHC.Base’
+instance Monoid m => Applicative (Const m)
+  -- Defined in ‘Data.Functor.Const’
+instance Applicative (Either e) -- Defined in ‘Data.Either’
+instance Applicative ZipList -- Defined in ‘Control.Applicative’
+instance Monad m => Applicative (WrappedMonad m)
+  -- Defined in ‘Control.Applicative’
+instance Control.Arrow.Arrow a => Applicative (WrappedArrow a b)
+  -- Defined in ‘Control.Applicative’
+instance Applicative [] -- Defined in ‘GHC.Base’
+instance Applicative Maybe -- Defined in ‘GHC.Base’
+instance Applicative IO -- Defined in ‘GHC.Base’
+instance Applicative ((->) a) -- Defined in ‘GHC.Base’
+instance Monoid a => Applicative ((,) a) -- Defined in ‘GHC.Base’
+Prelude Control.Applicative> :browse
+type role WrappedArrow representational nominal nominal
+newtype WrappedArrow (a :: * -> * -> *) b c
+  = WrapArrow {unwrapArrow :: a b c}
+type role WrappedMonad representational nominal
+newtype WrappedMonad (m :: * -> *) a
+  = WrapMonad {unwrapMonad :: m a}
+newtype ZipList a = ZipList {getZipList :: [a]}
+optional :: Alternative f => f a -> f (Maybe a)
+class Functor (f :: * -> *) where
+  ...
+  (<$) :: a -> f b -> f a
+(<$>) :: Functor f => (a -> b) -> f a -> f b
+(<**>) :: Applicative f => f a -> f (a -> b) -> f b
+class Applicative f => Alternative (f :: * -> *) where
+  empty :: f a
+  (<|>) :: f a -> f a -> f a
+  some :: f a -> f [a]
+  many :: f a -> f [a]
+  {-# MINIMAL empty, (<|>) #-}
+class Functor f => Applicative (f :: * -> *) where
+  pure :: a -> f a
+  (<*>) :: f (a -> b) -> f a -> f b
+  liftA2 :: (a -> b -> c) -> f a -> f b -> f c
+  (*>) :: f a -> f b -> f b
+  (<*) :: f a -> f b -> f a
+  {-# MINIMAL pure, ((<*>) | liftA2) #-}
+type role Const representational phantom
+newtype Const a (b :: k) = Const {getConst :: a}
+liftA :: Applicative f => (a -> b) -> f a -> f b
+liftA3 ::
+  Applicative f => (a -> b -> c -> d) -> f a -> f b -> f c -> f d
+Prelude Control.Applicative> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+
+test.hs:19:12: error:
+    Not in scope: ‘Atto.choise’
+    Perhaps you meant ‘Atto.choice’ (imported from Data.Attoparsec.ByteString)
+    Module ‘Data.Attoparsec.ByteString’ does not export ‘choise’.
+   |
+19 | parseDay = Atto.choise
+   |            ^^^^^^^^^^^
+Failed, 0 modules loaded.
+Prelude Control.Applicative> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+
+test.hs:1:1: error:
+    The IO action ‘main’ is not defined in module ‘Main’
+  |
+1 | 
+  | ^
+Failed, 0 modules loaded.
+Prelude Control.Applicative> :m + Data.String 
+Prelude Control.Applicative Data.String> :i IsString 
+class IsString a where
+  fromString :: String -> a
+  {-# MINIMAL fromString #-}
+  	-- Defined in ‘Data.String’
+instance a ~ Char => IsString [a] -- Defined in ‘Data.String’
+instance IsString a => IsString (Const a b)
+  -- Defined in ‘Data.String’
+Prelude Control.Applicative Data.String> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+
+test.hs:26:9: error:
+    • Expecting one more argument to ‘IO’
+      Expected a type, but ‘IO’ has kind ‘* -> *’
+    • In the type signature: main :: IO
+   |
+26 | main :: IO
+   |         ^^
+Failed, 0 modules loaded.
+Prelude Control.Applicative Data.String> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Applicative Data.String> :main
+Right Monday
+*Main Control.Applicative Data.String> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Applicative Data.String> :main
+Right Monday
+Right Thusday
+Right Wednesday
+Left "Failed reading: empty"
+*Main Control.Applicative Data.String> :m + Control.Applicative
+*Main Control.Applicative Data.String> Just 1 <|> Just 4
+Just 1
+*Main Control.Applicative Data.String> Nothing <|> Just 4
+Just 4
+*Main Control.Applicative Data.String> ;r
+
+<interactive>:19:2: error:
+    Parse error: module header, import declaration
+    or top-level declaration expected.
+*Main Control.Applicative Data.String> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Applicative Data.String> :main
+Right Monday
+Right Thusday
+Right Wednesday
+Left "Failed reading: empty"
+*Main Control.Applicative Data.String> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Applicative Data.String> :main
+Right Monday
+Right Thusday
+Right Wednesday
+Right Sunday
+Right Sataday
+Left "Failed reading: empty"
+*Main Control.Applicative Data.String> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Applicative Data.String> :main
+Right Monday
+Right Thusday
+Right Wednesday
+Right Sunday
+Right Sataday
+Left "Failed reading: empty"
+*Main Control.Applicative Data.String> :r
+[1 of 1] Compiling Main             ( test.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Applicative Data.String> :main
+Right Monday
+Right Thusday
+Right Wednesday
+Right Sunday
+Right Sataday
+Left "Failed reading: empty"
+*Main Control.Applicative Data.String> :l src/
+.Main.hs.swp  Main.hs~      Main.hs       .Main.hs.un~
+*Main Control.Applicative Data.String> :l src/Main.hs
+[1 of 1] Compiling Main             ( src/Main.hs, interpreted )
+
+src/Main.hs:7:1: error:
+    Could not find module ‘Class6.JSON’
+    Use -v to see a list of the files searched for.
+  |
+7 | import Class6.JSON
+  | ^^^^^^^^^^^^^^^^^^
+Failed, 0 modules loaded.
+Prelude Control.Applicative Data.String> 
+Leaving GHCi.
+shum@shum-asus:~/hsg/class6$ cabal repl
+Warning: The repl command is a part of the legacy v1 style of cabal usage.
+
+Please switch to using either the new project style and the new-repl command
+or the legacy v1-repl alias as new-style projects will become the default in
+the next version of cabal-install. Please file a bug if you cannot replicate a
+working v1- use case with the new-style commands.
+
+For more information, see: https://wiki.haskell.org/Cabal/NewBuild
+
+cabal: The 'repl' command does not support multiple targets at once.
+
+shum@shum-asus:~/hsg/class6$ cabal repl 
+.cabal-sandbox/       class6.cabal~         .Makefile.un~
+cabal.sandbox.config  .class6.cabal.un~     Setup.hs
+cabal.txt             dist/                 src/
+cabal.txt~            lib/                  test.hs
+.cabal.txt.un~        LICENSE               test.hs~
+CHANGELOG.md          Makefile              .test.hs.un~
+class6.cabal          Makefile~             
+shum@shum-asus:~/hsg/class6$ cabal repl class6
+Warning: The repl command is a part of the legacy v1 style of cabal usage.
+
+Please switch to using either the new project style and the new-repl command
+or the legacy v1-repl alias as new-style projects will become the default in
+the next version of cabal-install. Please file a bug if you cannot replicate a
+working v1- use case with the new-style commands.
+
+For more information, see: https://wiki.haskell.org/Cabal/NewBuild
+
+cabal: Ambiguous build target 'class6'. It could be:
+exe:class6 (component)
+lib:class6 (component)
+
+
+shum@shum-asus:~/hsg/class6$ cabal repl exe:class6
+Warning: The repl command is a part of the legacy v1 style of cabal usage.
+
+Please switch to using either the new project style and the new-repl command
+or the legacy v1-repl alias as new-style projects will become the default in
+the next version of cabal-install. Please file a bug if you cannot replicate a
+working v1- use case with the new-style commands.
+
+For more information, see: https://wiki.haskell.org/Cabal/NewBuild
+
+Preprocessing library for class6-0.1.0.0..
+Building library for class6-0.1.0.0..
+Preprocessing executable 'class6' for class6-0.1.0.0..
+GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
+[1 of 1] Compiling Main             ( src/Main.hs, interpreted )
+Ok, 1 module loaded.
+*Main> :main
+*** Exception: Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
+  undefined, called at lib/Class6/JSON.hs:22:9 in class6-0.1.0.0-2vc0jQvVU5gCEKR8LMT6ql:Class6.JSON
+*Main> :q
+Leaving GHCi.
+shum@shum-asus:~/hsg/class6$ cabal repl lib:class6
+Warning: The repl command is a part of the legacy v1 style of cabal usage.
+
+Please switch to using either the new project style and the new-repl command
+or the legacy v1-repl alias as new-style projects will become the default in
+the next version of cabal-install. Please file a bug if you cannot replicate a
+working v1- use case with the new-style commands.
+
+For more information, see: https://wiki.haskell.org/Cabal/NewBuild
+
+Preprocessing library for class6-0.1.0.0..
+GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+Ok, 1 module loaded.
+*Class6.JSON> :set -XOverloadedStrings 
+*Class6.JSON> Atto.parseOnly nullP "null"
+Right Null
+*Class6.JSON> Atto.parseOnly nullP "false"
+Left "string"
+*Class6.JSON> Atto.parseOnly boolP "false"
+Right (Bool False)
+*Class6.JSON> Atto.parseOnly jsonP "false"
+Right (Bool False)
+*Class6.JSON> Atto.parseOnly jsonP "null"
+Right Null
+*Class6.JSON> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+Ok, 1 module loaded.
+*Class6.JSON> Atto.parseOnly jsonP "\"hello world\""
+Right (String "hello world")
+*Class6.JSON> :t read
+read :: Read a => String -> a
+*Class6.JSON> :i Text.unpack
+
+<interactive>:1:1: error: Not in scope: ‘Text.unpack’
+*Class6.JSON> :i Read
+class Read a where
+  readsPrec :: Int -> ReadS a
+  readList :: ReadS [a]
+  GHC.Read.readPrec :: Text.ParserCombinators.ReadPrec.ReadPrec a
+  GHC.Read.readListPrec :: Text.ParserCombinators.ReadPrec.ReadPrec
+                             [a]
+  {-# MINIMAL readsPrec | readPrec #-}
+  	-- Defined in ‘GHC.Read’
+instance Read a => Read [a] -- Defined in ‘GHC.Read’
+instance Read Word -- Defined in ‘GHC.Read’
+instance Read Ordering -- Defined in ‘GHC.Read’
+instance Read a => Read (Maybe a) -- Defined in ‘GHC.Read’
+instance Read Integer -- Defined in ‘GHC.Read’
+instance Read Int -- Defined in ‘GHC.Read’
+instance Read Float -- Defined in ‘GHC.Read’
+instance Read Double -- Defined in ‘GHC.Read’
+instance Read Char -- Defined in ‘GHC.Read’
+instance Read Bool -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g,
+          Read h, Read i, Read j, Read k, Read l, Read m, Read n, Read o) =>
+         Read (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g,
+          Read h, Read i, Read j, Read k, Read l, Read m, Read n) =>
+         Read (a, b, c, d, e, f, g, h, i, j, k, l, m, n)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g,
+          Read h, Read i, Read j, Read k, Read l, Read m) =>
+         Read (a, b, c, d, e, f, g, h, i, j, k, l, m)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g,
+          Read h, Read i, Read j, Read k, Read l) =>
+         Read (a, b, c, d, e, f, g, h, i, j, k, l)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g,
+          Read h, Read i, Read j, Read k) =>
+         Read (a, b, c, d, e, f, g, h, i, j, k)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g,
+          Read h, Read i, Read j) =>
+         Read (a, b, c, d, e, f, g, h, i, j)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g,
+          Read h, Read i) =>
+         Read (a, b, c, d, e, f, g, h, i)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c, Read d, Read e, Read f, Read g,
+          Read h) =>
+         Read (a, b, c, d, e, f, g, h)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c, Read d, Read e, Read f,
+          Read g) =>
+         Read (a, b, c, d, e, f, g)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c, Read d, Read e, Read f) =>
+         Read (a, b, c, d, e, f)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c, Read d, Read e) =>
+         Read (a, b, c, d, e)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c, Read d) => Read (a, b, c, d)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b, Read c) => Read (a, b, c)
+  -- Defined in ‘GHC.Read’
+instance (Read a, Read b) => Read (a, b) -- Defined in ‘GHC.Read’
+instance Read () -- Defined in ‘GHC.Read’
+instance (Read b, Read a) => Read (Either a b)
+  -- Defined in ‘Data.Either’
+instance (Eq k, hashable-1.2.7.0:Data.Hashable.Class.Hashable k,
+          Read k, Read e) =>
+         Read (HashMap k e)
+  -- Defined in ‘unordered-containers-0.2.9.0:Data.HashMap.Base’
+instance Read Text -- Defined in ‘Data.Text’
+*Class6.JSON> read "35" :: Int
+35
+*Class6.JSON> read (show 35) :: Int
+35
+*Class6.JSON> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+
+lib/Class6/JSON.hs:53:24: error:
+    Not in scope: ‘Text.unpack’
+    Module ‘Data.Text.Encoding’ does not export ‘unpack’.
+   |
+53 |   pure (Number (read $ Text.unpack $ Text.decodeUtf8 bs))
+   |                        ^^^^^^^^^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+Ok, 1 module loaded.
+*Class6.JSON> Atto.parseOnly jsonP "34"
+Right (Number 34)
+*Class6.JSON> Atto.parseOnly jsonP "\"34\""
+Right (String "34")
+*Class6.JSON> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+
+lib/Class6/JSON.hs:37:6: error:
+    • Variable not in scope: res :: [Value]
+    • Perhaps you meant ‘rem’ (imported from Prelude)
+   |
+37 |   go res
+   |      ^^^
+
+lib/Class6/JSON.hs:44:9: error:
+    • Couldn't match type ‘Data.ByteString.Internal.ByteString’
+                     with ‘Value’
+      Expected type: Data.Attoparsec.Internal.Types.Parser
+                       Data.ByteString.Internal.ByteString Value
+        Actual type: Atto.Parser Data.ByteString.Internal.ByteString
+    • In a stmt of a 'do' block: Atto.string ","
+      In the expression:
+        do v <- jsonP
+           Atto.string ","
+      In the first argument of ‘Atto.choice’, namely
+        ‘[Atto.string "]" >> pure (Array (reverse res)),
+          do v <- jsonP
+             Atto.string ","]’
+   |
+44 |         Atto.string ","
+   |         ^^^^^^^^^^^^^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+
+lib/Class6/JSON.hs:37:6: error:
+    • Variable not in scope: res :: [Value]
+    • Perhaps you meant ‘rem’ (imported from Prelude)
+   |
+37 |   go res
+   |      ^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+Ok, 1 module loaded.
+*Class6.JSON> Atto.parseOnly jsonP "[]"
+Right (Number *** Exception: Prelude.read: no parse
+*Class6.JSON> Atto.parseOnly jsonP "\"34\""
+Right (String "34")
+*Class6.JSON> Atto.parseOnly jsonP "[]"
+Right (Number *** Exception: Prelude.read: no parse
+*Class6.JSON> :i fail
+class Applicative m => Monad (m :: * -> *) where
+  ...
+  fail :: String -> m a
+  	-- Defined in ‘GHC.Base’
+*Class6.JSON> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+
+lib/Class6/JSON.hs:70:9: error:
+    Not in scope: ‘ByteString.null’
+    No module named ‘ByteString’ is imported.
+   |
+70 |   when (ByteString.null bs) $
+   |         ^^^^^^^^^^^^^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+
+lib/Class6/JSON.hs:71:3: error:
+    Variable not in scope:
+      when
+        :: Bool
+           -> m0 a0
+           -> Data.Attoparsec.Internal.Types.Parser ByteString.ByteString a1
+   |
+71 |   when (ByteString.null bs) $
+   |   ^^^^
+Failed, 0 modules loaded.
+Prelude> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+Ok, 1 module loaded.
+*Class6.JSON> :i when
+when :: Applicative f => Bool -> f () -> f ()
+  	-- Defined in ‘GHC.Base’
+*Class6.JSON> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+Ok, 1 module loaded.
+*Class6.JSON> Atto.parseOnly jsonP "[]"
+Right (Number *** Exception: Prelude.read: no parse
+*Class6.JSON> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+Ok, 1 module loaded.
+*Class6.JSON> Atto.parseOnly jsonP "[]"
+Right (Number *** Exception: Prelude.read: no parse
+*Class6.JSON> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+Ok, 1 module loaded.
+*Class6.JSON> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+Ok, 1 module loaded.
+*Class6.JSON> Atto.parseOnly jsonP "[]"
+"[]"
+Right (Number *** Exception: Prelude.read: no parse
+*Class6.JSON> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+Ok, 1 module loaded.
+*Class6.JSON> Atto.parseOnly jsonP "[]"
+""
+Right (Array [])
+*Class6.JSON> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+Ok, 1 module loaded.
+*Class6.JSON> Atto.parseOnly jsonP "[]"
+Right (Array [])
+*Class6.JSON> Atto.parseOnly jsonP "123"
+Right (Number 123)
+*Class6.JSON> Atto.parseOnly jsonP "\"\""
+Right (String "")
+*Class6.JSON> Atto.parseOnly jsonP "\"sdf\""
+Right (String "sdf")
+*Class6.JSON> :r
+[1 of 1] Compiling Class6.JSON      ( lib/Class6/JSON.hs, interpreted )
+Ok, 1 module loaded.
+*Class6.JSON> Atto.parseOnly jsonP "[1]"
+Left "Failed reading: empty"
+*Class6.JSON> Atto.parseOnly jsonP "[1,]"
+Right (Array [Number 1])
+*Class6.JSON> Atto.parseOnly jsonP "[1,\"dfsdf\"]"
+Left "Failed reading: empty"
+*Class6.JSON> Atto.parseOnly jsonP "[1,\"dfsdf\",]"
+Right (Array [Number 1,String "dfsdf"])
+*Class6.JSON> Atto.parseOnly jsonP "[1,\"dfsdf\",[]]"
+Left "Failed reading: empty"
+*Class6.JSON> Atto.parseOnly jsonP "[1,\"dfsdf\",[],]"
+Right (Array [Number 1,String "dfsdf",Array []])
+*Class6.JSON> Atto.parseOnly jsonP "[1,\"dfsdf\",[123],]"
+Left "Failed reading: empty"
+*Class6.JSON> Atto.parseOnly jsonP "[1,\"dfsdf\",[123,],]"
+Right (Array [Number 1,String "dfsdf",Array [Number 123]])
+*Class6.JSON> 
+
