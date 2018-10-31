@@ -1,0 +1,8 @@
+
+cabal sandbox init
+cabal repl
+cabal init
+cabal repl exe:class6
+cabal repl lib:class6
+in repl
+":set -XOverloadedStrings"
