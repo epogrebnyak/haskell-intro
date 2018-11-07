@@ -1,0 +1,358 @@
+shum@shum-asus:~/hsg/class7$ cabal repl
+Warning: The repl command is a part of the legacy v1 style of cabal usage.
+
+Please switch to using either the new project style and the new-repl command
+or the legacy v1-repl alias as new-style projects will become the default in
+the next version of cabal-install. Please file a bug if you cannot replicate a
+working v1- use case with the new-style commands.
+
+For more information, see: https://wiki.haskell.org/Cabal/NewBuild
+
+GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
+Prelude> :m + Co
+Compiler.Hoopl                     Control.Monad.ST
+Compiler.Hoopl.Internals           Control.Monad.ST.Lazy
+Compiler.Hoopl.Passes.DList        Control.Monad.ST.Lazy.Safe
+Compiler.Hoopl.Passes.Dominator    Control.Monad.ST.Lazy.Unsafe
+Compiler.Hoopl.Wrappers            Control.Monad.ST.Safe
+Control.Applicative                Control.Monad.ST.Strict
+Control.Applicative.Backwards      Control.Monad.ST.Unsafe
+Control.Applicative.Lift           Control.Monad.Signatures
+Control.Arrow                      Control.Monad.State
+Control.Category                   Control.Monad.State.Class
+Control.Concurrent                 Control.Monad.State.Lazy
+Control.Concurrent.Chan            Control.Monad.State.Strict
+Control.Concurrent.MVar            Control.Monad.Trans
+Control.Concurrent.QSem            Control.Monad.Trans.Accum
+Control.Concurrent.QSemN           Control.Monad.Trans.Class
+Control.DeepSeq                    Control.Monad.Trans.Cont
+Control.Exception                  Control.Monad.Trans.Error
+Control.Exception.Base             Control.Monad.Trans.Except
+Control.Monad                      Control.Monad.Trans.Identity
+Control.Monad.Cont                 Control.Monad.Trans.List
+Control.Monad.Cont.Class           Control.Monad.Trans.Maybe
+Control.Monad.Error                Control.Monad.Trans.RWS
+Control.Monad.Error.Class          Control.Monad.Trans.RWS.Lazy
+Control.Monad.Except               Control.Monad.Trans.RWS.Strict
+Control.Monad.Fail                 Control.Monad.Trans.Reader
+Control.Monad.Fix                  Control.Monad.Trans.Select
+Control.Monad.IO.Class             Control.Monad.Trans.State
+Control.Monad.Identity             Control.Monad.Trans.State.Lazy
+Control.Monad.Instances            Control.Monad.Trans.State.Strict
+Control.Monad.List                 Control.Monad.Trans.Writer
+Control.Monad.Primitive            Control.Monad.Trans.Writer.Lazy
+Control.Monad.RWS                  Control.Monad.Trans.Writer.Strict
+Control.Monad.RWS.Class            Control.Monad.Writer
+Control.Monad.RWS.Lazy             Control.Monad.Writer.Class
+Control.Monad.RWS.Strict           Control.Monad.Writer.Lazy
+Control.Monad.Reader               Control.Monad.Writer.Strict
+Control.Monad.Reader.Class         Control.Monad.Zip
+Prelude> :m + Control.Monad.State
+Prelude Control.Monad.State> :i runState
+runState :: State s a -> s -> (a, s)
+  	-- Defined in ‘Control.Monad.Trans.State.Lazy’
+Prelude Control.Monad.State> runState doWork 1
+
+<interactive>:3:10: error:
+    Variable not in scope: doWork :: State s a
+Prelude Control.Monad.State> :i get
+get          getChar      getContents  getLine      gets
+Prelude Control.Monad.State> :i get
+class Monad m => MonadState s (m :: * -> *) | m -> s where
+  get :: m s
+  ...
+  	-- Defined in ‘Control.Monad.State.Class’
+Prelude Control.Monad.State> 
+Leaving GHCi.
+shum@shum-asus:~/hsg/class7$ cabal repl
+Warning: The repl command is a part of the legacy v1 style of cabal usage.
+
+Please switch to using either the new project style and the new-repl command
+or the legacy v1-repl alias as new-style projects will become the default in
+the next version of cabal-install. Please file a bug if you cannot replicate a
+working v1- use case with the new-style commands.
+
+For more information, see: https://wiki.haskell.org/Cabal/NewBuild
+
+GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
+Prelude> :m + Control.Monad.Trans.S
+Control.Monad.Trans.Select        Control.Monad.Trans.State.Lazy
+Control.Monad.Trans.State         Control.Monad.Trans.State.Strict
+Prelude> :m + Control.Monad.Trans.State
+Prelude Control.Monad.Trans.State> :i St
+State   StateT  String
+Prelude Control.Monad.Trans.State> :i State
+type State s = StateT s Data.Functor.Identity.Identity :: * -> *
+  	-- Defined in ‘Control.Monad.Trans.State.Lazy’
+Prelude Control.Monad.Trans.State> :i runState
+runState :: State s a -> s -> (a, s)
+  	-- Defined in ‘Control.Monad.Trans.State.Lazy’
+Prelude Control.Monad.Trans.State> :i get
+get          getChar      getContents  getLine      gets
+Prelude Control.Monad.Trans.State> :i get
+get :: Monad m => StateT s m s
+  	-- Defined in ‘Control.Monad.Trans.State.Lazy’
+Prelude Control.Monad.Trans.State> :i pu
+pure      put       putChar   putStr    putStrLn
+Prelude Control.Monad.Trans.State> :i put
+put :: Monad m => s -> StateT s m ()
+  	-- Defined in ‘Control.Monad.Trans.State.Lazy’
+Prelude Control.Monad.Trans.State> :l state.hs
+[1 of 1] Compiling Main             ( state.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Monad.Trans.State> runState doWork 1
+("1",2)
+*Main Control.Monad.Trans.State> :r
+[1 of 1] Compiling Main             ( state.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Monad.Trans.State> runState doWork 1
+("12",3)
+*Main Control.Monad.Trans.State> :r
+[1 of 1] Compiling Main             ( state.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Monad.Trans.State> runState doWork 1
+("1,2",3)
+*Main Control.Monad.Trans.State> :i get
+get          getChar      getContents  getLine      gets
+*Main Control.Monad.Trans.State> :i get
+get :: Monad m => StateT s m s
+  	-- Defined in ‘Control.Monad.Trans.State.Lazy’
+*Main Control.Monad.Trans.State> runState doWork 1
+*Main Control.Monad.Trans.State> :i StateT
+type role StateT nominal representational nominal
+newtype StateT s (m :: * -> *) a
+  = StateT {runStateT :: s -> m (a, s)}
+  	-- Defined in ‘Control.Monad.Trans.State.Lazy’
+instance [safe] (Functor m, Monad m) => Applicative (StateT s m)
+  -- Defined in ‘Control.Monad.Trans.State.Lazy’
+instance [safe] Functor m => Functor (StateT s m)
+  -- Defined in ‘Control.Monad.Trans.State.Lazy’
+instance [safe] Monad m => Monad (StateT s m)
+  -- Defined in ‘Control.Monad.Trans.State.Lazy’
+*Main Control.Monad.Trans.State> :m + Co
+Compiler.Hoopl                     Control.Monad.ST
+Compiler.Hoopl.Internals           Control.Monad.ST.Lazy
+Compiler.Hoopl.Passes.DList        Control.Monad.ST.Lazy.Safe
+Compiler.Hoopl.Passes.Dominator    Control.Monad.ST.Lazy.Unsafe
+Compiler.Hoopl.Wrappers            Control.Monad.ST.Safe
+Control.Applicative                Control.Monad.ST.Strict
+Control.Applicative.Backwards      Control.Monad.ST.Unsafe
+Control.Applicative.Lift           Control.Monad.Signatures
+Control.Arrow                      Control.Monad.State
+Control.Category                   Control.Monad.State.Class
+Control.Concurrent                 Control.Monad.State.Lazy
+Control.Concurrent.Chan            Control.Monad.State.Strict
+Control.Concurrent.MVar            Control.Monad.Trans
+Control.Concurrent.QSem            Control.Monad.Trans.Accum
+Control.Concurrent.QSemN           Control.Monad.Trans.Class
+Control.DeepSeq                    Control.Monad.Trans.Cont
+Control.Exception                  Control.Monad.Trans.Error
+Control.Exception.Base             Control.Monad.Trans.Except
+Control.Monad                      Control.Monad.Trans.Identity
+Control.Monad.Cont                 Control.Monad.Trans.List
+Control.Monad.Cont.Class           Control.Monad.Trans.Maybe
+Control.Monad.Error                Control.Monad.Trans.RWS
+Control.Monad.Error.Class          Control.Monad.Trans.RWS.Lazy
+Control.Monad.Except               Control.Monad.Trans.RWS.Strict
+Control.Monad.Fail                 Control.Monad.Trans.Reader
+Control.Monad.Fix                  Control.Monad.Trans.Select
+Control.Monad.IO.Class             Control.Monad.Trans.State
+Control.Monad.Identity             Control.Monad.Trans.State.Lazy
+Control.Monad.Instances            Control.Monad.Trans.State.Strict
+Control.Monad.List                 Control.Monad.Trans.Writer
+Control.Monad.Primitive            Control.Monad.Trans.Writer.Lazy
+Control.Monad.RWS                  Control.Monad.Trans.Writer.Strict
+Control.Monad.RWS.Class            Control.Monad.Writer
+Control.Monad.RWS.Lazy             Control.Monad.Writer.Class
+Control.Monad.RWS.Strict           Control.Monad.Writer.Lazy
+Control.Monad.Reader               Control.Monad.Writer.Strict
+Control.Monad.Reader.Class         Control.Monad.Zip
+*Main Control.Monad.Trans.State> :m + Control.Monad.Trans.Except 
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :i ExceptT 
+type role ExceptT nominal representational nominal
+newtype ExceptT e (m :: * -> *) a = ExceptT (m (Either e a))
+  	-- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] (Functor m, Monad m) => Applicative (ExceptT e m)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] (Eq e, Data.Functor.Classes.Eq1 m, Eq a) =>
+                Eq (ExceptT e m a)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] Functor m => Functor (ExceptT e m)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] Monad m => Monad (ExceptT e m)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] (Ord e, Data.Functor.Classes.Ord1 m, Ord a) =>
+                Ord (ExceptT e m a)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] (Show e, Data.Functor.Classes.Show1 m, Show a) =>
+                Show (ExceptT e m a)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] (Read e, Data.Functor.Classes.Read1 m, Read a) =>
+                Read (ExceptT e m a)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] Foldable f => Foldable (ExceptT e f)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] Traversable f => Traversable (ExceptT e f)
+  -- Defined in ‘Control.Monad.Trans.Except’
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :t throwE  
+throwE :: Monad m => e -> ExceptT e m a
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :r
+[1 of 1] Compiling Main             ( state.hs, interpreted )
+
+state.hs:17:1: error:
+    Duplicate type signatures for ‘doWork’
+    at state.hs:5:1-6
+       state.hs:17:1-6
+   |
+17 | doWork :: ExceptT String (State Int) String
+   | ^^^^^^
+
+state.hs:18:1: error:
+    Multiple declarations of ‘doWork’
+    Declared at: state.hs:6:1
+                 state.hs:18:1
+   |
+18 | doWork = do
+   | ^^^^^^
+Failed, 0 modules loaded.
+Prelude Control.Monad.Trans.State Control.Monad.Trans.Except> :r
+[1 of 1] Compiling Main             ( state.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> run
+runExcept   runExceptT  runState    runStateT
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :t runExceptT
+runExceptT :: ExceptT e m a -> m (Either e a)
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> runExceptT doWorkT
+
+<interactive>:20:1: error:
+    • No instance for (Show (State Int (Either String String)))
+        arising from a use of ‘print’
+    • In a stmt of an interactive GHCi command: print it
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> 
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> 
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :t runExceptT doWorkT
+runExceptT doWorkT :: State Int (Either String String)
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :t runState (runExceptT doWorkT) 1
+runState (runExceptT doWorkT) 1 :: (Either String String, Int)
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> runState (runExceptT doWorkT) 1
+(Left "failed",1)
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> 
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> 
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :r
+[1 of 1] Compiling Main             ( state.hs, interpreted )
+
+state.hs:19:8: error:
+    • Couldn't match type ‘StateT a0 m0’
+                     with ‘ExceptT String (State Int)’
+      Expected type: ExceptT String (State Int) a0
+        Actual type: StateT a0 m0 a0
+    • In a stmt of a 'do' block: s <- get
+      In the expression:
+        do s <- get
+           throwE "failed"
+      In an equation for ‘doWorkT’:
+          doWorkT
+            = do s <- get
+                 throwE "failed"
+   |
+19 |   s <- get
+   |        ^^^
+Failed, 0 modules loaded.
+Prelude Control.Monad.Trans.State Control.Monad.Trans.Except> :i lift
+
+<interactive>:1:1: error: Not in scope: ‘lift’
+Prelude Control.Monad.Trans.State Control.Monad.Trans.Except> :r
+[1 of 1] Compiling Main             ( state.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :i lift
+lift         liftCallCC'  liftIO       liftPass
+liftCallCC   liftCatch    liftListen
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :i lift
+class MonadTrans (t :: (* -> *) -> * -> *) where
+  lift :: Monad m => m a -> t m a
+  	-- Defined in ‘Control.Monad.Trans.Class’
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :r
+[1 of 1] Compiling Main             ( state.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> runState (runExceptT doWorkT) 1
+(Left "1",1)
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :r
+[1 of 1] Compiling Main             ( state.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> runState (runExceptT doWorkT) 1
+(Left "1",2)
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :t get
+get :: Monad m => StateT s m s
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :i ExceptT 
+type role ExceptT nominal representational nominal
+newtype ExceptT e (m :: * -> *) a = ExceptT (m (Either e a))
+  	-- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] (Functor m, Monad m) => Applicative (ExceptT e m)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] (Eq e, Data.Functor.Classes.Eq1 m, Eq a) =>
+                Eq (ExceptT e m a)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] Functor m => Functor (ExceptT e m)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] Monad m => Monad (ExceptT e m)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] (Ord e, Data.Functor.Classes.Ord1 m, Ord a) =>
+                Ord (ExceptT e m a)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] (Show e, Data.Functor.Classes.Show1 m, Show a) =>
+                Show (ExceptT e m a)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] (Read e, Data.Functor.Classes.Read1 m, Read a) =>
+                Read (ExceptT e m a)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] Foldable f => Foldable (ExceptT e f)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] Traversable f => Traversable (ExceptT e f)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] MonadIO m => MonadIO (ExceptT e m)
+  -- Defined in ‘Control.Monad.Trans.Except’
+instance [safe] MonadTrans (ExceptT e)
+  -- Defined in ‘Control.Monad.Trans.Except’
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :t fmap Right get
+fmap Right get :: Monad m => StateT b m (Either a b)
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :r
+[1 of 1] Compiling Main             ( state.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> runState (runExceptT doWorkT) 1
+(Left "1",2)
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> 
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> 
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :r
+[1 of 1] Compiling Main             ( state.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :r
+[1 of 1] Compiling Main             ( state.hs, interpreted )
+Ok, 1 module loaded.
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> runState (runExceptT doWorkT) 1
+(Left "1",2)
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> 
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> 
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :r
+Ok, 1 module loaded.
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> runState (runExceptT doWorkT) 1
+(Left "1",2)
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> :t get
+get :: Monad m => StateT s m s
+*Main Control.Monad.Trans.State Control.Monad.Trans.Except> 
+Leaving GHCi.
+shum@shum-asus:~/hsg/class7$ cabal repl
+Warning: The repl command is a part of the legacy v1 style of cabal usage.
+
+Please switch to using either the new project style and the new-repl command
+or the legacy v1-repl alias as new-style projects will become the default in
+the next version of cabal-install. Please file a bug if you cannot replicate a
+working v1- use case with the new-style commands.
+
+For more information, see: https://wiki.haskell.org/Cabal/NewBuild
+
+GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
+Prelude> :m + Control.Monad.State
+Prelude Control.Monad.State> :t get
+get :: MonadState s m => m s
+Prelude Control.Monad.State> 
+
