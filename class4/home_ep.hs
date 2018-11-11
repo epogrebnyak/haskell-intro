@@ -1,4 +1,3 @@
-
 {-
 
 * make a pretty printer to expression language from class2 home work
@@ -26,12 +25,11 @@ instance Monoid' Int where
     mappend' a b = a + b
 
 -- EP: cannot really extract `empty` from definition 
---  Main.mappend Main.empty Main.empty :: Int
+-- Main.mappend Main.empty Main.empty :: Int
 
 instance Monoid' Prod where
     empty' = Prod 1
     mappend' (Prod a) (Prod b) = Prod (a * b)
-
 
 -- ambigious without Main
 addTwo :: Int -> Int -> Int 

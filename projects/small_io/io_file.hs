@@ -5,7 +5,11 @@ import Data.Vector (Vector)
 import Data.ByteString.Lazy.Char8 (pack)
 
 -- https://hackage.haskell.org/package/cassava-0.5.1.0/docs/Data-Csv.html
+
+
 -- >>> decode NoHeader "John,27\r\nJane,28\r\n" :: Either String (Vector (Text, Int))
+
+
 -- Right [("John",27),("Jane",28)]
 -- x = decode NoHeader "John,27\r\nJane,28\r\n"
 
@@ -16,15 +20,15 @@ import qualified Data.Vector as V
 --getBytes = BL.readFile "1.txt"
 --x = BL.readFile "1.txt" =>> decode NoHeader 
 
-
-
-
 main :: IO ()
 main = do
     csvData <- BL.readFile "1.txt"
     case decode NoHeader csvData of
         Left err -> putStrLn err
-        Right v -> putStrLn (show v)
+        -- Does
+        Right v -> do 
+            -- let _ = v :: Matrix 
+            putStrLn (show (v:: Matrix))
             -- V.forM_ v $ \ (name, salary :: Int) ->
             -- putStrLn $ name ++ " earns " ++ show salary ++ " dollars"
 

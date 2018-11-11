@@ -16,20 +16,22 @@ getBytes filename = BL.readFile filename --"1.txt"
 
 main :: IO ()
 main = do
-  contents <- getBytes
+  contents <- getBytes "1.txt"
   BL.putStr contents  
 
 -- This works:
--- getBytes >>= BL.putStr
+-- (getBytes "1.txt") >>= BL.putStr
 
 
 -- MINOR: Can this be helpful?  
--- newtype Matrix = Vector (Vector BL.ByteString)
+type Matrix = Vector (Vector BL.ByteString)
 
 -- TODO: I want a function that takes a filename or getBytes
 --       and returns a Vector (Vector BL.ByteString)    
 
-getVectorOfVectors :: String -> Either String (Vector (Vector BL.ByteString))
+--getVectorOfVectors :: String -> IO (Either String (Vector (Vector BL.ByteString)))
+getVectorOfVectors :: String -> IO(Either String Matrix)
+
 
 {--
 
