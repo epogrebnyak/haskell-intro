@@ -2,27 +2,34 @@
 
 import qualified Data.ByteString.Lazy as BL
 import qualified Data.ByteString as B
-import Data.Vector (Vector, fromList)
-import Data.ByteString.Char8 (pack, unpack)
+import Data.Vector (Vector, fromList, (!))
+import Data.ByteString.Lazy.Char8 (pack, unpack)
 
 
--- was: BL!
-type bString  = B.ByteString
--- lets have a proprietary data format
--- to reporesent a matrix  of bytestrings
-type Matrix = Vector (Vector bString)
+-- was: BL.ByteString
+type ByteStr  = BL.ByteString
+-- proprietary data format to reporesent a matrix of bytestrings
+type ByteMatrix = Vector (Vector ByteStr)
 
--- fromList $ map pack ["1.0", "2.0"]
-stringsToVector :: [String] -> Vector bString
-stringsToVector argList = fromList $ map pack argList
+stringsToVector :: [String] -> Vector ByteStr
+stringsToVector stringList = fromList $ map pack stringList
 
-m_ :: Matrix
-m_ = fromList [stringsToVector ["1.0", "2.0"], 
-              stringsToVector ["abc", "def"]] 
--- TODO: accept ["1.0", "2.0"], ["abc", "def"] as argument 
+toByteMatrix :: [[String]] -> ByteMatrix
+toByteMatrix stringMatrix = fromList $ map stringsToVector stringMatr
 
--- RESULT: Now we have a Matrix m_ to work with as for testing 
--- of CSV input
+bmSample :: ByteMatrix               
+bmSample = toByteMatrix [["abc", "def"], ["1.0", "2.0"]]              
 
--- NEXT: read CSV input and compere to m'.
+isEqual a b = if (a == b) then print(True) 
+              else error "not equal"
 
+            
+decode' :: BL.ByteString -> Either String Matrix
+decode' = decode NoHeader 
+getBytes filename = BL.readFile filename --"1.txt"
+
+
+
+
+--main = do            
+--    isEqual m_ p_ --True
