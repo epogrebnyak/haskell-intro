@@ -32,18 +32,21 @@ p2 = Datapoint {name = "GDP", unit = "bln_rub", year = 2017, month = Nothing, fr
 splitRow :: RowFormat -> Row -> [Datapoint]
 splitRow "qqqq" row = [p1, p1, p2, p2] where year = head(row)
 
-
-
 -- assume all datarows have same number of columns
 ncol :: Table -> Int
 ncol t = (length $ head (dataRows t)) - 1 
 
-getFormat :: Table -> RowFormat
-getFormat t = case ncol t of 
+m12 = concat (replicate 12 "m")
+
+colToFormat :: Int -> String
+colToFormat n = case n of 
     4 -> "qqqq"
     5 -> "aqqqq"
-    12 -> "mmmmmmmmmmmm"
-    17 -> "aqqqq" ++ "mmmmmmmmmmmm"
+    12 -> m12
+    17 -> "aqqqq" ++ m12
+
+getFormat :: Table -> RowFormat
+getFormat t = colToFormat $ ncol t 
 
 getValues :: Table -> [Datapoint]
 getValues t = 
