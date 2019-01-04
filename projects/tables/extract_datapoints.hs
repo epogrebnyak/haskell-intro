@@ -32,6 +32,9 @@ p2 = Datapoint {name = "GDP", unit = "bln_rub", year = 2017, month = Nothing, fr
 splitRow :: RowFormat -> Row -> [Datapoint]
 splitRow "qqqq" row = [p1, p1, p2, p2] where year = head(row)
 
+
+
+-- assume all datarows have same number of columns
 ncol :: Table -> Int
 ncol t = (length $ head (dataRows t)) - 1 
 
@@ -44,6 +47,7 @@ getFormat t = case ncol t of
 
 getValues :: Table -> [Datapoint]
 getValues t = 
+    -- todo: Must applly to all rows
     splitter $ head (dataRows t)
     -- partial application, splitter will expect a row as an argument
     where splitter = splitRow (getFormat t)
