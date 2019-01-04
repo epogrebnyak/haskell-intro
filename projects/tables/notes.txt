@@ -1,0 +1,38 @@
+-- Read CSV file, split it to tables, extract values from tables
+-- filename ("gdp.csv") -> [Table] -> [Datapoint]
+
+
+
+
+
+
+-------------------------------
+
+
+    -- sam = [["GDP, % change to year earlier"], ["2017","100,6","102,5","102,2","100,9"]]
+         
+
+{-
+    sam = [["GDP"], 
+      ["% change to year earlier"],
+      ["2017","100,6","102,5","102,2","100,9"]],
+      ["2018","101,3","101,9","101,5",""],
+      ["GDP, bln run (current price)"],
+      ["2017","20549,8","22035,1","23948,8","25503,4"],
+      ["2018","22239,4","24846,6","27007,2",""]
+    ]
+    -}
+
+      -- let v = decode NoHeader csvData :: Either String (V.Vector BaseballStats)
+      -- let summed = fmap (V.foldr summer 0) v
+      -- putStrLn $ "Total atBats was: " ++ (show summed)
+      -- where summer (name, year, team, atBats) n = n + atBats      
+
+    -- map by row http://hackage.haskell.org/package/cassava-0.5.1.0/docs/Data-Csv.html
+    -- row head and row tail
+    -- if rowhead is integer it is a data row
+    -- if rowhead is not integer it is a title row
+    -- table has one or several title rows
+    --           and datarows    
+    -- todo: row data structure, table data structure
+    -- reading of "gdp.csv" must be a list of two tables 

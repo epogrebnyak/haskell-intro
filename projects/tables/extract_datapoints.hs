@@ -45,7 +45,7 @@ getFormat t = case ncol t of
 getValues :: Table -> [Datapoint]
 getValues t = 
     splitter $ head (dataRows t)
-    -- partial application, will expect a row as an argument
+    -- partial application, splitter will expect a row as an argument
     where splitter = splitRow (getFormat t)
 
 vs = getValues(t1)    
