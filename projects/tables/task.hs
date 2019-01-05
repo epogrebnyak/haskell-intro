@@ -2,6 +2,9 @@ type RowFormat = [Char]
 expand :: RowFormat -> [(Char, Int)]
 expand pat = [(c, count c (take (i+1) pat)) | (c, i) <- zip pat [0..]]
 
+--accept positions year values = [(year, freq, period, x)
+--    | (freq, period), x <- zip positions values]
+   
 
 msg a word b = (show a) ++ " " ++ word ++ " " ++ (show b)
 assertEquals' a b = if a /= b then error $ msg a "not equal to" b 
