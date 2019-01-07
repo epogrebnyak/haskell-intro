@@ -11,16 +11,15 @@ and engaging, so we are on track to learn more.
 ### Preliminary 
 
 Set up GHCi Haskell on your computer or use a limited web version as
-suggeted [here](setup.md).
+suggested [here](setup.md).
 
 ### Core files
 
 1. Yuras original [topic list](topics.md), a great plan to learn. If you are to take 
    just one thing out with you from this repo, take this topic list - it will guide you 
-   throughout you learning whatever resources you choose to study with.  
+   throughout your learning whatever resources you choose to study with.  
 
-2. This repository holds session transcripts (as played in interpreter and saved class /  
-   homework scripts) by class 1-7 closely following the topics above. Hoping to do some work on organisisng the classes for future reference. 
+2. This repository holds session transcripts (as played in interpreter and saved scripts) by class 1-7 closely following the topics above. Hoping to do some work on organisisng the classes for future reference. 
 
 3. Extra links for [quick and longer readings](biblio.md). As we went though the course   
    we looked for good references to follow up on topics studies. Here is our little collection. 
