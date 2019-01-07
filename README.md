@@ -8,8 +8,6 @@ at the end of 2018. Yuras knows 150% of Haskell, but he adjusted instruction occ
 we wanted to learn just some functional concepts, but Haskell provided very immersive
 and engaging.
 
-Will be glad to hear if it is useful for your learning!
-
 ### Core files
 
 - Yuras original [topic list](topics.md), a great plan to learn
@@ -25,3 +23,5 @@ Will be glad to hear if it is useful for your learning!
 ### Personal notes
 - [notes.hs](notes.hs)
 - [how_we_started.md](how_we_started.md)
+
+Will be [glad to hear](https://twitter.com/PogrebnyakE) if it is useful for your learning!
