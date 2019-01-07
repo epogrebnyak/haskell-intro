@@ -15,6 +15,7 @@ Readings about haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Is Rust functional](https://www.fpcomplete.com/blog/2018/10/is-rust-functional) - yes,
   the article has simple Haskell counterexamples for Rust.
 
+
 ## Longer reads
 
 - <http://learnyouahaskell.com/> - a nice intro as far as it deals with familiar topics (eg map/filer, list comprehensions).
@@ -24,29 +25,18 @@ Readings about haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - <https://www.tutorialspoint.com/haskell> - available as Android app (and look better on android without no ads) 
 
-## Reputable Stack Overflow questions and toy code
+## Special topics
 
-- [exponentiation-in-haskell](https://stackoverflow.com/questions/6400568/exponentiation-in-haskell)
-- [division-in-haskell: what is `x:xs`?](https://stackoverflow.com/questions/7368926/division-in-haskell)
-- [Fib numbers](https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition)
+- Really nice [functions by tutorial by Carl Burch](http://www.toves.org/books/hsfun/),
+  the only additiona could have been lambda functions
 
-
-## Special topics 
-
-### Category theory 
-
-You can learn and use Haskell without looking at cat theory.  
-
-- Bartosz Milewski's '[Category Theory for Programmers][ctp]' is a great intro to 
-  Haskell itself, written in very good language and at very readable pace. Top trending repository on Github. 
-
-[ctp]: https://github.com/hmemcpy/milewski-ctfp-pdf
-
-- Category theory [Youtube playlist](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_) - Zarak
-
+### Type and type classes
+- <http://book.realworldhaskell.org/read/using-typeclasses.html>
+- <http://shuklan.com/haskell/lec03.html#/0/10>
+- <http://learnyouahaskell.com/types-and-typeclasses>
 
 ### Typesystem
-
 - [In cartoons](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
-- [Don't read the monad tutorials.](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
+- [Don't read the monad tutorials](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
   
+

@@ -1,79 +1,55 @@
 -- Notes by E.Pogrebnyak
 -- Started 09/09/2018
 
--- Q: does Haskell compile on Windows?
--- A: the following compiles notes.exe which is runnable on Windows!!!
---    it does make a Windows binary!!!
---    > ghc --make notes 
-
--- exit from interpreter:
+-- Start interpreter:
 -- :q
 
--- Q: there is a standard library available without imports
--- A: Prelude? 
+-- Exit from interpreter (just like vim):
+-- :q
+
+-- Q: Does Haskell compile on Windows?
+-- A: The following compiles notes.exe which is runnable on Windows!!!
+--    It does make a Windows binary!!!
+--    > ghc --make notes 
+
+-- Q: There is a standard library available without imports?
+-- A: Yes, it is Prelude module. 
 
 -- can run this in interpreter without main 
 -- but in a script, you need main() function, similar to C 
 main = putStrLn "Hello, world"
 
--- $ operator
+-- useful $ operator
 head $ take 10 [1..]
-
+-- equals to 
+head (take 10 [1..])
 
 -- function composition 
 -- f . g = h where h x = f (g x)   -- as defined in the Prelude
+a = (\x -> x + 1) 1
 
+-- multiline statement in ghci
+-- multiline statement in script 
+b = [1,2,3 \
+\, 4,5]
 
--- Not shown:
---    - lambdas
---    - pattern mathcing
---    - different ways to define a fucntions on several types
---    - let in / where / do 
---    - multiline statement
-
-
--- Additions:
--- ==========
-
--- quick basic intro 
--- also https://learnxinyminutes.com/docs/haskell/
-
--- good functions tutorial
--- http://www.toves.org/books/hsfun/
--- but lacks lambda functions
-
--- typeclasses
--- http://book.realworldhaskell.org/read/using-typeclasses.html
--- http://shuklan.com/haskell/lec03.html#/0/10
--- http://learnyouahaskell.com/types-and-typeclasses
-
--- fold
--- http://hackage.haskell.org/package/base-4.12.0.0/docs/src/Data.Foldable.html#foldl
-
--- Unsorted:
--- =========
-
--- Videos:
--- https://youtu.be/VFCXjYEBR4E accompains http://learnyouahaskell.com
--- just for the taste of it: https://www.youtube.com/watch?v=tJNU1H9XewM&t=857s
-
-
--- This also has a repo on github with code
--- http://learnyouahaskell.com/starting-out
--- Excercises for dealint with sequences are great 
-
--- This has type constriant and actual tupe withing type signature
+-- type constriant 
 -- https://stackoverflow.com/questions/9142731/what-does-the-symbol-mean-in-haskell
 -- ghci> :t (==)  
 -- (==) :: (Eq a) => a -> a -> Bool
 
+-- if-else / case of / guards
+-- https://stackoverflow.com/questions/9345589/guards-vs-if-then-else-vs-cases-in-haskell
 
--- Special cases:
--- ==============
+-- Basic IO
+-- https://wiki.haskell.org/Tutorials/Programming_Haskell/String_IO
+{-
+interact' f = do 
+    s <- getContents
+    putStr (f s)
+main = interact' id 
 
--- supress warnings, use: 
--- main = return ()
--- https://stackoverflow.com/questions/46547208/why-is-my-haskell-code-saying-variable-not-in-scope-main
+-- Raising an error:
 
 -- mock assertions with functions
 -- https://downloads.haskell.org/~ghc/6.12.2/docs/html/users_guide/assertions.html
@@ -82,5 +58,11 @@ head $ take 10 [1..]
 -- http://www.randomhacks.net/2007/03/10/haskell-8-ways-to-report-errors/
 
 
--- if-else / case of / guards
--- https://stackoverflow.com/questions/9345589/guards-vs-if-then-else-vs-cases-in-haskell
+-- Stack Overflow:
+-- [exponentiation-in-haskell](https://stackoverflow.com/questions/6400568/exponentiation-in-haskell)
+-- [division-in-haskell: what is `x:xs`?](https://stackoverflow.com/questions/7368926/division-in-haskell)
+-- [Fib numbers](https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition)
+
+-- Supress warnings, use: 
+-- main = return ()
+-- https://stackoverflow.com/questions/46547208/why-is-my-haskell-code-saying-variable-not-in-scope-main

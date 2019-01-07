@@ -17,6 +17,10 @@ Write something abnout what you do and your interests, perhaps add few links - i
   
 - **Zarak**: studied neuroscience at college, along with coursework in applied math and physics. Hoping to study a bit of category theory via [Chapter 0](https://www.amazon.com/Algebra-Chapter-Graduate-Studies-Mathematics/dp/0821847813) by Aluffi next summer.
 
+
+- Category theory [Youtube playlist](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_) - Zarak
+
+
 #### Learning objective:
 
 > Introduction to new approaches in programming using Haskell 
@@ -39,6 +43,8 @@ Haskell can be thought provoking for us - the result is a little change we think
 - haslkell seems strognly typed, does this make it a fast?
 
 - How is Haskell related to some other functional programming languages? Why use Haskell over, e.g. SML, Erlang?
+
+
 
 
 #### Next steps:
