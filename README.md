@@ -24,4 +24,4 @@ and engaging.
 - [notes.hs](notes.hs)
 - [how_we_started.md](how_we_started.md)
 
-Will be [glad to hear](https://twitter.com/PogrebnyakE) if it is useful for your learning!
+Will be [glad to hear](https://twitter.com/PogrebnyakE/status/1082306102468005891) if it is useful for your learning!
