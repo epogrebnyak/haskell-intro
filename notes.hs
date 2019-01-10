@@ -1,5 +1,27 @@
--- Notes by E.Pogrebnyak
--- Started 09/09/2018
+-- testing on Travis-CI:
+-- https://github.com/haskell-CI/haskell-ci
+
+
+-- Great single topics reads
+-- =========================
+
+-- Functions tutorial (no lambda functions though)
+-- http://www.toves.org/books/hsfun/
+
+-- Desugarization (list comp desugs to do notation):
+-- http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html
+
+-- Learn Physics by Programming in Haskell
+-- http://arxiv.org/abs/1412.4880
+
+-- Haskell Basics (informal discussion in write-you-a-haskell)
+-- http://dev.stephendiehl.com/fun/001_basics.html
+
+-- https://github.com/rudymatela/concise-cheat-sheets
+
+-- My notes
+-- =========
+-- Started by E.Pogrebnyak on 09/09/2018
 
 -- Q: does Haskell compile on Windows?
 -- A: the following compiles notes.exe which is runnable on Windows!!!
@@ -19,61 +41,28 @@ main = putStrLn "Hello, world"
 -- $ operator
 head $ take 10 [1..]
 
-
 -- function composition 
 -- f . g = h where h x = f (g x)   -- as defined in the Prelude
 
+-- function 'case of' varieties
+-- if-else / case of / guards / pattern matching / MultiIf
+-- https://stackoverflow.com/questions/9345589/guards-vs-if-then-else-vs-cases-in-haskell
 
--- Not shown:
---    - lambdas
---    - pattern mathcing
---    - different ways to define a fucntions on several types
---    - let in / where / do 
---    - multiline statement
+-- Types
+-- =====
 
-
--- Additions:
--- ==========
-
--- quick basic intro 
--- also https://learnxinyminutes.com/docs/haskell/
-
--- good functions tutorial
--- http://www.toves.org/books/hsfun/
--- but lacks lambda functions
-
--- typeclasses
+-- typeclasses:
 -- http://book.realworldhaskell.org/read/using-typeclasses.html
 -- http://shuklan.com/haskell/lec03.html#/0/10
 -- http://learnyouahaskell.com/types-and-typeclasses
 
--- fold
--- http://hackage.haskell.org/package/base-4.12.0.0/docs/src/Data.Foldable.html#foldl
-
--- Unsorted:
--- =========
-
--- Videos:
--- https://youtu.be/VFCXjYEBR4E accompains http://learnyouahaskell.com
--- just for the taste of it: https://www.youtube.com/watch?v=tJNU1H9XewM&t=857s
-
-
--- This also has a repo on github with code
--- http://learnyouahaskell.com/starting-out
--- Excercises for dealint with sequences are great 
-
--- This has type constriant and actual tupe withing type signature
+-- type constriant 
 -- https://stackoverflow.com/questions/9142731/what-does-the-symbol-mean-in-haskell
 -- ghci> :t (==)  
 -- (==) :: (Eq a) => a -> a -> Bool
 
-
--- Special cases:
--- ==============
-
--- supress warnings, use: 
--- main = return ()
--- https://stackoverflow.com/questions/46547208/why-is-my-haskell-code-saying-variable-not-in-scope-main
+-- Testing
+-- =======
 
 -- mock assertions with functions
 -- https://downloads.haskell.org/~ghc/6.12.2/docs/html/users_guide/assertions.html
@@ -81,6 +70,10 @@ head $ take 10 [1..]
 -- raising errors in Haskell
 -- http://www.randomhacks.net/2007/03/10/haskell-8-ways-to-report-errors/
 
+-- Warnings
+-- ========
 
--- if-else / case of / guards
--- https://stackoverflow.com/questions/9345589/guards-vs-if-then-else-vs-cases-in-haskell
+-- to supress warnings, use: 
+-- main = return ()
+-- https://stackoverflow.com/questions/46547208/why-is-my-haskell-code-saying-variable-not-in-scope-main
+
