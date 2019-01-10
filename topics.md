@@ -1,4 +1,3 @@
-
 # List of topics
 
 Here is a list of topics we may want to cover. It is not final, we can add or remove
@@ -16,7 +15,7 @@ The order may change.
 
 ## Algebraic data type and function
 
- - what exactly the are
+ - what exactly they are
  - how to define them
  - pattern matching
  - how to define functions

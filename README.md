@@ -1,79 +1,43 @@
 # haskell-intro
 
-#### Tutor:
+Curated introduction to Haskell by [Yuras Shumovich](https://twitter.com/shumovichy)
+as studied by [Evgeniy](https://twitter.com/PogrebnyakE) and [Zarak](https://github.com/zarak).
 
-*Y*: @yuras
+We were lucky to have Yuras as a tutor in Haskell for this small course
+at the end of 2018. Yuras knows 150% of Haskell, but he adjusted instruction occording to our prior knowledge (or, rather, ignorance), beliefs and aspirations. Initially 
+we wanted to learn just some functional concepts, but Haskell proved very immersive
+and engaging, so we are on track to learn more. 
 
-#### Student background:
+### Preliminary 
 
-Write something abnout what you do and your interests, perhaps add few links - it helps our tutor to prepare: 
+Set up GHCi Haskell on your computer or use a limited web version as
+suggested [here](setup.md).
 
-- **EP**: interested in reproducible 
-  economic research, eg  [data science projects as a data pipeline](https://github.com/drivendata/cookiecutter-data-science).
-  Maintainer of [mini-kep macroeconomic time series dataset](https://github.com/mini-kep/intro), 
-  course author on [machine readable financial statements analysis](https://github.com/ru-corporate/teaching-2018). 
-  No formal computer science background, but fair math and econometrics. 
-  [some reputation on Stack Overflow for python](https://stackoverflow.com/users/1758363/epo)  
-  
-- **Zarak**: studied neuroscience at college, along with coursework in applied math and physics. Hoping to study a bit of category theory via [Chapter 0](https://www.amazon.com/Algebra-Chapter-Graduate-Studies-Mathematics/dp/0821847813) by Aluffi next summer.
+### Core files
 
-#### Some prior reading:
+1. Yuras original [topic list](topics.md), a great plan to learn. If you are to take 
+   just one thing out with you from this repo, take this topic list - it will guide you 
+   throughout your learning whatever resources you choose to study with.  
 
-- [Intro to functional programming in python docs](https://docs.python.org/3/howto/functional.html) - we do understand most written here, but not using `itertools` as much
+2. This repository holds session transcripts (as played in interpreter and saved scripts) by class 1-7 closely following the topics above. Hoping to do some work on organisisng the classes for future reference. 
 
-- [Haskell Concepts in One Sentence](https://ndrgrnd.net/posts/haskellOneSentence.html) - maybe group these concepts by level of difficulty, and work through some examples? We do not have to cover all, but it seems in interesting list of jargon and topics. 
+3. Extra links for [quick and longer readings](biblio.md). As we went though the course   
+   we looked for good references to follow up on topics studies. Here is our little collection. 
 
-- <http://learnyouahaskell.com/> - seems a nice intro as long at deals with familiar topics (eg map/filer, list comprehensions)
+### Follow-up
 
-- <https://github.com/billpmurphy/hask> and [similar](https://github.com/sfermigier/awesome-functional-python#libraries) - some Haskell in python, EP: is this a good direction to learn?
-  Yuras: I think it is better to start with Haskell directly, and then try to apply things to python using these libraries.
+- `Prelude` module holds basic functions and worth studying on its own. You can can get type declarations of Prelude by typing `:browse Prelude` in intepreter or check this command output [here](browse_prelude.hs). Examples of `Prelude` usage are included in [A Tour of the Haskell Prelude][pre]. 
 
-- EP: anything you can recommend for us to review?
-  Yuras: No, it is more then enough. I'll introduce everything gradually.
+[pre]: http://www.cse.chalmers.se/edu/course/TDA555/tourofprelude.html
 
-- extra reading: connections to category theory, for category theory I have [this playlist saved](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_), have only watched the first lecture though - Zarak.
+- Bartosz Milewski's '[Category Theory for Programmers][ctp]' is a great intro to 
+  Haskell itself, written in  very good technical language and rolled at a very readable pace. It is a top trending repository on Github. Suggested reading up to a point of your saturation. 
 
+[ctp]: https://github.com/hmemcpy/milewski-ctfp-pdf
 
-#### Learning objective:
+### Personal notes (work in progress)
+- [notes.hs](notes.hs)
+- [Similarities to other languages](sim.md)
+- [how_we_started.md](how_we_started.md)
 
-> Introduction to new approaches in programming using Haskell 
-
-Comment: we are likely to continue use python/julia/R for development, but introduction to  
-Haskell can be thought provoking for us - the result is a little change we think of developing code.
-
-#### Questions:
-
-- we know some functional tools in python, eg lambdas, list comprehension, iterators, `filter`, `map` (can apply), 
-  `itertools` (mostly heard of). how far haskell extends these? (probably a silly question)
-
-- Haskell type system motivation (what is being achived) and implementation
-
-- `pandoc` seems the most famous popular application written in Haskell. Any story behind it?
-   Was Haskell particularly well suited for file format transformations or chosen accidentally for it?
-
-- very short overview of Haskell in production - what is Haskell community doing? 
-
-- haslkell seems strognly typed, does this make it a fast?
-
-- How is Haskell related to some other functional programming languages? Why use Haskell over, e.g. SML, Erlang?
-
-
-#### Next steps:
-
-- [x] merge updates to this document 
-- [x] videochat to discuss it, if necessary
-- [x] make an outline for several lectures
-- [x] install haskell, see below
-- [x] choose format to communicate: [Skype](https://support.skype.com/en/faq/fa10022/how-do-i-share-my-screen-in-skype)
-- [ ] first lesson
-
-
-#### Setting up Haskell
-
-Please try to get the Glasgow Haskell Compiler installed. If you have any issue, we'll try to solve them
-during the first meeting.
-
-The easiest way to install GHC is to use the [minimal installer](https://www.haskell.org/downloads#minimal)
-for your platform. Other options are OK too, e.g. you can install it using your package manager.
-Also you can use online tools like [this](https://www.tutorialspoint.com/compile_haskell_online.php),
-though they don't provide access to interactive environment.
+Will be [glad to hear](https://twitter.com/PogrebnyakE/status/1082306102468005891) if this repo is useful for your learning!

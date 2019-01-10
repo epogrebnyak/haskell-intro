@@ -23,26 +23,30 @@
 -- =========
 -- Started by E.Pogrebnyak on 09/09/2018
 
--- Q: does Haskell compile on Windows?
--- A: the following compiles notes.exe which is runnable on Windows!!!
---    it does make a Windows binary!!!
---    > ghc --make notes 
-
--- exit from interpreter:
+-- Start interpreter:
 -- :q
 
--- Q: there is a standard library available without imports
--- A: Prelude? 
+-- Exit from interpreter (just like vim):
+-- :q
+
+-- Q: Does Haskell compile on Windows?
+-- A: The following compiles notes.exe which is runnable on Windows!!!
+--    It does make a Windows binary!!!
+--    > ghc --make notes 
+
+-- Q: There is a standard library available without imports?
+-- A: Yes, it is Prelude module. 
 
 -- can run this in interpreter without main 
 -- but in a script, you need main() function, similar to C 
 main = putStrLn "Hello, world"
 
--- $ operator
+-- useful $ operator
 head $ take 10 [1..]
 
 -- function composition 
 -- f . g = h where h x = f (g x)   -- as defined in the Prelude
+a = (\x -> x + 1) 1
 
 -- function 'case of' varieties
 -- if-else / case of / guards / pattern matching / MultiIf
