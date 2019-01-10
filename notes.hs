@@ -1,7 +1,3 @@
--- testing on Travis-CI:
--- https://github.com/haskell-CI/haskell-ci
-
-
 -- Great single topics reads
 -- =========================
 
