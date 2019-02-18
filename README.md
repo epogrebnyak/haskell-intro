@@ -19,10 +19,8 @@ suggested [here](setup.md).
    just one thing out with you from this repo, take this topic list - it will guide you 
    throughout your learning whatever resources you choose to study with.  
 
-2. This repository holds session transcripts (as played in interpreter and saved scripts) by class 1-7 closely following the topics above. Hoping to do some work on organisisng the classes for future reference. 
+2. This repository holds session transcripts (as played in interpreter and saved scripts) by `class 1-7` closely following the topics above. Hoping to do some work on organisisng the classes for future reference. 
 
-3. Extra links for [quick and longer readings](biblio.md). As we went though the course   
-   we looked for good references to follow up on topics studies. Here is our little collection. 
 
 ### Follow-up
 
@@ -31,9 +29,12 @@ suggested [here](setup.md).
 [pre]: http://www.cse.chalmers.se/edu/course/TDA555/tourofprelude.html
 
 - Bartosz Milewski's '[Category Theory for Programmers][ctp]' is a great intro to 
-  Haskell itself, written in  very good technical language and rolled at a very readable pace. It is a top trending repository on Github. Suggested reading up to a point of your saturation. 
-
+  Haskell itself, written in  very good technical language and rolled at a very readable pace. It is a top trending repository on Github. 
+  
 [ctp]: https://github.com/hmemcpy/milewski-ctfp-pdf
+
+- Extra links for [quick and longer readings](biblio.md). As we went though the course   
+   we looked for good references to follow up on topics studies. 
 
 ### Personal notes (work in progress)
 - [notes.hs](notes.hs)
