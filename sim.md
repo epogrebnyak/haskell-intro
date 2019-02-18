@@ -26,3 +26,6 @@ Similarities soon dry out, but help at start.
 ## General concepts
 
 - recursion (but in Haskell there is also tail recursion with lazy typing)
+
+## Julia / Lisp
+- multiple dispatch
