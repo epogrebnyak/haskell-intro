@@ -1,4 +1,4 @@
-":browse Prelude" 
+-- ":browse Prelude" 
 
 Prelude> :browse
 (!!) :: [a] -> Int -> a
