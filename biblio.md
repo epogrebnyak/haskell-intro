@@ -14,7 +14,7 @@ Readings about haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [Is Rust functional](https://www.fpcomplete.com/blog/2018/10/is-rust-functional) - yes,
   the article has simple Haskell counterexamples for Rust.
-
+  
 
 ## Longer reads
 
@@ -25,18 +25,30 @@ Readings about haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - <https://www.tutorialspoint.com/haskell> - available as Android app (and look better on android without no ads) 
 
+- [haskellbook.com](http://haskellbook.com) is paid content, but one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories)
+
+- [What I Wish I Knew When Learning Haskell](http://dev.stephendiehl.com/hask/) is truely a long read, but you can definitely spot parts you'll like.  
+
+
 ## Special topics
 
 - Really nice [functions by tutorial by Carl Burch](http://www.toves.org/books/hsfun/),
   the only additiona could have been lambda functions
+  
+- [Haskell at work](https://haskell-at-work.com/episodes/2018-05-13-introduction-to-cabal.html) has a gentle introduction   
+  to cabal 
 
-### Type and type classes
+
+### Types and type classes
+
 - <http://book.realworldhaskell.org/read/using-typeclasses.html>
 - <http://shuklan.com/haskell/lec03.html#/0/10>
 - <http://learnyouahaskell.com/types-and-typeclasses>
 
-### Typesystem
+
+### Type system
 - [In cartoons](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 - [Don't read the monad tutorials](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
+- [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia) 
   
 
