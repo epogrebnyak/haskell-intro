@@ -35,6 +35,10 @@ There are different ways forwards, here are some clues:
   
 [ctp]: https://github.com/hmemcpy/milewski-ctfp-pdf
 
+- Google [Haskell 101 and 102](https://github.com/google/haskell-trainings/releases) has two presentations that 
+  talk about Haskell from scratch. Their approach about teaching Functor, Applicative and Monad via 
+  `fmap`, `ap`, `bind` is simple and effective.
+
 - Extra links for [quick and longer readings](biblio.md).
 
 ### My personal notes
