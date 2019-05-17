@@ -19,13 +19,18 @@ More on looking from Python:
 - <https://github.com/billpmurphy/hask> and [similar](https://github.com/sfermigier/awesome-functional-python#libraries)
 
 
-## C similarities
+A bit of wise humor:
+
+- [bubble sort in Python 5](https://www.youtube.com/watch?v=BvECNQRrjCY)
+
+## C 
 
 - algebraic data types are similar to struct and unions 
+
+## Julia / Lisp
+
+- multiple dispatch
 
 ## General concepts
 
 - recursion (but in Haskell there is also tail recursion with lazy typing)
-
-## Julia / Lisp
-- multiple dispatch
