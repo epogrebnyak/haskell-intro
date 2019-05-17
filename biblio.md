@@ -31,6 +31,7 @@ Readings about haskell are quite numerous. Good lists are [here](https://wiki.ha
   the only additiona could have been lambda functions
 
 ### Type and type classes
+
 - <http://book.realworldhaskell.org/read/using-typeclasses.html>
 - <http://shuklan.com/haskell/lec03.html#/0/10>
 - <http://learnyouahaskell.com/types-and-typeclasses>
@@ -39,4 +40,11 @@ Readings about haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [In cartoons](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 - [Don't read the monad tutorials](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
   
+### Discussions
 
+- [Programming with no variables]( https://ru.stackoverflow.com/a/908911/264569) (in Russian), a Haskell basics discussion by @fsoikin
+
+### Courses
+
+- [FP at ITMO](https://github.com/jagajaga/FP-Course-ITMO)
+- [YouTube and code of seminars at CMC MSU](https://cmc-haskell-2018.github.io)
