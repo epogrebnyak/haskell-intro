@@ -20,7 +20,7 @@ throughout your learning whatever resources you choose to study with.
 
 ### Classes 
 
-This repository holds session transcripts (as played in interpreter and saved scripts) by `class 1-7` closely following the topics above. Hoping to do some work on organisisng the classes for future reference. 
+This repository holds session transcripts (as played in interpreter and saved scripts) by `class 1-7` closely following the [topics list](topics.md) above. Hoping to organise the classes for future reference. 
 
 ### Follow-up
 
@@ -36,13 +36,12 @@ There are different ways forwards, here are some clues:
 [ctp]: https://github.com/hmemcpy/milewski-ctfp-pdf
 
 - Google [Haskell 101 and 102](https://github.com/google/haskell-trainings/releases) has two presentations that 
-  talk about Haskell from scratch. Their approach about teaching Functor, Applicative and Monad via 
-  `fmap`, `ap`, `bind` is simple and effective.
+  talk about Haskell from scratch. Their approach about teaching Functor, Applicative and Monad via  `fmap`, `ap`, `bind` is simple and effective.
 
 - Extra links for [quick and longer readings](biblio.md).
 
-### My personal notes
-- [notes.hs](notes.hs) - never finsihed 
-- [Similarities to other languages](sim.md)
+- [Similarities to other languages](sim.md) may be worth reveiwing.
+
+- [notes.hs](notes.hs) has unsorted links and code bits.
 
 Will be [glad to hear](https://twitter.com/PogrebnyakE/status/1082306102468005891) if this repo is useful for your learning!

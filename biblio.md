@@ -38,6 +38,7 @@ Readings about haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 
 ### Type system
+
 - [In cartoons](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 - [Don't read the monad tutorials](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
 - [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia) 
@@ -49,10 +50,10 @@ Readings about haskell are quite numerous. Good lists are [here](https://wiki.ha
 [asyntax]: 
 https://box.kaspersky.com/d/40f9231d6dfe4f789d31/files/?p=/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9%20%D0%9F%D0%B8%D1%80%D0%BE%D0%B3%D0%BE%D0%B2%20-%20%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.pdf
   
-
 - [Programming with no variables]( https://ru.stackoverflow.com/a/908911/264569) (in Russian), a Haskell basics discussion by @fsoikin
 
 ### Courses
 
 - [FP at ITMO](https://github.com/jagajaga/FP-Course-ITMO)
 - [YouTube and code of seminars at CMC MSU](https://cmc-haskell-2018.github.io)
+- [Zero BS Haskell](https://github.com/alpacaaa/zero-bullshit-haskell)

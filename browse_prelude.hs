@@ -1,4 +1,9 @@
--- ":browse Prelude" 
+-- Listing of Prelude module via:
+-- ":b Prelude" 
+
+-- Note:
+--    See also http://www.cse.chalmers.se/edu/year/2015/course/TDA452_Functional_Programming/Haskell-Prelude-Tour-A4.pdf
+
 
 Prelude> :browse
 (!!) :: [a] -> Int -> a
