@@ -1,5 +1,23 @@
--- Notes by E.Pogrebnyak
--- Started 09/09/2018
+-- Great single topics reads
+-- =========================
+
+-- Functions tutorial (no lambda functions though)
+-- http://www.toves.org/books/hsfun/
+
+-- Desugarization (list comp desugs to do notation):
+-- http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html
+
+-- Learn Physics by Programming in Haskell
+-- http://arxiv.org/abs/1412.4880
+
+-- Haskell Basics (informal discussion in write-you-a-haskell)
+-- http://dev.stephendiehl.com/fun/001_basics.html
+
+-- https://github.com/rudymatela/concise-cheat-sheets
+
+-- My notes
+-- =========
+-- Started by E.Pogrebnyak on 09/09/2018
 
 -- Start interpreter:
 -- :q
@@ -21,35 +39,30 @@ main = putStrLn "Hello, world"
 
 -- useful $ operator
 head $ take 10 [1..]
--- equals to 
-head (take 10 [1..])
 
 -- function composition 
 -- f . g = h where h x = f (g x)   -- as defined in the Prelude
 a = (\x -> x + 1) 1
 
--- multiline statement in ghci
--- multiline statement in script 
-b = [1,2,3 \
-\, 4,5]
+-- function 'case of' varieties
+-- if-else / case of / guards / pattern matching / MultiIf
+-- https://stackoverflow.com/questions/9345589/guards-vs-if-then-else-vs-cases-in-haskell
+
+-- Types
+-- =====
+
+-- typeclasses:
+-- http://book.realworldhaskell.org/read/using-typeclasses.html
+-- http://shuklan.com/haskell/lec03.html#/0/10
+-- http://learnyouahaskell.com/types-and-typeclasses
 
 -- type constriant 
 -- https://stackoverflow.com/questions/9142731/what-does-the-symbol-mean-in-haskell
 -- ghci> :t (==)  
 -- (==) :: (Eq a) => a -> a -> Bool
 
--- if-else / case of / guards
--- https://stackoverflow.com/questions/9345589/guards-vs-if-then-else-vs-cases-in-haskell
-
--- Basic IO
--- https://wiki.haskell.org/Tutorials/Programming_Haskell/String_IO
-{-
-interact' f = do 
-    s <- getContents
-    putStr (f s)
-main = interact' id 
-
--- Raising an error:
+-- Testing
+-- =======
 
 -- mock assertions with functions
 -- https://downloads.haskell.org/~ghc/6.12.2/docs/html/users_guide/assertions.html
@@ -57,12 +70,10 @@ main = interact' id
 -- raising errors in Haskell
 -- http://www.randomhacks.net/2007/03/10/haskell-8-ways-to-report-errors/
 
+-- Warnings
+-- ========
 
--- Stack Overflow:
--- [exponentiation-in-haskell](https://stackoverflow.com/questions/6400568/exponentiation-in-haskell)
--- [division-in-haskell: what is `x:xs`?](https://stackoverflow.com/questions/7368926/division-in-haskell)
--- [Fib numbers](https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition)
-
--- Supress warnings, use: 
+-- to supress warnings, use: 
 -- main = return ()
 -- https://stackoverflow.com/questions/46547208/why-is-my-haskell-code-saying-variable-not-in-scope-main
+
