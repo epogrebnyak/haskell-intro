@@ -33,7 +33,7 @@ A bit of wise humor:
 
 ## F#
 
-- ![][https://raw.githubusercontent.com/epogrebnyak/haskell-intro/master/rails.png]: [slides](https://www.slideshare.net/ScottWlaschin/functional-design-patterns-devternity2018), [talk 2017](https://www.youtube.com/watch?v=srQt1NAHYC0), [talk 2018](https://www.youtube.com/watch?v=Nrp_LZ-XGsY)
+- ![](https://raw.githubusercontent.com/epogrebnyak/haskell-intro/master/rails.png): [slides](https://www.slideshare.net/ScottWlaschin/functional-design-patterns-devternity2018), [talk 2017](https://www.youtube.com/watch?v=srQt1NAHYC0), [talk 2018](https://www.youtube.com/watch?v=Nrp_LZ-XGsY)
 
 ## General concepts
 
