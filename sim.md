@@ -41,3 +41,8 @@ A bit of wise humor:
 ## General concepts
 
 - recursion (but in Haskell there is also tail recursion with lazy typing)
+
+## Monads in Haskell, Scala, Python
+
+- [Talk](http://www.moscowpython.ru/meetup/44/monady-eksplikacija/), [slides](https://speakerdeck.com/moscowdjango/monady-eksplikatsiia)
+- 
