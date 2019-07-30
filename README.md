@@ -23,7 +23,7 @@ suggested [here](setup.md).
 
 <!--Hoping to organise the classes for future reference. Also [notes.hs](notes.hs) has unsorted links and code bits.-->
 
-**Acknowledgement**. We were lucky to have [Yuras](https://twitter.com/shumovichy) as a tutor in Haskell for this small course at the end of 2018. Yuras knows 150% of Haskell, but he adjusted instruction according to our prior knowledge (or, rather, ignorance). Initially we wanted to learn *['just some functional concepts'](how_we_started.md)*, but Haskell proved very immersive and engaging.
+**Acknowledgement**. We were lucky to have [Yuras](https://twitter.com/shumovichy) as a tutor in Haskell for this small course at the end of 2018. Yuras knows 150% of Haskell, but he adjusted instruction according to our [prior knowledge (or, rather, ignorance)](how_we_started.md).
 
 
 ## Reading 

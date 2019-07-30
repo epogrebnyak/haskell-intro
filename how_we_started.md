@@ -1,5 +1,8 @@
 # haskell-intro
 
+ Initially we wanted to learn *'just some functional concepts'*, but Haskell proved very immersive and engaging.
+
+
 #### Tutor:
 
 *Y*: @yuras
