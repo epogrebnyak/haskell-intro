@@ -1,4 +1,4 @@
-![]("https://pbs.twimg.com/media/D_wNe_tXsAExBvF?format=png&name=900x900")
+![Haskell IDE](https://pbs.twimg.com/media/D_wNe_tXsAExBvF?format=png&name=900x900)
 
 > ... and a simple, straightforward way to read a csv file.
 
