@@ -1,11 +1,7 @@
 # haskell-intro
 
-- [Classes](#Classes): | Set up GHCi | Topic list | Sessions
-- [Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
-
-This page at Github: <https://epogrebnyak.github.io/haskell-intro/>
-
-Feedback: <https://twitter.com/PogrebnyakE/status/1082306102468005891>
+[Classes](#Classes): | Set up GHCi | Topic list | Sessions
+[Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
 
 <!-- 
 People cited:
@@ -29,14 +25,13 @@ suggested [here](setup.md).
 
 **Acknowledgement**. We were lucky to have [Yuras](https://twitter.com/shumovichy) as a tutor in Haskell for this small course at the end of 2018. Yuras knows 150% of Haskell, but he adjusted instruction according to our prior knowledge (or, rather, ignorance). Initially we wanted to learn *['just some functional concepts'](how_we_started.md)*, but Haskell proved very immersive and engaging.
 
+
 ## Reading 
 
 Readings about Haskell are quite numerous. Good lists are [here](https://wiki.haskell.org/Learning_Haskell) and [here](https://stackoverflow.com/questions/1012573/getting-started-with-haskell).
 
 
 ### Top picks
-
-
 
 1. `Prelude` module holds basic functions and worth studying on its own. You can can get type declarations of Prelude by typing `:browse Prelude` in intepreter or check this command output [here](browse_prelude.hs). Examples of `Prelude` usage are included in [A Tour of the Haskell Prelude][pre]. 
 
@@ -62,6 +57,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - Short and very clean [introductory blog by Will Yager](http://yager.io/CrashCourse/Haskell.html).
 
 - [Haskell Basics](http://dev.stephendiehl.com/fun/001_basics.html) from Write You A Haskell.
+
 
 ### Longer reads
 
@@ -92,6 +88,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - <http://www.cs.nott.ac.uk/~pszgmh/pih.html>
 - <http://www.happylearnhaskelltutorial.com/1/first_step.html>
 -->
+
 
 ### Other resources
 
@@ -144,12 +141,18 @@ English:
 
 [asyntax]: http://bit.ly/332pjaw
 
-- [Programming with no variables](https://ru.stackoverflow.com/a/908911/264569), a Haskell basics discussion by @fsoikin
+- [Programming with no variables](https://ru.stackoverflow.com/a/908911/264569), a Haskell basics discussion by @fsoikin.
 
-- Critical review of [books available in Russian](https://medium.com/@_bravit) by @_bravit 
+- Critical review of [books available in Russian](https://medium.com/@_bravit) by @_bravit. 
 
 Courses: 
 
 - [Stepik](https://stepik.org/course/75/promo)
 - [FP at ITMO](https://github.com/jagajaga/FP-Course-ITMO)
 - [YouTube and code of seminars at CMC MSU](https://cmc-haskell-2018.github.io)
+
+## Feedback
+
+This page at Github: <https://epogrebnyak.github.io/haskell-intro/>
+
+Twitter: <https://twitter.com/PogrebnyakE/status/1082306102468005891>
