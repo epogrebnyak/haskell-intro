@@ -8,7 +8,6 @@ People cited:
 
 @shumovichy, @BartoszMilewski, @fsoikin, @_bravit, @smdiehl, @carl_burch,
 @alex_pir, @binroot
-
 -->
 
 ## Classes
