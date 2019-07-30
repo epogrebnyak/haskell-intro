@@ -32,16 +32,18 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 ### Top picks
 
-1. `Prelude` module holds basic functions and worth studying on its own. You can can get type declarations of Prelude by typing `:browse Prelude` in intepreter or check this command output [here](browse_prelude.hs). Examples of `Prelude` usage are included in [A Tour of the Haskell Prelude][pre]. 
 
-[pre]: http://www.cse.chalmers.se/edu/course/TDA555/tourofprelude.html
+
+1. `Prelude` module holds basic functions and worth studying on its own. You can can get type declarations of Prelude by typing `:browse Prelude` in intepreter or check this command output [here](browse_prelude.hs). Examples of `Prelude` usage are included in [A Tour of the Haskell Prelude][pre]. 
 
 2. Bartosz Milewski's '[Category Theory for Programmers][ctp]' is a great intro to 
   Haskell itself, written in  very good technical language and rolled at a very readable pace. It is a top trending repository on Github. Not also this [playlist](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_) (not related to the book).  
-  
-[ctp]: https://github.com/hmemcpy/milewski-ctfp-pdf
 
 3. Google [Haskell 101 and 102](https://github.com/google/haskell-trainings/releases) has two presentations that talk about Haskell from scratch. Their approach about teaching Functor, Applicative and Monad via  `fmap`, `ap`, `bind` is simple and effective.
+
+[pre]: http://www.cse.chalmers.se/edu/course/TDA555/tourofprelude.html
+[ctp]: https://github.com/hmemcpy/milewski-ctfp-pdf
+
 
 ### Quick introductions
 
