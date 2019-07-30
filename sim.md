@@ -45,4 +45,4 @@ A bit of wise humor:
 ## Monads in Haskell, Scala, Python
 
 - [Talk](http://www.moscowpython.ru/meetup/44/monady-eksplikacija/), [slides](https://speakerdeck.com/moscowdjango/monady-eksplikatsiia)
-- 
+

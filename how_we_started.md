@@ -43,17 +43,3 @@ Haskell can be thought provoking for us - the result is a little change we think
 - haslkell seems strognly typed, does this make it a fast?
 
 - How is Haskell related to some other functional programming languages? Why use Haskell over, e.g. SML, Erlang?
-
-
-
-
-#### Next steps:
-
-- [x] merge updates to this document 
-- [x] videochat to discuss it, if necessary
-- [x] make an outline for several lectures
-- [x] install haskell, see below
-- [x] choose format to communicate: [Skype](https://support.skype.com/en/faq/fa10022/how-do-i-share-my-screen-in-skype)
-- [ ] first lesson
-
-

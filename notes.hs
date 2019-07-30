@@ -1,18 +1,6 @@
 -- Great single topics reads
 -- =========================
 
--- Functions tutorial (no lambda functions though)
--- http://www.toves.org/books/hsfun/
-
--- Desugarization (list comp desugs to do notation):
--- http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html
-
--- Learn Physics by Programming in Haskell
--- http://arxiv.org/abs/1412.4880
-
--- Haskell Basics (informal discussion in write-you-a-haskell)
--- http://dev.stephendiehl.com/fun/001_basics.html
-
 -- https://github.com/rudymatela/concise-cheat-sheets
 
 -- My notes
