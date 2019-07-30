@@ -3,6 +3,10 @@
 - [Classes](#Classes): | Set up GHCi | Topic list | Sessions
 - [Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
 
+This page at Github: <https://epogrebnyak.github.io/haskell-intro/>
+
+Feedback: <https://twitter.com/PogrebnyakE/status/1082306102468005891>
+
 <!-- 
 People cited:
 
@@ -149,9 +153,3 @@ Courses:
 - [Stepik](https://stepik.org/course/75/promo)
 - [FP at ITMO](https://github.com/jagajaga/FP-Course-ITMO)
 - [YouTube and code of seminars at CMC MSU](https://cmc-haskell-2018.github.io)
-
-
-
-## Feedback
-
-Will be [glad to hear](https://twitter.com/PogrebnyakE/status/1082306102468005891) if this repo is useful for your learning!
