@@ -1,7 +1,7 @@
 # haskell-intro
 
-- [Classes](#Classes)
-- [Reading](#Reading)
+- [Classes](#Classes): Set up GHCi | Topic list | Sessions
+- [Reading](#Reading): Top picks | Quick introductions | Longer reads | Other resources | Courses
 
 <!-- 
 People cited:
@@ -19,7 +19,7 @@ suggested [here](setup.md).
 
 **Topic list.** Yuras original [topic list](topics.md), a great plan to learn. 
 
-**Classes**. This repository holds session transcripts `class 1-7` closely following the [topics list](topics.md) from above. 
+**Sessions**. This repository holds session transcripts `class 1-7` closely following the [topics list](topics.md) from above. 
 
 <!--Hoping to organise the classes for future reference. Also [notes.hs](notes.hs) has unsorted links and code bits.-->
 
@@ -87,7 +87,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - <http://www.happylearnhaskelltutorial.com/1/first_step.html>
 -->
 
-### Other
+### Other resources
 
 #### Various topics
 
