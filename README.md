@@ -1,5 +1,3 @@
-# haskell-intro
-
 <img src="https://pbs.twimg.com/media/D_wNe_tXsAExBvF?format=png&name=900x900"
 align=center>
 
@@ -13,7 +11,7 @@ People cited:
 @alex_pir, @binroot
 -->
 
-## Classes
+# Classes
 
 **About classes.** This is a curated introduction to Haskell by [Yuras Shumovich](https://twitter.com/shumovichy) as studied by [Evgeniy](https://twitter.com/PogrebnyakE) and [Zarak](https://github.com/zarak).
 
@@ -29,12 +27,12 @@ suggested [here](setup.md).
 **Acknowledgement**. We were lucky to have [Yuras](https://twitter.com/shumovichy) as a tutor in Haskell for this small course at the end of 2018. Yuras knows 150% of Haskell, but he adjusted instruction according to our [prior knowledge (or, rather, ignorance)](how_we_started.md).
 
 
-## Reading 
+# Reading 
 
 Readings about Haskell are quite numerous. Good lists are [here](https://wiki.haskell.org/Learning_Haskell) and [here](https://stackoverflow.com/questions/1012573/getting-started-with-haskell).
 
 
-### Top picks
+## Top picks
 
 1. `Prelude` module holds basic functions and worth studying on its own. You can can get type declarations of Prelude by typing `:browse Prelude` in intepreter or check this command output [here](browse_prelude.hs). Examples of `Prelude` usage are included in [A Tour of the Haskell Prelude][pre]. 
 
@@ -47,7 +45,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 [ctp]: https://github.com/hmemcpy/milewski-ctfp-pdf
 
 
-### Quick introductions
+## Quick introductions
 
 - [Haskell Concepts in One Sentence](https://ndrgrnd.net/posts/haskellOneSentence.html) 
   luckily corresponds to our topics list!
@@ -62,15 +60,15 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Haskell Basics](http://dev.stephendiehl.com/fun/001_basics.html) from Write You A Haskell.
 
 
-### Longer reads
+## Longer reads
 
-#### Core
+### Core
 
 - <http://learnyouahaskell.com/> - a nice intro as far as it deals with familiar topics (eg map/filer, list comprehensions).
 
 - <http://book.realworldhaskell.org>
 
-#### Specialty
+### Specialty
 
 - [What I Wish I Knew When Learning Haskell](http://dev.stephendiehl.com/hask/) is truely a long read, but you can definitely spot parts you'll like.  
 
@@ -78,7 +76,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [haskellbook.com](http://haskellbook.com) is paid content, but one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories)
 
-#### More tutorials
+### More tutorials
 
 - Interactive slides with several lectures on Haskell from Nishant Shuklan.
   Favourite slide: [quotes about programming languages](http://shuklan.com/haskell/lec01.html#/0/30)
@@ -93,9 +91,9 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 -->
 
 
-### Other resources
+## Other resources
 
-#### Various topics
+### Various topics
 
 - Really nice [functions by tutorial by Carl Burch](http://www.toves.org/books/hsfun/),
   the only addition could have been lambda functions
@@ -107,30 +105,30 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Fibonacci numbers](https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition)
 
 
-#### Type system
+### Type system
 
 - [In cartoons](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 - [Don't read the monad tutorials](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
 - [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia) 
 
-#### Advanced 
+### Advanced 
 
 - Graham Hutton, Erik Meijer. [Monadic Parsing in Haskell.](http%3A%2F%2Fwww.cs.nott.ac.uk%2F~pszgmh%2Fpearl.pdf&usg=AOvVaw1BSPFzc6UYlS64ndClR60K) 
 with [comments](https://github.com/mini-kep/kep-parser.hs/tree/master/learn-parse)
 
-#### Motivational presentations
+### Motivational presentations
 
 - Simon Peyton-Jones, one of language creators. _Escape from the ivory tower: the Haskell journey [video](https://www.youtube.com/watch?v=re96UgMk6GQ&feature=youtu.be&t=725)_. 
 Shows wise and funny graphs about adoption curves of programming languages.
 
 
-#### Some Stack Overflow questions
+### Some Stack Overflow questions
 
 - <https://stackoverflow.com/questions/1012573/getting-started-with-haskell>
 - <https://stackoverflow.com/questions/6400568/exponentiation-in-haskell>
 - [what is `x:xs`?](https://stackoverflow.com/questions/7368926/division-in-haskell)
 
-### Courses
+## Courses
 
 English:
 
@@ -138,7 +136,7 @@ English:
 - [Tsoding](https://www.youtube.com/channel/UCEbYhDd6c6vngsF5PQpFVWg)
 
 
-### In Russian
+## In Russian
 
 - Alexey Pirogov [slides][asyntax] about functional programming in general and [small English summary](https://twitter.com/PogrebnyakE/status/1107962689958174720?ref_src=twsrc%5Etfw).
 
@@ -154,7 +152,7 @@ Courses:
 - [FP at ITMO](https://github.com/jagajaga/FP-Course-ITMO)
 - [YouTube and code of seminars at CMC MSU](https://cmc-haskell-2018.github.io)
 
-## Feedback
+# Feedback
 
 This page at Github: <https://epogrebnyak.github.io/haskell-intro/>
 
