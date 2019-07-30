@@ -9,13 +9,11 @@ People cited:
 @shumovichy, @BartoszMilewski, @fsoikin, @_bravit, @smdiehl, @carl_burch,
 @alex_pir, @binroot
 
-
 -->
 
 ## Classes
 
-This is a curated introduction to Haskell by [Yuras Shumovich](https://twitter.com/shumovichy)
-as studied by [Evgeniy](https://twitter.com/PogrebnyakE) and [Zarak](https://github.com/zarak).
+**About classes.** This is a curated introduction to Haskell by [Yuras Shumovich](https://twitter.com/shumovichy) as studied by [Evgeniy](https://twitter.com/PogrebnyakE) and [Zarak](https://github.com/zarak).
 
 **Set up GHCi.** Set up GHCi Haskell on your computer or use a limited web version as
 suggested [here](setup.md).
@@ -30,7 +28,8 @@ suggested [here](setup.md).
 
 ## Reading 
 
-Readings about Haskell are quite numerous. Good lists are [here](https://wiki.haskell.org/Learning_Haskell) and [here](https://stackoverflow.com/questions/1012573/getting-started-with-haskell). @_bravit provides a critical review of [books available in Russian](https://medium.com/@_bravit)
+Readings about Haskell are quite numerous. Good lists are [here](https://wiki.haskell.org/Learning_Haskell) and [here](https://stackoverflow.com/questions/1012573/getting-started-with-haskell).
+
 
 ### Top picks
 
@@ -57,7 +56,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - Short and very clean [introductory blog by Will Yager](http://yager.io/CrashCourse/Haskell.html)
 
-- [Haskell Basics (part of Write You A Haskell)](http://dev.stephendiehl.com/fun/001_basics.html)
+- [Haskell Basics from Write You A Haskell](http://dev.stephendiehl.com/fun/001_basics.html)
 
 ### Longer reads
 
@@ -89,16 +88,14 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - <http://www.happylearnhaskelltutorial.com/1/first_step.html>
 -->
 
-### Special topics
+### Other
 
-#### Miscellaneous
+#### Various topics
 
 - Really nice [functions by tutorial by Carl Burch](http://www.toves.org/books/hsfun/),
   the only addition could have been lambda functions
   
 - [Haskell at work](https://haskell-at-work.com/episodes/2018-05-13-introduction-to-cabal.html) has a gentle introduction to cabal 
-
-#### Code fragments
 
 - [Desugarization](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html) (list comp desugarss to do notation)  
 
@@ -111,29 +108,22 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Don't read the monad tutorials](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
 - [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia) 
 
-####  Advaned topics 
+#### Advanced 
 
-- Graham Hutton, Erik Meijer. [Monadic Parsing in Haskell.](http%3A%2F%2Fwww.cs.nott.ac.uk%2F~pszgmh%2Fpearl.pdf&usg=AOvVaw1BSPFzc6UYlS64ndClR60K), 
-with comments [here](https://github.com/mini-kep/kep-parser.hs/tree/master/learn-parse)
+- Graham Hutton, Erik Meijer. [Monadic Parsing in Haskell.](http%3A%2F%2Fwww.cs.nott.ac.uk%2F~pszgmh%2Fpearl.pdf&usg=AOvVaw1BSPFzc6UYlS64ndClR60K) 
+with [comments](https://github.com/mini-kep/kep-parser.hs/tree/master/learn-parse)
 
 #### Motivational presentations
 
 - Simon Peyton-Jones, one of language creators. _Escape from the ivory tower: the Haskell journey [video](https://www.youtube.com/watch?v=re96UgMk6GQ&feature=youtu.be&t=725)_. 
 Shows wise and funny graphs about adoption curves of programming languages.
 
-- Alexey Pirogov [slides][asyntax] about functional programming in general and [small English summary](https://twitter.com/PogrebnyakE/status/1107962689958174720?ref_src=twsrc%5Etfw).
 
-[asyntax]: http://bit.ly/332pjaw
-
-####  Some Stack Overflow questions
+#### Some Stack Overflow questions
 
 - <https://stackoverflow.com/questions/1012573/getting-started-with-haskell>
 - <https://stackoverflow.com/questions/6400568/exponentiation-in-haskell>
 - [what is `x:xs`?](https://stackoverflow.com/questions/7368926/division-in-haskell)
-
-In Russian:
-
-- [Programming with no variables](https://ru.stackoverflow.com/a/908911/264569), a Haskell basics discussion by @fsoikin
 
 ### Courses
 
@@ -142,11 +132,24 @@ English:
 - [Zero BS Haskell](https://github.com/alpacaaa/zero-bullshit-haskell)
 - [Tsoding](https://www.youtube.com/channel/UCEbYhDd6c6vngsF5PQpFVWg)
 
-Russian: 
+
+### In Russian
+
+- Alexey Pirogov [slides][asyntax] about functional programming in general and [small English summary](https://twitter.com/PogrebnyakE/status/1107962689958174720?ref_src=twsrc%5Etfw).
+
+[asyntax]: http://bit.ly/332pjaw
+
+- [Programming with no variables](https://ru.stackoverflow.com/a/908911/264569), a Haskell basics discussion by @fsoikin
+
+- Critical review of [books available in Russian](https://medium.com/@_bravit) by @_bravit 
+
+Courses: 
 
 - [Stepik](https://stepik.org/course/75/promo)
 - [FP at ITMO](https://github.com/jagajaga/FP-Course-ITMO)
 - [YouTube and code of seminars at CMC MSU](https://cmc-haskell-2018.github.io)
+
+
 
 ## Feedback
 
