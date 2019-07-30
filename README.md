@@ -2,9 +2,12 @@
 
 - [Classes](#Classes)
 - [Reading](#Reading)
+
 <!-- 
 People cited:
-@shumovichy, @BartoszMilewski, @fsoikin - TODO: add more
+
+@shumovichy, @BartoszMilewski, @fsoikin, @_bravit, @smdiehl, @carl_burch
+
 -->
 
 ## Classes
@@ -12,30 +15,20 @@ People cited:
 This is a curated introduction to Haskell by [Yuras Shumovich](https://twitter.com/shumovichy)
 as studied by [Evgeniy](https://twitter.com/PogrebnyakE) and [Zarak](https://github.com/zarak).
 
-### Set up GHCi 
-
-Set up GHCi Haskell on your computer or use a limited web version as
+**Set up GHCi.** Set up GHCi Haskell on your computer or use a limited web version as
 suggested [here](setup.md).
 
-### Topic list 
+**Topic list.** Yuras original [topic list](topics.md), a great plan to learn. 
 
-Yuras original [topic list](topics.md), a great plan to learn. If you are to take 
-just one thing out with you from this repo, take this topic list - it will guide you 
-throughout your learning whatever resources you choose to study with.  
+If you are to take just one thing out with you from this repo, take this topic list - it will guide you throughout your learning whatever resources you choose to study with.  
 
-### Classes 
+**Classes**. This repository holds session transcripts (as played in interpreter and saved scripts) by `class 1-7` closely following the [topics list](topics.md) above. Hoping to organise the classes for future reference. Also [notes.hs](notes.hs) has unsorted links and code bits.
 
-This repository holds session transcripts (as played in interpreter and saved scripts) by `class 1-7` closely following the [topics list](topics.md) above. Hoping to organise the classes for future reference. Also [notes.hs](notes.hs) has unsorted links and code bits.
-
-### Acknowledgement
-
-We were lucky to have Yuras as a tutor in Haskell for this small course
-at the end of 2018. Yuras knows 150% of Haskell, but he adjusted instruction according to our prior knowledge (or, rather, ignorance). Initially we wanted to learn ['just some functional concepts'](how_we_started.md), but Haskell proved very immersive
-and engaging. 
+**Acknowledgement**. We were lucky to have [Yuras](https://twitter.com/shumovichy) as a tutor in Haskell for this small course at the end of 2018. Yuras knows 150% of Haskell, but he adjusted instruction according to our prior knowledge (or, rather, ignorance). Initially we wanted to learn ['just some functional concepts'](how_we_started.md), but Haskell proved very immersive and engaging. 
 
 ## Reading 
 
-Readings about haskell are quite numerous. Good lists are [here](https://wiki.haskell.org/Learning_Haskell) and [here](https://stackoverflow.com/questions/1012573/getting-started-with-haskell).
+Readings about Haskell are quite numerous. Good lists are [here](https://wiki.haskell.org/Learning_Haskell) and [here](https://stackoverflow.com/questions/1012573/getting-started-with-haskell). @_bravit provides a critical review of [books available in Russian](https://medium.com/@_bravit)
 
 ### Top picks
 
@@ -103,7 +96,7 @@ There are different ways forwards, here are some clues:
   
 - [Haskell at work](https://haskell-at-work.com/episodes/2018-05-13-introduction-to-cabal.html) has a gentle introduction to cabal 
 
-### Tiny fragments
+### Code fragments
 
 - [Desugarization](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html) (list comp desugarss to do notation)  
 
@@ -134,8 +127,8 @@ https://box.kaspersky.com/d/40f9231d6dfe4f789d31/files/?p=/%D0%90%D0%BB%D0%B5%D0
 
 ### Some Stack Overflow questions
 
-- https://stackoverflow.com/questions/1012573/getting-started-with-haskell
-- https://stackoverflow.com/questions/6400568/exponentiation-in-haskell
+- <https://stackoverflow.com/questions/1012573/getting-started-with-haskell>
+- <https://stackoverflow.com/questions/6400568/exponentiation-in-haskell>
 - [what is `x:xs`?](https://stackoverflow.com/questions/7368926/division-in-haskell)
 
 In Russian:
