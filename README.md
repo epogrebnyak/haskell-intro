@@ -1,7 +1,7 @@
 # haskell-intro
 
-- [Classes](#Classes): Set up GHCi | Topic list | Sessions
-- [Reading](#Reading): Top picks | Quick introductions | Longer reads | Other resources | Courses
+- [Classes](#Classes): | Set up GHCi | Topic list | Sessions
+- [Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
 
 <!-- 
 People cited:
@@ -19,7 +19,7 @@ suggested [here](setup.md).
 
 **Topic list.** Yuras original [topic list](topics.md), a great plan to learn. 
 
-**Sessions**. This repository holds session transcripts `class 1-7` closely following the [topics list](topics.md) from above. 
+**Sessions**. [This repository](https://github.com/epogrebnyak/haskell-intro) holds session transcripts `class 1-7` closely following the [topics list](topics.md) from above. 
 
 <!--Hoping to organise the classes for future reference. Also [notes.hs](notes.hs) has unsorted links and code bits.-->
 
@@ -55,9 +55,9 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Is Rust functional](https://www.fpcomplete.com/blog/2018/10/is-rust-functional) - yes,
   the article has simple Haskell counterexamples for Rust.
 
-- Short and very clean [introductory blog by Will Yager](http://yager.io/CrashCourse/Haskell.html)
+- Short and very clean [introductory blog by Will Yager](http://yager.io/CrashCourse/Haskell.html).
 
-- [Haskell Basics from Write You A Haskell](http://dev.stephendiehl.com/fun/001_basics.html)
+- [Haskell Basics](http://dev.stephendiehl.com/fun/001_basics.html) from Write You A Haskell.
 
 ### Longer reads
 
