@@ -1,5 +1,9 @@
 # haskell-intro
 
+<div align=center>
+![][https://pbs.twimg.com/media/D_wNe_tXsAExBvF?format=png&name=900x900]
+</div>
+
 [Classes](#Classes): | Set up GHCi | Topic list | Sessions
 [Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
 
