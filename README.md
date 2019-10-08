@@ -4,6 +4,7 @@
 
 
 [Classes](#Classes): | Set up GHCi | Topic list | Sessions
+
 [Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
 
 <!-- 
