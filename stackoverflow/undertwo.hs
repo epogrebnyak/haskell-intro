@@ -19,4 +19,4 @@ fb = fmap count b
 -- Hangs on infinite list of randoms
 c = sequence (repeat rio)
 fc = fmap count c
--- fc hangs
+-- fc hangs... ;(

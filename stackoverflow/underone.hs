@@ -2,7 +2,7 @@ import System.Random
 
 -- Obtaining n through limits
 -- See https://twitter.com/InertialObservr/status/1183489675274510336
---     https://twitter.com/InertialObservr/status/1183489675274510336
+
 
 import System.Random
 inf = repeat (randomRIO (0::Double,1))
@@ -27,16 +27,18 @@ cnt xs = 1 + length xs'
 
 -- Works of infinite list 
 a = (return (repeat 0.015)) :: IO [Double]
-fa = fmap cnt a --67 
+fa = fmap cnt a 
+--67 
 
 -- Works on trimmed list of randoms
 rio = randomRIO (0::Double, 1)         
 b = sequence $ take 10 (repeat rio)
 fb = fmap cnt b 
+-- fb is 2 to 5
 
 -- Hangs on infinite list of randoms
 c = sequence (repeat rio)
-fc = fmap cnt c 
+fc = fmap cnt c
 
 
 rs = [0.564, 0.104, 0.452, 5.5e-2, 0.897]
