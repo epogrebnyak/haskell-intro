@@ -45,7 +45,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 ## Quick introductions
 
 - [Haskell Concepts in One Sentence](https://ndrgrnd.net/posts/haskellOneSentence.html) 
-  luckily corresponds to our topics list!
+  luckily corresponds to our topics list! (cached [here](https://github.com/epogrebnyak/haskell-intro/issues/5))
 
 - Skim a [cheatsheet](http://cheatsheet.codeslower.com/CheatSheet.pdf) for terminology.
 
