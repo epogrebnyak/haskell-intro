@@ -66,8 +66,6 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [haskellbook.com](http://haskellbook.com) is paid content, but one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories)
 
-- [tutorialspoint.com/haskell](https://www.tutorialspoint.com/haskell) - looks better as Android app without no ads. 
-
 ## Other resources
 
 ### Various topics
