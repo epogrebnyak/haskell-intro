@@ -62,9 +62,9 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [What I Wish I Knew When Learning Haskell](http://dev.stephendiehl.com/hask/) is truely a long read, but you can definitely spot parts you'll like.  
 
-- [RWH - Real World Haskell](http://book.realworldhaskell.org)
+- [RWH - Real World Haskell](http://book.realworldhaskell.org).
 
-- [haskellbook.com](http://haskellbook.com) is paid content, but one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories)
+- [haskellbook.com](http://haskellbook.com) is paid content, but one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories).
 
 ## Other resources
 
