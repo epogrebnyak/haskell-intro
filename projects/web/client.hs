@@ -1,3 +1,5 @@
+-- from https://github.com/snoyberg/http-client/blob/master/TUTORIAL.md#connection-manager
+
 {-# LANGUAGE OverloadedStrings #-}
 import qualified Data.ByteString.Lazy.Char8 as L8
 import           Network.HTTP.Client        (defaultManagerSettings, newManager)
