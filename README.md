@@ -88,6 +88,9 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
   first glance one needs to spot functors, applicatives and monads.
 - [In cartoons](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 - [Don't read the monad tutorials](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
+- [Effectful Haskell: IO, Monads, Functors](https://slpopejoy.github.io/posts/Effectful01.html#fn1) - a monadic tutorial that 'clicks'.
+
+![](rails.png)
 
 ### Advanced (Fuctional Pearls)
 
