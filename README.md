@@ -33,6 +33,8 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 ## Top picks
 
+0. The [topic list](topics.md), again.
+
 1. Google [Haskell 101 and 102](https://github.com/google/haskell-trainings/releases) has two presentations that talk about Haskell from scratch. Their approach about teaching Functor, Applicative and Monad via  `fmap`, `ap`, `bind` is simple and effective.
 
 2. `Prelude` module holds basic functions and worth studying on its own. You can can get type declarations of Prelude by typing `:browse Prelude` in intepreter or check this command output [here](browse_prelude.hs). Examples of `Prelude` usage are included in [A Tour of the Haskell Prelude][pre]. 
