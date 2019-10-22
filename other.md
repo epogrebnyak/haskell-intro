@@ -7,6 +7,7 @@
 
 [asyntax]: http://bit.ly/332pjaw
 
+- [Exponentiation in Haskell](https://stackoverflow.com/questions/6400568/exponentiation-in-haskell)
 
 ### Outdated
 

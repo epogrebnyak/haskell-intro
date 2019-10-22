@@ -66,7 +66,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [haskellbook.com](http://haskellbook.com) is paid content, but one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories).
 
-- [Getting started with Haskell](https://stackoverflow.com/questions/1012573/getting-started-with-haskell) metnions resources above and lays you a learning path for years ahead.
+- [Getting started with Haskell](https://stackoverflow.com/questions/1012573/getting-started-with-haskell) mentions resources above and lays you a learning path for years ahead.
 
 ## Other resources
 
@@ -74,7 +74,6 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [what is `x:xs`?](https://stackoverflow.com/questions/7368926/division-in-haskell)
 - [Fibonacci numbers](https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition)
-- [Exponentiation in Haskell](https://stackoverflow.com/questions/6400568/exponentiation-in-haskell)
 
 ### Various topics
 
