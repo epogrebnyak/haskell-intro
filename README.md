@@ -66,36 +66,39 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [haskellbook.com](http://haskellbook.com) is paid content, but one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories).
 
+- [Getting started with Haskell](https://stackoverflow.com/questions/1012573/getting-started-with-haskell) metnions resources above and lays you a learning path for years ahead.
+
 ## Other resources
+
+### Trivial examples
+
+- [what is `x:xs`?](https://stackoverflow.com/questions/7368926/division-in-haskell)
+- [Fibonacci numbers](https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition)
+- [Exponentiation in Haskell](https://stackoverflow.com/questions/6400568/exponentiation-in-haskell)
 
 ### Various topics
 
 - [Functions by tutorial by Carl Burch](http://www.toves.org/books/hsfun/), the only addition could have been lambda functions
-- [Haskell at work](https://haskell-at-work.com/episodes/2018-05-13-introduction-to-cabal.html) has a gentle introduction to cabal 
 - [Desugarization](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html) (list comp desugarss to do notation)  
-- [Fibonacci numbers](https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition)
+- 'Haskell at work' has a [gentle introduction to cabal](https://haskell-at-work.com/episodes/2018-05-13-introduction-to-cabal.html)
+- [Pronounceable names for operators](https://stackoverflow.com/questions/7746894/are-there-pronounceable-names-for-common-haskell-operators)
 
 ### Type system
 
-- [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia) 
+- [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia) is a classic article about types classes. In a quick 
+  first glance one needs to spot functors, applicatives and monads.
 - [In cartoons](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 - [Don't read the monad tutorials](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
 
-### Advanced - Fuctional Pearls
+### Advanced (Fuctional Pearls)
 
-- Graham Hutton, Erik Meijer. [Monadic Parsing in Haskell.](http%3A%2F%2Fwww.cs.nott.ac.uk%2F~pszgmh%2Fpearl.pdf&usg=AOvVaw1BSPFzc6UYlS64ndClR60K) 
-with [comments](https://github.com/mini-kep/kep-parser.hs/tree/master/learn-parse)
+- Graham Hutton, Erik Meijer. [Monadic Parsing in Haskell](http%3A%2F%2Fwww.cs.nott.ac.uk%2F~pszgmh%2Fpearl.pdf&usg=AOvVaw1BSPFzc6UYlS64ndClR60K) 
+(with [comments](https://github.com/mini-kep/kep-parser.hs/tree/master/learn-parse))
 
-### Motivational presentations
+### Motivational
 
-- Simon Peyton-Jones, one of language creators. _Escape from the ivory tower: the Haskell journey [video](https://www.youtube.com/watch?v=re96UgMk6GQ&feature=youtu.be&t=725)_. 
-Shows wise and funny graphs about adoption curves of programming languages.
+- Simon Peyton-Jones, one of language creators. _Escape from the ivory tower: the Haskell journey [video](https://www.youtube.com/watch?v=re96UgMk6GQ&feature=youtu.be&t=725)_. Funny graphs about adoption curves of programming languages.
 
-### Some Stack Overflow questions
-
-- <https://stackoverflow.com/questions/1012573/getting-started-with-haskell>
-- <https://stackoverflow.com/questions/6400568/exponentiation-in-haskell>
-- [what is `x:xs`?](https://stackoverflow.com/questions/7368926/division-in-haskell)
 
 ## Courses
 
