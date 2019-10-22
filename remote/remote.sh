@@ -5,6 +5,7 @@ cabal update
 cabal install aeson
 cabal install http-client
 cabal install http-client-tls
+cabal install http-conduit
 cabal install req --force-reinstalls
 mkdir ~/github
 git clone https://github.com/epogrebnyak/haskell-intro.git ~/github/haskell-intro
