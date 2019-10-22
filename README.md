@@ -1,11 +1,11 @@
+[Classes](#Classes): | About | Set up GHCi | Topic list | Sessions
+
+[Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
+
 ![Haskell IDE](https://pbs.twimg.com/media/D_wNe_tXsAExBvF?format=png&name=900x900)
 
 > ... and a simple, straightforward way to read a csv file.
 
-
-[Classes](#Classes): | Set up GHCi | Topic list | Sessions
-
-[Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
 
 <!-- 
 People cited:
@@ -18,14 +18,14 @@ People cited:
 
 **About classes.** This is a curated introduction to Haskell by [Yuras Shumovich](https://twitter.com/shumovichy) as studied by [Evgeniy](https://twitter.com/PogrebnyakE) and [Zarak](https://github.com/zarak).
 
+We were lucky to have [Yuras](https://twitter.com/shumovichy) as a tutor in Haskell for this small course at the end of 2018. Yuras knows 150% of Haskell, but he adjusted instruction according to our [prior knowledge (or, rather, ignorance)](how_we_started.md).
+
 **Set up GHCi.** Set up GHCi Haskell on your computer or use a limited web version as
 suggested [here](setup.md).
 
 **Topic list.** Yuras original [topic list](topics.md), a great plan to learn. 
 
 **Sessions**. [This repository](https://github.com/epogrebnyak/haskell-intro) holds session transcripts `class 1-7` closely following the [topics list](topics.md) from above. 
-
-**Acknowledgement**. We were lucky to have [Yuras](https://twitter.com/shumovichy) as a tutor in Haskell for this small course at the end of 2018. Yuras knows 150% of Haskell, but he adjusted instruction according to our [prior knowledge (or, rather, ignorance)](how_we_started.md).
 
 # Reading 
 
