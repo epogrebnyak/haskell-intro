@@ -18,3 +18,4 @@ git clone https://github.com/epogrebnyak/haskell-intro.git ~/github/haskell-intr
 # cache git password
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
+git config --global user.name "epogrebnyak"
