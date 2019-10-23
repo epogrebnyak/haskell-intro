@@ -11,6 +11,7 @@ cabal install http-conduit
 cabal install req --force-reinstalls
 sudo apt-get install libcurl4-gnutls-dev
 cabal install curl
+cabal install download-curl
 # download and use the excercise repo
 mkdir ~/github
 git clone https://github.com/epogrebnyak/haskell-intro.git ~/github/haskell-intro
