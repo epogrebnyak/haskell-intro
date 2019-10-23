@@ -60,13 +60,25 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 ## Longer reads
 
+### Easier
+
 - [LYAH - Learn You A Haskell](http://learnyouahaskell.com) - a nice intro as far as it deals with familiar topics (eg map/filer, list comprehensions).
+
+- [CS194](https://www.seas.upenn.edu/~cis194/spring13/lectures.html)
+
+### Tougher
 
 - [What I Wish I Knew When Learning Haskell](http://dev.stephendiehl.com/hask/) is truely a long read, but you can definitely spot parts you'll like.  
 
 - [RWH - Real World Haskell](http://book.realworldhaskell.org).
 
 - [haskellbook.com](http://haskellbook.com) is paid content, but one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories).
+
+- <https://github.com/jagajaga/FP-Course-ITMO>
+
+### Reviews
+
+- <https://github.com/bitemyapp/learnhaskell>
 
 - [Getting started with Haskell](https://stackoverflow.com/questions/1012573/getting-started-with-haskell) mentions resources above and lays you a learning path for years ahead.
 
