@@ -2,7 +2,7 @@
 # in the instance:
 sudo apt-get update
 sudo apt-get install haskell-platform
-# global installations are not good, but this is a try
+# global installations for cabal are not good, but this is a try
 cabal update
 cabal install aeson
 cabal install http-client
@@ -14,3 +14,6 @@ cabal install curl
 # download and use the excercise repo
 mkdir ~/github
 git clone https://github.com/epogrebnyak/haskell-intro.git ~/github/haskell-intro
+# cache git password
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
