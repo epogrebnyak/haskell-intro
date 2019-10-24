@@ -39,7 +39,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 2. `Prelude` module holds basic functions and worth studying on its own. You can can get type declarations of Prelude by typing `:browse Prelude` in intepreter or check this command output [here](browse_prelude.hs). Examples of `Prelude` usage are included in [A Tour of the Haskell Prelude][pre]. 
 
-3. Bartosz Milewski's '[Category Theory for Programmers][ctp]' is a great intro to Haskell itself, written in  very good technical language and rolled at a very readable pace. It is a top trending repository on Github. Not also this [playlist](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_) (not related to the book).  
+3. Bartosz Milewski's '[Category Theory for Programmers][ctp]' is a great intro to Haskell itself, written in  very good technical language and rolled at a very readable pace. It is a top trending repository on Github. Note also this [playlist](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_) (not related to the book).  
 
 [pre]: http://www.cse.chalmers.se/edu/course/TDA555/tourofprelude.html
 [ctp]: https://github.com/hmemcpy/milewski-ctfp-pdf
