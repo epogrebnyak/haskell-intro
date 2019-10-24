@@ -1,24 +1,32 @@
 -- Retrieve bibliographic information based on DOI and other handles.
--- Use bibliographic information in pandoc / pandoc-citeproc.
+-- For use with pandoc and pandoc-citeproc.
 
 {-# LANGUAGE OverloadedStrings #-}
+
 import qualified Data.ByteString.Char8 as B
-import Data.Text (pack, unpack, replace, toLower)
+import Data.Text (pack, unpack, toLower)
+-- requires libcurl installation `sudo apt-get install libcurl4-gnutls-dev`
 import Network.Curl.Download (openURIWithOpts)
 import Network.Curl.Opts (CurlOption(CurlFollowLocation, CurlHttpHeaders))
 
 type URL = String
 data Handle = DOI String | ISBN String deriving Show
 
+prefixWith p s = p ++ ":" ++ s
+prefix (DOI s) = prefixWith "doi" s 
+prefix (ISBN s) = prefixWith "isbn" s
+
+filename h = (lower . under . str) h ++ ".txt"
+    where
+      chars = "./:" 
+      under = map (\s -> if s `elem` chars then '_' else s)
+      lower = unpack . toLower . pack
+
 curl :: URL -> CurlOption -> IO (Either String B.ByteString)
 curl url header = openURIWithOpts opts url where 
     opts = [ CurlFollowLocation True,
              header
            ]    
-
-save :: FilePath -> Either String B.ByteString -> IO ()           
-save filename (Right content) = writeFile filename (B.unpack content)
-save filename (Left _) = return () -- do nothing
 
 retrieveDOI s = curl url header
     where url = "https://doi.org/" ++ s 
@@ -27,19 +35,9 @@ retrieveDOI s = curl url header
 retrieve (DOI s) = retrieveDOI s
 retrieve _ = return (Left "Not supported")
 
-str :: Handle -> String
-str (DOI s) = "doi:" ++ s
-str (ISBN s) = "isbn:" ++ s
-
-toUnderscore chars s = if s `elem` chars then "_" else s
-
-filename :: Handle -> FilePath
-filename h = ((unpack . changes . pack . str) h) ++ ".txt" 
-      where changes = (toLower . 
-                       (replace "." "_") . 
-                       (replace "/" "_") . 
-                       (replace ":" "_")
-                       )                       
+save :: FilePath -> Either String B.ByteString -> IO ()           
+save filename (Right content) = writeFile filename (B.unpack content)
+save filename (Left _) = return () -- do nothing
 
 loadLocal :: Handle -> IO()
 loadLocal h = (retrieve h) >>= (save (filename h))
@@ -49,9 +47,10 @@ loadLocal h = (retrieve h) >>= (save (filename h))
 --       Must return value in any case
 get h = readFile $ filename h
 
-h = DOI "10.3982/ECTA11427"
-
 main = loadLocal $ DOI "10.3982/ECTA11427"
+
+d = DOI "10.3982/ECTA11427"
+-- filename d is "doi_10_3982_ecta11427.txt"
 
 -- NEXT:
 -- link to pandoc-citeproc: csl item probably goes to metadata
@@ -65,5 +64,3 @@ main = loadLocal $ DOI "10.3982/ECTA11427"
 -- NOT TODO:
 -- Similar package (outdated bibliographic APIs, but does local db caching nicely)
 -- https://github.com/nushio3/citation-resolve/blob/master/src/Text/CSL/Input/Identifier/Internal.hs#L142-L152
-
-
