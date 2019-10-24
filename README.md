@@ -109,7 +109,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 ### Motivational
 
-- Simon Peyton-Jones, one of language creators. _Escape from the ivory tower: the Haskell journey [video](https://www.youtube.com/watch?v=re96UgMk6GQ&feature=youtu.be&t=725)_. Funny graphs about adoption curves of programming languages.
+- Simon Peyton-Jones, one of language creators. _Escape from the ivory tower: the Haskell journey [video](https://www.youtube.com/watch?v=re96UgMk6GQ&feature=youtu.be&t=725)_. Funny graphs about adoption curves of programming languages starting [here](https://youtu.be/re96UgMk6GQ?t=2860).
 
 ## Courses
 
