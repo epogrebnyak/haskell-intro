@@ -47,7 +47,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 ## Quick introductions
 
 - [Haskell Concepts in One Sentence](https://ndrgrnd.net/posts/haskellOneSentence.html) 
-  luckily corresponds to our topics list! (cached [here](https://github.com/epogrebnyak/haskell-intro/issues/5))
+  luckily corresponds to our topics list! (cached and reclassified [here](https://github.com/epogrebnyak/haskell-intro/issues/5))
 
 - Skim a [cheatsheet](http://cheatsheet.codeslower.com/CheatSheet.pdf) for terminology.
 
@@ -70,26 +70,20 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [What I Wish I Knew When Learning Haskell](http://dev.stephendiehl.com/hask/) is truely a long read, but you can definitely spot parts you'll like.  
 
-- [RWH - Real World Haskell](http://book.realworldhaskell.org).
+- [RWH - Real World Haskell](http://book.realworldhaskell.org) is a usual suggestion to read after LYAH (above), but hey it 
+  was front endge in 2008, but probably not as current know. The text presentation is also quite characteristic to 2008.
 
 - [haskellbook.com](http://haskellbook.com) is paid content, but one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories).
 
-- <https://github.com/jagajaga/FP-Course-ITMO>
+- [FP-Course-ITMO](https://github.com/jagajaga/FP-Course-ITMO) is both a course and learning path suggestions, in English.
 
 ### Reviews
 
-- <https://github.com/bitemyapp/learnhaskell>
-
 - [Getting started with Haskell](https://stackoverflow.com/questions/1012573/getting-started-with-haskell) mentions resources above and lays you a learning path for years ahead.
 
+- [How to learn Haskell](https://github.com/bitemyapp/learnhaskell) is 'a list of recommendations from one of the authors of the Haskell Book', it is translated to many languages.
+
 ## Other resources
-
-### Trivial examples
-
-- [what is `x:xs`?](https://stackoverflow.com/questions/7368926/division-in-haskell)
-- [Fibonacci numbers](https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition)
-
-### Various topics
 
 - [Functions by tutorial by Carl Burch](http://www.toves.org/books/hsfun/), the only addition could have been lambda functions
 - [Desugarization](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html) (list comp desugarss to do notation)  
@@ -103,18 +97,19 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [In cartoons](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 - [Don't read the monad tutorials](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
 - [Effectful Haskell: IO, Monads, Functors](https://slpopejoy.github.io/posts/Effectful01.html#fn1) - a monadic tutorial that 'clicks'.
+- [Эффекты в Haskell](https://ruhaskell.org/posts/theory/2018/01/18/effects-haskell.html) - in Russian, I like the monad classification and a table at the end of an article.
 
 ![](rails.png)
 
-### Advanced (Fuctional Pearls)
+### Advanced 
 
 - Graham Hutton, Erik Meijer. [Monadic Parsing in Haskell](http%3A%2F%2Fwww.cs.nott.ac.uk%2F~pszgmh%2Fpearl.pdf&usg=AOvVaw1BSPFzc6UYlS64ndClR60K) 
 (with [comments](https://github.com/mini-kep/kep-parser.hs/tree/master/learn-parse))
+- [Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire](https://research.utwente.nl/en/publications/functional-programming-with-bananas-lenses-envelopes-and-barbed-w)
 
 ### Motivational
 
 - Simon Peyton-Jones, one of language creators. _Escape from the ivory tower: the Haskell journey [video](https://www.youtube.com/watch?v=re96UgMk6GQ&feature=youtu.be&t=725)_. Funny graphs about adoption curves of programming languages.
-
 
 ## Courses
 
@@ -125,7 +120,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 ### Russian: 
 
-- [Stepik](https://stepik.org/course/75/promo)
+- [Stepik](https://stepik.org/course/75/promo) course is very good and nice to students.
 - [FP at ITMO](https://github.com/jagajaga/FP-Course-ITMO)
 - [YouTube and code of seminars at CMC MSU](https://cmc-haskell-2018.github.io)
 
