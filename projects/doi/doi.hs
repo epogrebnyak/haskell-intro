@@ -1,8 +1,5 @@
--- Replicate calls to bibliography server
-
--- Similar package (outdated bibliographic APIs, but does nocal caching nicely)
--- https://github.com/nushio3/citation-resolve/blob/master/src/Text/CSL/Input/Identifier/Internal.hs#L142-L152
-
+-- Retrieve bibliographic information based on DOI and other handles.
+-- Use bibliographic information in pandoc / pandoc-citeproc.
 
 {-# LANGUAGE OverloadedStrings #-}
 import qualified Data.ByteString.Char8 as B
@@ -13,10 +10,10 @@ import Network.Curl.Opts (CurlOption(CurlFollowLocation, CurlHttpHeaders))
 type URL = String
 data Handle = DOI String | ISBN String deriving Show
 
-curl :: URL -> CurlHttpHeaders -> IO (Either String B.ByteString)
+curl :: URL -> CurlOption -> IO (Either String B.ByteString)
 curl url header = openURIWithOpts opts url where 
     opts = [ CurlFollowLocation True,
-             CurlHttpHeaders header
+             header
            ]    
 
 save :: FilePath -> Either String B.ByteString -> IO ()           
@@ -34,29 +31,39 @@ str :: Handle -> String
 str (DOI s) = "doi:" ++ s
 str (ISBN s) = "isbn:" ++ s
 
+toUnderscore chars s = if s `elem` chars then "_" else s
+
 filename :: Handle -> FilePath
-filename h = ((unpack . changes . pack . str) h) + ".txt" 
+filename h = ((unpack . changes . pack . str) h) ++ ".txt" 
       where changes = (toLower . 
                        (replace "." "_") . 
                        (replace "/" "_") . 
                        (replace ":" "_")
-                       )
-       
+                       )                       
+
 loadLocal :: Handle -> IO()
 loadLocal h = (retrieve h) >>= (save (filename h))
 
 -- TODO: must read file the local file if it exists
 --       and query web and save if it does not
---       return value in any case
+--       Must return value in any case
 get h = readFile $ filename h
 
 h = DOI "10.3982/ECTA11427"
 
-main = load $ DOI "10.3982/ECTA11427"
+main = loadLocal $ DOI "10.3982/ECTA11427"
 
--- NEXT: make sample output using python program
--- NEXT: say what python program does not do
--- NEXT: read a local file as JSON or CSL item
--- NEXT: correct csl item so that it fits pandoc-cslproc
--- NEXT: make bibliography
--- NEXT: make it a small package
+-- NEXT:
+-- link to pandoc-citeproc: csl item probably goes to metadata
+-- trace citeproc call to Pandoc metadata or bibliography
+-- correct csl item from DOI so that it fits pandoc-cslproc
+
+-- OTHER:
+-- make it a small package eg. doi-echo
+-- read a local file as JSON or CSL item (will deal with aeson) - for `get h`
+
+-- NOT TODO:
+-- Similar package (outdated bibliographic APIs, but does local db caching nicely)
+-- https://github.com/nushio3/citation-resolve/blob/master/src/Text/CSL/Input/Identifier/Internal.hs#L142-L152
+
+
