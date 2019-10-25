@@ -7,9 +7,6 @@ People cited:
 
 # Classes
 
-About | Set up GHCi | Topic list | Sessions
-
-
 **About classes.** This is a curated introduction to Haskell by [Yuras Shumovich](https://twitter.com/shumovichy) as studied by [Evgeniy](https://twitter.com/PogrebnyakE) and [Zarak](https://github.com/zarak).
 
 We were lucky to have [Yuras](https://twitter.com/shumovichy) as a tutor in Haskell for this small course at the end of 2018. Yuras knows 150% of Haskell, but he adjusted instruction according to our [prior knowledge (or, rather, ignorance)](blog/how_we_started.md).
@@ -22,8 +19,6 @@ suggested [here](setup.md).
 **Sessions**. [This repository](https://github.com/epogrebnyak/haskell-intro) holds session transcripts `class 1-7` closely following the [topics list](topics.md) from above. 
 
 # Reading 
-
-Top picks | Quick introductions | Longer reads | Other resources | Courses | Problem sets
 
 Readings about Haskell are quite numerous. Good lists are [here](https://wiki.haskell.org/Learning_Haskell) and [here](https://stackoverflow.com/questions/1012573/getting-started-with-haskell).
 
