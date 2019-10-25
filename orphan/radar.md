@@ -1,3 +1,10 @@
+# 2019-10-25
+
+
+
+
+# Earlier
+
 Short examples:
 - https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20examples
 
