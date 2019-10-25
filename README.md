@@ -133,6 +133,6 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 # Feedback
 
-Issues for this Github repo: <https://epogrebnyak.github.io/haskell-intro/issues>
+Issues for this Github repo: <https://github.com/epogrebnyak/haskell-intro/issues>
 
 Twitter: <https://twitter.com/PogrebnyakE/status/1082306102468005891>
