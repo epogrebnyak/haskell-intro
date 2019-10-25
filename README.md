@@ -99,7 +99,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Effectful Haskell: IO, Monads, Functors](https://slpopejoy.github.io/posts/Effectful01.html#fn1) - a monadic tutorial that 'clicks'.
 - [Эффекты в Haskell](https://ruhaskell.org/posts/theory/2018/01/18/effects-haskell.html) - in Russian, I like the monad classification and a table at the end of an article.
 
-![](rails.png)
+![](image/rails.png)
 
 ### Advanced 
 
