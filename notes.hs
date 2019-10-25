@@ -1,5 +1,5 @@
--- Great single topics reads
--- =========================
+-- Notes and small experiments
+-- ===========================
 
 -- https://github.com/rudymatela/concise-cheat-sheets
 
@@ -39,11 +39,6 @@ a = (\x -> x + 1) 1
 -- Types
 -- =====
 
--- typeclasses:
--- http://book.realworldhaskell.org/read/using-typeclasses.html
--- http://shuklan.com/haskell/lec03.html#/0/10
--- http://learnyouahaskell.com/types-and-typeclasses
-
 -- type constriant 
 -- https://stackoverflow.com/questions/9142731/what-does-the-symbol-mean-in-haskell
 -- ghci> :t (==)  
@@ -65,3 +60,8 @@ a = (\x -> x + 1) 1
 -- main = return ()
 -- https://stackoverflow.com/questions/46547208/why-is-my-haskell-code-saying-variable-not-in-scope-main
 
+-- ### Trivial examples
+ 
+-- - [what is `x:xs`?](https://stackoverflow.com/questions/7368926/division-in-haskell)
+-- - [Fibonacci numbers](https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition)
+-- - [Small examples like TSV to CSV](http://www.haskellforall.com/2015/10/basic-haskell-examples.html)

@@ -8,3 +8,5 @@ Also you can use online tools like [this](https://www.tutorialspoint.com/compile
 though they don't provide access to interactive environment.
 
 Addition: [repl.it](https://repl.it/languages/haskell) has Haskell IDE and runnable command line.
+
+If you are interested in remote please see [the setup script](remote/remote.sh).
