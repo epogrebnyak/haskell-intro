@@ -1,13 +1,12 @@
-[Classes](#Classes): | About | Set up GHCi | Topic list | Sessions
-
-[Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
-
-
 <p align="center">
   <img src="image/collage.png">
   <br>
   <quote> ... and a simple, straightforward way to read a CSV file. </quote>  
 </p>
+
+[Classes](#Classes): | About | Set up GHCi | Topic list | Sessions
+
+[Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
 
 <!-- 
 People cited:
