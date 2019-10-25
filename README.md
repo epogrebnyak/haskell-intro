@@ -75,13 +75,15 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [haskellbook.com](http://haskellbook.com) is paid content, but one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories).
 
-- [FP-Course-ITMO](https://github.com/jagajaga/FP-Course-ITMO) is both a course and learning path suggestions, in English.
 
 ### Reviews
 
 - [Getting started with Haskell](https://stackoverflow.com/questions/1012573/getting-started-with-haskell) mentions resources above and lays you a learning path for years ahead.
 
 - [How to learn Haskell](https://github.com/bitemyapp/learnhaskell) is 'a list of recommendations from one of the authors of the Haskell Book', it is translated to many languages.
+
+- [FP-Course-ITMO](https://github.com/jagajaga/FP-Course-ITMO) is both a course and learning path suggestions, in English.
+
 
 ## Other resources
 
@@ -126,8 +128,14 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [FP at ITMO](https://github.com/jagajaga/FP-Course-ITMO)
 - [YouTube and code of seminars at CMC MSU](https://cmc-haskell-2018.github.io)
 
+## Problem sets
+
+- [Exercism](https://exercism.io/my/tracks/haskell)
+- [99 problems](https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems)
+
+
 # Feedback
 
-This page at Github: <https://epogrebnyak.github.io/haskell-intro/>
+Issues for this Github repo: <https://epogrebnyak.github.io/haskell-intro/issues>
 
 Twitter: <https://twitter.com/PogrebnyakE/status/1082306102468005891>
