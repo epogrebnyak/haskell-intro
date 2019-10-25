@@ -2,9 +2,9 @@
 
 [Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
 
-
-|---------|-------|
-|![Haskell collage](image/collage.png) | > ... and a simple, straightforward way to read a CSV file. |
+|   |   | 
+|---|---|
+|![Haskell collage](image/collage.png)   | > ... and a simple, straightforward way to read a CSV file.   |
 
 
 <!-- 
