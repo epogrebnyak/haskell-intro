@@ -2,7 +2,7 @@
 
 [Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
 
-![Haskell IDE](https://pbs.twimg.com/media/D_wNe_tXsAExBvF?format=png&name=900x900)
+![Haskell collage](image/collage.png)
 
 > ... and a simple, straightforward way to read a csv file.
 
