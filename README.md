@@ -1,7 +1,7 @@
 <p align="center">
   <img src="image/collage_large.png">
   <br>
-  <a href="https://twitter.com/PogrebnyakE/status/1151954656555360269">... and a simple, straightforward way to read a CSV file. </quote>  
+  <a href="https://twitter.com/PogrebnyakE/status/1151954656555360269">... and a simple, straightforward way to read a CSV file.</a> </quote>  
 </p>
 
 <!-- 
