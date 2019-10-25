@@ -2,12 +2,12 @@
 
 [Reading](#Reading): | Top picks | Quick introductions | Longer reads | Other resources | Courses
 
-<center>
-![Haskell collage](image/collage.png)  
-<quote>
-> ... and a simple, straightforward way to read a CSV file.   |
-</quote>
-</center>
+
+<p align="center">
+  <img src="image/collage.png">
+  <br>
+  <quote> ... and a simple, straightforward way to read a CSV file. </quote>  
+</p>
 
 <!-- 
 People cited:
