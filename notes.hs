@@ -65,3 +65,6 @@ a = (\x -> x + 1) 1
 -- - [what is `x:xs`?](https://stackoverflow.com/questions/7368926/division-in-haskell)
 -- - [Fibonacci numbers](https://wiki.haskell.org/The_Fibonacci_sequence#Naive_definition)
 -- - [Small examples like TSV to CSV](http://www.haskellforall.com/2015/10/basic-haskell-examples.html)
+
+-- Short examples:
+-- https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20examples
