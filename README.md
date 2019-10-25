@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="image/collage_large.png">
+  <br>
+  <quote> ... and a simple, straightforward way to read a CSV file. </quote>  
+</p>
+
 <!-- 
 People cited:
 
@@ -130,10 +136,3 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 Issues for this Github repo: <https://epogrebnyak.github.io/haskell-intro/issues>
 
 Twitter: <https://twitter.com/PogrebnyakE/status/1082306102468005891>
-
-
-<p align="center">
-  <img src="image/collage.png">
-  <br>
-  <quote> ... and a simple, straightforward way to read a CSV file. </quote>  
-</p>
