@@ -1,7 +1,7 @@
 <p align="center">
   <img src="image/collage_large.png">
   <br>
-  <quote> ... and a simple, straightforward way to read a CSV file. </quote>  
+  <a href="https://twitter.com/PogrebnyakE/status/1151954656555360269">... and a simple, straightforward way to read a CSV file.</a> 
 </p>
 
 <!-- 
@@ -59,7 +59,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 ### Easier
 
-- [LYAH - Learn You A Haskell](http://learnyouahaskell.com) - a nice intro as far as it deals with familiar topics (eg map/filer, list comprehensions).
+- [LYAH - Learn You A Haskell](http://learnyouahaskell.com) 
 
 - [CS194](https://www.seas.upenn.edu/~cis194/spring13/lectures.html)
 
@@ -133,6 +133,6 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 # Feedback
 
-Issues for this Github repo: <https://epogrebnyak.github.io/haskell-intro/issues>
+Issues for this Github repo: <https://github.com/epogrebnyak/haskell-intro/issues>
 
 Twitter: <https://twitter.com/PogrebnyakE/status/1082306102468005891>
