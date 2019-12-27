@@ -55,6 +55,15 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [Haskell Basics](http://dev.stephendiehl.com/fun/001_basics.html) from Write You A Haskell.
 
+## Functional programming terminology
+
+- [A Glossary of Functional Programming](http://degoes.net/articles/fp-glossary) by John De Goes.
+  
+- [Functional Programming Jargon](https://github.com/hemanth/functional-programming-jargon) by Hemanth HM  (with examples in JavaScript).
+
+- [Haskell.org own Glossary page](https://wiki.haskell.org/Category:Glossary)
+
+
 ## Longer reads
 
 ### Easier
