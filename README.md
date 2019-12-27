@@ -127,6 +127,8 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [Zero BS Haskell](https://github.com/alpacaaa/zero-bullshit-haskell)
 - [Tsoding](https://www.youtube.com/channel/UCEbYhDd6c6vngsF5PQpFVWg)
+- [Phrasebook](https://typeclasses.com/phrasebook) has a neat interface, but 
+  relies heavily metphores from other programming languages (eg replicating [loops](https://typeclasses.com/phrasebook/for-loops), [variables](https://typeclasses.com/phrasebook/variables)), which looks like a step in side direction.
 
 ### Russian: 
 
@@ -139,6 +141,9 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Exercism](https://exercism.io/my/tracks/haskell)
 - [99 problems](https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems)
 
+# Things to watch
+
+- Boring/Inclusive/"Developper" vs Fancy/Elitist/"Researcher" Haskell
 
 # Feedback
 
