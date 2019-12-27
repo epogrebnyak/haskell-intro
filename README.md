@@ -75,21 +75,16 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 ### Tougher
 
 - [What I Wish I Knew When Learning Haskell](http://dev.stephendiehl.com/hask/) is truely a long read, but you can definitely spot parts you'll like.  
-
-- [RWH - Real World Haskell](http://book.realworldhaskell.org) is a usual suggestion to read after LYAH (above), but hey it 
-  was front endge in 2008, but probably not as current know. The text presentation is also quite characteristic to 2008.
-
+- [RWH - Real World Haskell](http://book.realworldhaskell.org) is a usual suggestion to read after LYAH (above). It was front endge in 2008, but probably not as current know. The text presentation is also quite characteristic to 2008. 
+- Tae Sandoval is doing [an update](https://github.com/tssm/up-to-date-real-world-haskell) of RWH! 
 - [haskellbook.com](http://haskellbook.com) is paid content, but one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories).
 
-
-### Reviews
+### Study recommendations
 
 - [Getting started with Haskell](https://stackoverflow.com/questions/1012573/getting-started-with-haskell) mentions resources above and lays you a learning path for years ahead.
-
 - [How to learn Haskell](https://github.com/bitemyapp/learnhaskell) is 'a list of recommendations from one of the authors of the Haskell Book', it is translated to many languages.
-
 - [FP-Course-ITMO](https://github.com/jagajaga/FP-Course-ITMO) is both a course and learning path suggestions, in English.
-
+- [Haskell Study Plan](https://github.com/soupi/haskell-study-plan) 
 
 ## Other resources
 
@@ -150,3 +145,5 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 Issues for this Github repo: <https://github.com/epogrebnyak/haskell-intro/issues>
 
 Twitter: <https://twitter.com/PogrebnyakE/status/1082306102468005891>
+
+
