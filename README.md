@@ -86,12 +86,19 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [FP-Course-ITMO](https://github.com/jagajaga/FP-Course-ITMO) is both a course and learning path suggestions, in English.
 - [Haskell Study Plan](https://github.com/soupi/haskell-study-plan) 
 
-## Other resources
+## Specific topics
 
 - [Functions by tutorial by Carl Burch](http://www.toves.org/books/hsfun/), the only addition could have been lambda functions
 - [Desugarization](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html) (list comp desugarss to do notation)  
-- 'Haskell at work' has a [gentle introduction to cabal](https://haskell-at-work.com/episodes/2018-05-13-introduction-to-cabal.html)
 - [Pronounceable names for operators](https://stackoverflow.com/questions/7746894/are-there-pronounceable-names-for-common-haskell-operators)
+
+
+## Build tools
+
+- 'Haskell at work' has an [introduction to cabal](https://haskell-at-work.com/episodes/2018-05-13-introduction-to-cabal.html)
+- Juan Pedro Villa Isaza blog provides [a walk through a minimal cabal file](https://jpvillaisaza.co/2017/03/14/minimal-cabal-files).
+- An introduction to `cabal` and `stack` at [@kowainik](https://kowainik.github.io/posts/2018-06-21-haskell-build-tools)
+
 
 ### Type system
 
