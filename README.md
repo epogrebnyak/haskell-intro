@@ -98,7 +98,10 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - 'Haskell at work' has an [introduction to cabal](https://haskell-at-work.com/episodes/2018-05-13-introduction-to-cabal.html)
 - Juan Pedro Villa Isaza blog provides [a walk through a minimal cabal file](https://jpvillaisaza.co/2017/03/14/minimal-cabal-files).
 - An introduction to `cabal` and `stack` at [@kowainik](https://kowainik.github.io/posts/2018-06-21-haskell-build-tools)
+- [Lesson 35. Building projects with stack](https://livebook.manning.com/book/get-programming-with-haskell/chapter-35/)
 
+
+https://livebook.manning.com/book/get-programming-with-haskell/chapter-35/
 
 ### Type system
 
@@ -151,5 +154,3 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 Issues for this Github repo: <https://github.com/epogrebnyak/haskell-intro/issues>
 
 Twitter: <https://twitter.com/PogrebnyakE/status/1082306102468005891>
-
-
