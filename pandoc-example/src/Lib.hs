@@ -1,29 +1,23 @@
--- https://ocharles.org.uk/guest-posts/2013-12-12-24-days-of-hackage-pandoc.htm
--- https://github.com/jgm/pandoc/issues/683
+-- https://pandoc.org/using-the-pandoc-api.html
 
-module Lib
-    ( someFunc
-    ) where
+module Lib where
 
 import Text.Pandoc
+import qualified Data.Text as T
+import qualified Data.Text.IO as TIO
 
-textToConvert = unlines [ "Hello World."
+textToConvert = T.pack ( unlines [ "Hello World."
                         , ""
                         , "    this is a Markdown code block"
                         , ""
-                        , "[This is a link](http://www.latermuse.com/)" ]
+                        , "[This is a link](http://www.latermuse.com/)" ] )
 
-pandocParsed = readMarkdown def textToConvert
+-- doc' = readMarkdown def (T.pack "[testing](url)")
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
-
-pandocConverted = writeLaTeX def pandocParsed
-
-convertedToHtml = writeHtml def pandocParsed
-
-convertedToOpenDocument = writeOpenDocument opts pandocParsed
-  where
-    opts = def { writerWrapText = True -- Enable text wrapping
-               , writerColumns = 80 }  -- Set column width to 80
-
+pan :: IO ()
+pan = do
+  result <- runIO $ do
+    doc <- readMarkdown def (T.pack "[testing](url)")
+    writeRST def doc
+  rst <- handleError result
+  TIO.putStrLn rst

@@ -21,11 +21,14 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- text
 - pandoc
 #- pandoc-citeproc
 
 library:
   source-dirs: src
+  ghc-options:
+    - -OverloadedStrings     
 
 executables:
   pandoc-example-exe:
@@ -35,6 +38,7 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -OverloadedStrings 
     dependencies:
     - pandoc-example
 
@@ -46,5 +50,6 @@ tests:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -OverloadedStrings 
     dependencies:
     - pandoc-example
