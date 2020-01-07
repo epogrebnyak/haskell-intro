@@ -1,4 +1,5 @@
 -- https://ocharles.org.uk/guest-posts/2013-12-12-24-days-of-hackage-pandoc.htm
+-- https://github.com/jgm/pandoc/issues/683
 
 module Lib
     ( someFunc
