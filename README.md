@@ -55,6 +55,11 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [Haskell Basics](http://dev.stephendiehl.com/fun/001_basics.html) from Write You A Haskell.
 
+- [learnxinyminutes on Haskell](https://github.com/adambard/learnxinyminutes-docs/blob/master/haskell.html.markdown) - it is very minimal indeed.
+
+- [A dense Haskell learning material for the brave](https://her.esy.fun/posts/0010-Haskell-Now/index.html) by Yann Esposito explicitly separates concepts by difficulty and suggests good learning path (beware the `nix` installation part, you do not have to do that, there is stack and Haskell platform).
+
+
 ## Functional programming terminology
 
 - [A Glossary of Functional Programming](http://degoes.net/articles/fp-glossary) by John De Goes.
@@ -85,13 +90,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [How to learn Haskell](https://github.com/bitemyapp/learnhaskell) is 'a list of recommendations from one of the authors of the Haskell Book', it is translated to many languages.
 - [FP-Course-ITMO](https://github.com/jagajaga/FP-Course-ITMO) is both a course and learning path suggestions, in English.
 - [Haskell Study Plan](https://github.com/soupi/haskell-study-plan) 
-
-## Specific topics
-
-- [Functions by tutorial by Carl Burch](http://www.toves.org/books/hsfun/), the only addition could have been lambda functions
-- [Desugarization](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html) (list comp desugarss to do notation)  
-- [Pronounceable names for operators](https://stackoverflow.com/questions/7746894/are-there-pronounceable-names-for-common-haskell-operators)
-
+- [How to Learn Haskell](https://acm.wustl.edu/functional/haskell.php), an artefact of study program from spring semester 2010 at Washington University in St. Louis, part of broader [Adventures in Functional Programming Haskell & Scheme](https://acm.wustl.edu/functional/). 
 
 ## Build tools
 
@@ -101,7 +100,12 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Lesson 35. Building projects with stack](https://livebook.manning.com/book/get-programming-with-haskell/chapter-35/)
 
 
-https://livebook.manning.com/book/get-programming-with-haskell/chapter-35/
+## Specific topics
+
+- [Functions by tutorial by Carl Burch](http://www.toves.org/books/hsfun/), the only addition could have been lambda functions
+- [Desugarization](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html) (list comp desugarss to do notation)  
+- [Pronounceable names for operators](https://stackoverflow.com/questions/7746894/are-there-pronounceable-names-for-common-haskell-operators)
+
 
 ### Type system
 
