@@ -137,9 +137,10 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Tsoding](https://www.youtube.com/channel/UCEbYhDd6c6vngsF5PQpFVWg)
 - [Phrasebook](https://typeclasses.com/phrasebook) has a neat interface, but 
   relies heavily metphores from other programming languages (eg replicating [loops](https://typeclasses.com/phrasebook/for-loops), [variables](https://typeclasses.com/phrasebook/variables)), which looks like a step in side direction.
-- [Stepik notes][se] in English
+- [Stepik notes][stepik-en] in English
 
-[sе]: https://hmemcpy.com/2020/01/functional-programming-in-haskell-stepik-course-notes-module-1/
+[stepik-en]: https://hmemcpy.com/2020/01/functional-programming-in-haskell-stepik-course-notes-module-1
+
 
 ### Russian: 
 
