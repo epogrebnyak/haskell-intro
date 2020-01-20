@@ -80,9 +80,16 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 ### Tougher
 
 - [What I Wish I Knew When Learning Haskell](http://dev.stephendiehl.com/hask/) is truely a long read, but you can definitely spot parts you'll like.  
-- [RWH - Real World Haskell](http://book.realworldhaskell.org) is a usual suggestion to read after LYAH (above). It was front endge in 2008, but probably not as current know. The text presentation is also quite characteristic to 2008. 
+- [RWH - Real World Haskell](http://book.realworldhaskell.org) by Bryan O'Sullivan, Don Stewart, and John Goerzen is a usual suggestion to read after LYAH (above). It was front endge in 2008, but probably not as current know. The text layout is also quite 2008.
 - Tae Sandoval is doing [an update](https://github.com/tssm/up-to-date-real-world-haskell) of RWH! 
-- [haskellbook.com](http://haskellbook.com) is paid content, but one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories).
+- Two recent good books from Manning publishing house: 
+  - [Get Programming with Haskell by Will Kurt](https://www.manning.com/books/get-programming-with-haskell)
+  - [Haskell in Depth by Vitaly Bragilevsky](https://www.manning.com/books/haskell-in-depth)
+  
+### Paid content 
+
+- [Programming in Haskell](https://www.cs.nott.ac.uk/~pszgmh/pih.html) by Graham Hutton, has sample chapters and a set of slides and videos
+- For [haskellbook.com](http://haskellbook.com) by Christopher Allen and Julie Moronuki one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories).
 
 ### Study recommendations
 
