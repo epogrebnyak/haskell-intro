@@ -118,7 +118,6 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Desugarization](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html) (list comp desugarss to do notation)  
 - [Pronounceable names for operators](https://stackoverflow.com/questions/7746894/are-there-pronounceable-names-for-common-haskell-operators)
 
-
 ### Type system
 
 - [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia) is a classic article about types classes. At first glance one needs to spot functors, applicatives and monads.
@@ -126,6 +125,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Don't read the monad tutorials](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
 - [Effectful Haskell: IO, Monads, Functors](https://slpopejoy.github.io/posts/Effectful01.html#fn1) - a monadic tutorial that 'clicks'.
 - [Эффекты в Haskell](https://ruhaskell.org/posts/theory/2018/01/18/effects-haskell.html) - in Russian, I like the monad classification and a table at the end of an article.
+- [Thinking with types](https://thinkingwithtypes.com/) by is Sandy Maguire - first chapters are free and are good intro to types in general, before going int dependent types later in the book. Has code repo by the author [here](https://github.com/isovector/thinking-with-types). 
 
 ![](image/rails.png)
 
