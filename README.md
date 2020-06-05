@@ -73,8 +73,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 ### New
 
-- [Why Haskell Matters](https://github.com/thma/WhyHaskellMatters) by [@thma](https://github.com/thma)
-
+- [Why Haskell Matters](https://github.com/thma/WhyHaskellMatters) by [Thomas Mahler](https://github.com/thma)
 
 ### Easier
 
