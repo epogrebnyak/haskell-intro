@@ -134,6 +134,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - Graham Hutton, Erik Meijer. [Monadic Parsing in Haskell](http%3A%2F%2Fwww.cs.nott.ac.uk%2F~pszgmh%2Fpearl.pdf&usg=AOvVaw1BSPFzc6UYlS64ndClR60K) 
 (with [comments](https://github.com/mini-kep/kep-parser.hs/tree/master/learn-parse))
 - [Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire](https://research.utwente.nl/en/publications/functional-programming-with-bananas-lenses-envelopes-and-barbed-w)
+- [A List of Foundational Haskell Papers](https://github.com/cohomolo-gy/haskell-resources)
 
 ### Motivational
 
