@@ -168,7 +168,7 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 # Things to watch
 
-- Boring/Inclusive/"Developper" vs Fancy/Elitist/"Researcher" Haskell
+- [Boring/Inclusive/"Developper"/Simple](https://www.simplehaskell.org/) vs Fancy/Elitist/"Researcher" Haskell
 
 # Feedback
 
