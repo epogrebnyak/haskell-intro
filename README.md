@@ -124,7 +124,9 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Don't read the monad tutorials](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
 - [Effectful Haskell: IO, Monads, Functors](https://slpopejoy.github.io/posts/Effectful01.html#fn1) - a monadic tutorial that 'clicks'.
 - [Эффекты в Haskell](https://ruhaskell.org/posts/theory/2018/01/18/effects-haskell.html) - in Russian, I like the monad classification and a table at the end of an article.
-- [Thinking with types](https://thinkingwithtypes.com/) by is Sandy Maguire - first chapters are free and are good intro to types in general, before going int dependent types later in the book. Has code repo by the author [here](https://github.com/isovector/thinking-with-types). 
+- [Thinking with types](https://thinkingwithtypes.com/) by Sandy Maguire - first chapters are free and are good intro to types in general, before going int dependent types later in the book. Has code repo by the author [here](https://github.com/isovector/thinking-with-types). 
+- [Lambda the Ultimate Pattern Factory](https://github.com/thma/LtuPatternFactory) by Thomas Mahler relates software design patterns to  Haskell type classes, a larger study that makes step forward in [SOLID principles in functional settings](https://twitter.com/unclebobmartin/status/1164511654618550273) discussion (see also [here](https://stackoverflow.com/questions/5577054/solid-for-functional-programming)). You are getting a good fresh angle on [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia). 
+
 
 ![](image/rails.png)
 
