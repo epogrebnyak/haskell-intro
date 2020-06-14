@@ -1,6 +1,6 @@
 Last update: 2019-10-28
 
-This file is to be used together with Github issue.
+This file is to be used together with Github issues.
 
 # Project ideas:
 

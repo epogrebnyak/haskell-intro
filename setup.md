@@ -9,4 +9,6 @@ though they don't provide access to interactive environment.
 
 Addition: [repl.it](https://repl.it/languages/haskell) has Haskell IDE and runnable command line.
 
-If you are interested in remote please see [the setup script](remote/remote.sh).
+If you are interested in remote please see [the setup script](config/remote.sh).
+
+See also Zurihac recommendations: https://github.com/zfoh/haskell-simple-install
