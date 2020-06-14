@@ -29,6 +29,10 @@ main = sort' <$> getEnv "PATH" >>= putStrLn
 -- - [x] combine IO actions
 -- - [x] <$> is fmap
 -- - [x] desugar do notaton 
--- - [ ] make it work on my computer as executable (https://gitlab.haskell.org/ghc/ghc/issues/18332) 
 -- - [x] must use cabal v2-repl even in verion >3.0.0
+
+-- Not achieved
+-- ============
+
+-- [ ] make the script compile on my computer with non-latin usename (https://gitlab.haskell.org/ghc/ghc/issues/18332) 
 
