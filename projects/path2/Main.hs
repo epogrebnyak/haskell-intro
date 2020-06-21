@@ -4,7 +4,7 @@
 -- Similar result in cmd.exe (without sorting):
 --    for %a in ("%path:;=";"%") do @echo %~a
 
--- Or in python that is: 
+-- Or in python that is (without sorting): 
 -- python3 -c "import os; x=sorted(os.environ['PATH'].split(':')); print('\n'.join(x))"
 
 
@@ -32,6 +32,8 @@ sort'' s = (unlines . sort) $ lower <$> (splitOn ";" s)
 main = do
    paths <- getEnv "PATH"
    putStrLn $ sort'' paths 
+
+main' = getEnv "PATH" >>= \paths -> putStrLn (sort'' paths)
 
 
 -- Learning goals
