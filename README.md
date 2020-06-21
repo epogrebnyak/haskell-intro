@@ -77,7 +77,8 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 ### Easier
 
-- [LYAH - Learn You A Haskell](http://learnyouahaskell.com) 
+- [Learn You A Haskell for Great Good!](http://learnyouahaskell.com) 
+  - [LYAH Jupyter notebook adaptation](https://github.com/jamesdbrock/learn-you-a-haskell-notebook)
 
 - [CS194](https://www.seas.upenn.edu/~cis194/spring13/lectures.html)
 
