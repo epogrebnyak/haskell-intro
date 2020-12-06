@@ -102,7 +102,10 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [How to learn Haskell](https://github.com/bitemyapp/learnhaskell) is 'a list of recommendations from one of the authors of the Haskell Book', it is translated to many languages.
 - [FP-Course-ITMO](https://github.com/jagajaga/FP-Course-ITMO) is both a course and learning path suggestions, in English.
 - [Haskell Study Plan](https://github.com/soupi/haskell-study-plan) 
-- [How to Learn Haskell](https://acm.wustl.edu/functional/haskell.php), an artefact of study program from spring semester 2010 at Washington University in St. Louis, part of broader [Adventures in Functional Programming Haskell & Scheme](https://acm.wustl.edu/functional/). 
+- [How to Learn Haskell](https://acm.wustl.edu/functional/haskell.php), an artefact of study program from spring semester 2010 at Washington University in St. 
+Louis, part of broader [Adventures in Functional Programming Haskell & Scheme](https://acm.wustl.edu/functional/). 
+- A fast growing [haskell-learning list](https://github.com/sassela/haskell-learning).
+
 
 ## Build tools
 
