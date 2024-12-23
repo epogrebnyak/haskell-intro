@@ -23,31 +23,37 @@ The order may change.
  - lazy evaluation
 
 ## Polymorphism
+
  - parametric polymorphism
  - ad-hoc polymorphism
  - type classes
  - some standard type classes: Show, Read, Num, Monoid
 
 ## Referential transparency
+
  - property testing
  - referential transparency
  - equation reasoning
 
 ## Functor
+
  - Functor typeclass
  - common instances: Maybe, Either, [], IO, (->)
 
 ## Applicative and Monad
+
  - Applicative type class
  - Monad type class
  - common instances: Maybe, Either, [], IO, (->)
 
 ## Monad transformers
+
  - ReaderT
  - StateT
  - ExceptT
 
 ## In short
+
  - concurrency
  - software transaction memory
  - parallel strategies
