@@ -4,7 +4,7 @@
   <a href="https://twitter.com/PogrebnyakE/status/1151954656555360269">... and a simple, straightforward way to read a CSV file.</a> 
 </p>
 
-<!-- 
+<!--
 People cited:
 
 @shumovichy, @BartoszMilewski, @fsoikin, @_bravit, @smdiehl, @carl_burch,
@@ -20,11 +20,11 @@ We were lucky to have [Yuras](https://twitter.com/shumovichy) as a tutor in Hask
 **Set up GHCi.** Set up GHCi Haskell on your computer or use a limited web version as
 suggested [here](setup.md).
 
-**Topic list.** Yuras original [topic list](topics.md), a great plan to learn. 
+**Topic list.** Yuras original [topic list](topics.md), a great plan to learn.
 
-**Sessions**. [This repository](https://github.com/epogrebnyak/haskell-intro) holds session transcripts `class 1-7` closely following the [topics list](topics.md) from above. 
+**Sessions**. [This repository](https://github.com/epogrebnyak/haskell-intro) holds session transcripts `class 1-7` closely following the [topics list](topics.md) from above.
 
-# Reading 
+# Reading
 
 Readings about Haskell are quite numerous. Good lists are [here](https://wiki.haskell.org/Learning_Haskell) and [here](https://stackoverflow.com/questions/1012573/getting-started-with-haskell).
 
@@ -32,18 +32,18 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 0. The [topic list](topics.md), again.
 
-1. Google [Haskell 101 and 102](https://github.com/google/haskell-trainings/releases) has two presentations that talk about Haskell from scratch. Their approach about teaching Functor, Applicative and Monad via  `fmap`, `ap`, `bind` is simple and effective.
+1. Google [Haskell 101 and 102](https://github.com/google/haskell-trainings/releases) has two presentations that talk about Haskell from scratch. Their approach about teaching Functor, Applicative and Monad via `fmap`, `ap`, `bind` is simple and effective.
 
-2. `Prelude` module holds basic functions and worth studying on its own. You can can get type declarations of Prelude by typing `:browse Prelude` in intepreter or check this command output [here](browse_prelude.hs). Examples of `Prelude` usage are included in [A Tour of the Haskell Prelude][pre]. 
+2. `Prelude` module holds basic functions and worth studying on its own. You can can get type declarations of Prelude by typing `:browse Prelude` in intepreter or check this command output [here](browse_prelude.hs). Examples of `Prelude` usage are included in [A Tour of the Haskell Prelude][pre].
 
-3. Bartosz Milewski's '[Category Theory for Programmers][ctp]' is a great intro to Haskell itself, written in  very good technical language and rolled at a very readable pace. It is a top trending repository on Github. Note also this [playlist](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_) (not related to the book).  
+3. Bartosz Milewski's '[Category Theory for Programmers][ctp]' is a great intro to Haskell itself, written in very good technical language and rolled at a very readable pace. It is a top trending repository on Github. Note also this [playlist](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_) (not related to the book).
 
 [pre]: http://www.cse.chalmers.se/edu/course/TDA555/tourofprelude.html
 [ctp]: https://github.com/hmemcpy/milewski-ctfp-pdf
 
 ## Quick introductions
 
-- [Haskell Concepts in One Sentence](https://ndrgrnd.net/posts/haskellOneSentence.html) 
+- [Haskell Concepts in One Sentence](https://ndrgrnd.net/posts/haskellOneSentence.html)
   luckily corresponds to our topics list! (cached and reclassified [here](https://github.com/epogrebnyak/haskell-intro/issues/5))
 
 - Skim a [cheatsheet](http://cheatsheet.codeslower.com/CheatSheet.pdf) for terminology.
@@ -59,15 +59,12 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 - [A dense Haskell learning material for the brave](https://her.esy.fun/posts/0010-Haskell-Now/index.html) by Yann Esposito explicitly separates concepts by difficulty and suggests good learning path (beware the `nix` installation part, you do not have to do that, there is stack and Haskell platform).
 
-
 ## Functional programming terminology
 
 - [A Glossary of Functional Programming](http://degoes.net/articles/fp-glossary) by John De Goes.
-  
-- [Functional Programming Jargon](https://github.com/hemanth/functional-programming-jargon) by Hemanth HM  (with examples in JavaScript).
+- [Functional Programming Jargon](https://github.com/hemanth/functional-programming-jargon) by Hemanth HM (with examples in JavaScript).
 
 - [Haskell.org own Glossary page](https://wiki.haskell.org/Category:Glossary)
-
 
 ## Longer reads
 
@@ -77,21 +74,22 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 
 ### Easier
 
-- [Learn You A Haskell for Great Good!](http://learnyouahaskell.com) 
+- [Learn You A Haskell for Great Good!](http://learnyouahaskell.com)
+
   - [LYAH Jupyter notebook adaptation](https://github.com/jamesdbrock/learn-you-a-haskell-notebook)
 
 - [CS194](https://www.seas.upenn.edu/~cis194/spring13/lectures.html)
 
 ### Tougher
 
-- [What I Wish I Knew When Learning Haskell](http://dev.stephendiehl.com/hask/) is truely a long read, but you can definitely spot parts you'll like.  
+- [What I Wish I Knew When Learning Haskell](http://dev.stephendiehl.com/hask/) is truely a long read, but you can definitely spot parts you'll like.
 - [RWH - Real World Haskell](http://book.realworldhaskell.org) by Bryan O'Sullivan, Don Stewart, and John Goerzen is a usual suggestion to read after LYAH (above). It was front endge in 2008, but probably not as current know. The text layout is also quite 2008.
-- Tae Sandoval is doing [an update](https://github.com/tssm/up-to-date-real-world-haskell) of RWH! 
-- Two recent good books from Manning publishing house: 
+- Tae Sandoval is doing [an update](https://github.com/tssm/up-to-date-real-world-haskell) of RWH!
+- Two recent good books from Manning publishing house:
   - [Get Programming with Haskell by Will Kurt](https://www.manning.com/books/get-programming-with-haskell)
   - [Haskell in Depth by Vitaly Bragilevsky](https://www.manning.com/books/haskell-in-depth)
-  
-### Paid content 
+
+### Paid content
 
 - [Programming in Haskell](https://www.cs.nott.ac.uk/~pszgmh/pih.html) by Graham Hutton, has sample chapters and a set of slides and videos
 - For [haskellbook.com](http://haskellbook.com) by Christopher Allen and Julie Moronuki one can examine [the excercises on github](https://github.com/search?o=desc&q=haskellbook&s=stars&type=Repositories).
@@ -101,11 +99,10 @@ Readings about Haskell are quite numerous. Good lists are [here](https://wiki.ha
 - [Getting started with Haskell](https://stackoverflow.com/questions/1012573/getting-started-with-haskell) mentions resources above and lays you a learning path for years ahead.
 - [How to learn Haskell](https://github.com/bitemyapp/learnhaskell) is 'a list of recommendations from one of the authors of the Haskell Book', it is translated to many languages.
 - [FP-Course-ITMO](https://github.com/jagajaga/FP-Course-ITMO) is both a course and learning path suggestions, in English.
-- [Haskell Study Plan](https://github.com/soupi/haskell-study-plan) 
-- [How to Learn Haskell](https://acm.wustl.edu/functional/haskell.php), an artefact of study program from spring semester 2010 at Washington University in St. 
-Louis, part of broader [Adventures in Functional Programming Haskell & Scheme](https://acm.wustl.edu/functional/). 
+- [Haskell Study Plan](https://github.com/soupi/haskell-study-plan)
+- [How to Learn Haskell](https://acm.wustl.edu/functional/haskell.php), an artefact of study program from spring semester 2010 at Washington University in St.
+  Louis, part of broader [Adventures in Functional Programming Haskell & Scheme](https://acm.wustl.edu/functional/).
 - A fast growing [haskell-learning list](https://github.com/sassela/haskell-learning).
-
 
 ## Build tools
 
@@ -114,11 +111,10 @@ Louis, part of broader [Adventures in Functional Programming Haskell & Scheme](h
 - An introduction to `cabal` and `stack` at [@kowainik](https://kowainik.github.io/posts/2018-06-21-haskell-build-tools)
 - [Lesson 35. Building projects with stack](https://livebook.manning.com/book/get-programming-with-haskell/chapter-35/)
 
-
 ## Specific topics
 
 - [Functions by tutorial by Carl Burch](http://www.toves.org/books/hsfun/), the only addition could have been lambda functions
-- [Desugarization](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html) (list comp desugarss to do notation)  
+- [Desugarization](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html) (list comp desugarss to do notation)
 - [Pronounceable names for operators](https://stackoverflow.com/questions/7746894/are-there-pronounceable-names-for-common-haskell-operators)
 
 ### Type system
@@ -128,17 +124,16 @@ Louis, part of broader [Adventures in Functional Programming Haskell & Scheme](h
 - [Don't read the monad tutorials](http://dev.stephendiehl.com/hask/#eightfold-path-to-monad-satori)
 - [Effectful Haskell: IO, Monads, Functors](https://slpopejoy.github.io/posts/Effectful01.html#fn1) - a monadic tutorial that 'clicks'.
 - [Эффекты в Haskell](https://ruhaskell.org/posts/theory/2018/01/18/effects-haskell.html) - in Russian, I like the monad classification and a table at the end of an article.
-- [Thinking with types](https://thinkingwithtypes.com/) by Sandy Maguire - first chapters are free and are good intro to types in general, before going int dependent types later in the book. Has code repo by the author [here](https://github.com/isovector/thinking-with-types). 
-- [Lambda the Ultimate Pattern Factory](https://github.com/thma/LtuPatternFactory) by Thomas Mahler relates software design patterns to  Haskell type classes, a larger study that makes step forward in [SOLID principles in functional settings](https://twitter.com/unclebobmartin/status/1164511654618550273) discussion (see also [here](https://stackoverflow.com/questions/5577054/solid-for-functional-programming)). You are getting a good fresh angle on [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia). 
-- [What we talk about when we talk about monads](https://arxiv.org/ftp/arxiv/papers/1803/1803.10195.pdf) by [Tomas Petricek](http://tomasp.net/). Review of formal definitions, angles of interpretation (eg container or chained computation) and even sociology of monads - what motivates people to talk about them (mentoins the _ivory tower_   and _rite of passage_). Shows good and wrong paths of use, very well-written, easy and rewarding to read.
-
+- [Thinking with types](https://thinkingwithtypes.com/) by Sandy Maguire - first chapters are free and are good intro to types in general, before going int dependent types later in the book. Has code repo by the author [here](https://github.com/isovector/thinking-with-types).
+- [Lambda the Ultimate Pattern Factory](https://github.com/thma/LtuPatternFactory) by Thomas Mahler relates software design patterns to Haskell type classes, a larger study that makes step forward in [SOLID principles in functional settings](https://twitter.com/unclebobmartin/status/1164511654618550273) discussion (see also [here](https://stackoverflow.com/questions/5577054/solid-for-functional-programming)). You are getting a good fresh angle on [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia).
+- [What we talk about when we talk about monads](https://arxiv.org/ftp/arxiv/papers/1803/1803.10195.pdf) by [Tomas Petricek](http://tomasp.net/). Review of formal definitions, angles of interpretation (eg container or chained computation) and even sociology of monads - what motivates people to talk about them (mentoins the _ivory tower_ and _rite of passage_). Shows good and wrong paths of use, very well-written, easy and rewarding to read.
 
 ![](image/rails.png)
 
-### Advanced 
+### Advanced
 
-- Graham Hutton, Erik Meijer. [Monadic Parsing in Haskell](http%3A%2F%2Fwww.cs.nott.ac.uk%2F~pszgmh%2Fpearl.pdf&usg=AOvVaw1BSPFzc6UYlS64ndClR60K) 
-(with [comments](https://github.com/mini-kep/kep-parser.hs/tree/master/learn-parse))
+- Graham Hutton, Erik Meijer. [Monadic Parsing in Haskell](http%3A%2F%2Fwww.cs.nott.ac.uk%2F~pszgmh%2Fpearl.pdf&usg=AOvVaw1BSPFzc6UYlS64ndClR60K)
+  (with [comments](https://github.com/mini-kep/kep-parser.hs/tree/master/learn-parse))
 - [Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire](https://research.utwente.nl/en/publications/functional-programming-with-bananas-lenses-envelopes-and-barbed-w)
 - [A List of Foundational Haskell Papers](https://github.com/cohomolo-gy/haskell-resources)
 
@@ -154,12 +149,11 @@ Louis, part of broader [Adventures in Functional Programming Haskell & Scheme](h
 
 - [Zero BS Haskell](https://github.com/alpacaaa/zero-bullshit-haskell)
 - [Tsoding](https://www.youtube.com/channel/UCEbYhDd6c6vngsF5PQpFVWg)
-- [Phrasebook](https://typeclasses.com/phrasebook) has a neat interface, but 
+- [Phrasebook](https://typeclasses.com/phrasebook) has a neat interface, but
   a bit too much emphasis on metaphores from other programming languages (eg replicating [loops](https://typeclasses.com/phrasebook/for-loops), [variables](https://typeclasses.com/phrasebook/variables)).
 - [Stepik course notes in English][stepik-en] by Igal Tabachnik
 
 [stepik-en]: https://hmemcpy.com/2020/01/functional-programming-in-haskell-stepik-course-notes-module-1
-
 
 ### Russian
 

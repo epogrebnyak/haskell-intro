@@ -1,5 +1,5 @@
 # Revision history for pandocer
 
-## 0.1.0.0  -- YYYY-mm-dd
+## 0.1.0.0 -- YYYY-mm-dd
 
-* First version. Released on an unsuspecting world.
+- First version. Released on an unsuspecting world.

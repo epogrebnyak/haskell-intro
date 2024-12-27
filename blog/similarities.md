@@ -1,16 +1,16 @@
-# Similarities 
+# Similarities
 
-Similarities soon dry out, but help at start. 
+Similarities soon dry out, but help at start.
 
 > Yuras: I think it is better to start with Haskell directly, and then try to apply things to python using these libraries.
 
 ## Python similarities
 
 - map/filter, but `Data.List` much richer
-- list comprehensions  
+- list comprehensions
 - [partial](https://docs.python.org/2/library/functools.html#functools.partial) helps understand currying
 - lambdas, nameless functions
-- kwargs unpacking is a remote analogy to _pattern matching_ 
+- kwargs unpacking is a remote analogy to _pattern matching_
 
 More on looking from Python:
 
@@ -18,14 +18,13 @@ More on looking from Python:
 
 - <https://github.com/billpmurphy/hask> and [similar](https://github.com/sfermigier/awesome-functional-python#libraries)
 
-
 A bit of wise humor:
 
 - [Bubble sort in Python 5](https://www.youtube.com/watch?v=BvECNQRrjCY)
 
-## C 
+## C
 
-- algebraic data types are similar to struct and unions 
+- algebraic data types are similar to struct and unions
 
 ## Julia / Lisp
 
@@ -45,4 +44,3 @@ A bit of wise humor:
 ## Monads in Haskell, Scala, Python
 
 - [Talk](http://www.moscowpython.ru/meetup/44/monady-eksplikacija/), [slides](https://speakerdeck.com/moscowdjango/monady-eksplikatsiia)
-
