@@ -114,3 +114,6 @@ main = do
   -- two pushes 
   let finalState = execState (accept Push >> accept Push) >> seq initial
   print finalState -- Radio is on, voiume is 8.
+
+-- Next challenge is StateT:
+-- https://wiki.haskell.org/Simple_StateT_use
